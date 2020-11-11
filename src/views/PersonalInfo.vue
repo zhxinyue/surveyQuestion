@@ -18,7 +18,7 @@
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="value1"/>
+        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="suCompany"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
@@ -29,7 +29,7 @@
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" />
+        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="suBumen"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
@@ -40,7 +40,7 @@
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" />
+        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="suName"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
@@ -51,7 +51,7 @@
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" />
+        <input type="number" class="box_dec" placeholder="请点击输入（必填）" v-model="suTelephone"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
@@ -62,7 +62,7 @@
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" />
+        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="suAddress"/>
       </div>
     </div>
     <div class="bottom_btn">
@@ -76,15 +76,52 @@ export default {
   name: "PersonalInfo",
   data() {
     return {
-        value1:'222'
+        suCompany:'',
+        suBumen:'',
+        suName:'',
+        suTelephone:'',
+        suAddress:'',
+
     };
+  },
+  created(){
+    console.log(this.$route.query.spId)
   },
   methods: {
     lastStep() {
       this.$router.go(-1);
     },
     nextStep() {
-        this.$router.push({name: 'Thanks'})
+      if(this.suCompany=='' || this.suBumen=='' ||this.suName=='' ||this.suTelephone=='' ||this.suAddress==''){
+        this.$dialog.alert({
+            message: "您还没有完整填写，请继续完成！",
+          });
+          return;
+      }
+       var phone = Number(this.suTelephone)
+      if(!(/^[1][3,4,5,6,7,8][0-9]{9}$/.test(phone))){ 
+        this.$dialog.alert({
+            message: "您输入的手机号不合法！",
+          });
+          return;
+      }
+      this.$ajax.post('https://result.eolinker.com/fHSq9Erb6b80ebc3e2a059e8b04fcf3bb1e6ae8b8fe238d?uri=/trav/writeAnswerUser.do',
+     {
+       suCompany:this.suCompany,
+        suBumen:this.suBumen,
+        suName:this.suName,
+        suTelephone:this.suTelephone,
+        suAddress:this.suAddress,
+       spId:this.$route.query.spId
+     }
+     ).then((res)=>{
+if(res.data.code == 0){
+ this.$router.push({name: 'Thanks'})
+}
+
+     })
+
+
     },
   },
 };

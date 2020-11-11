@@ -4,18 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import vant from 'vant'
+import axios from 'axios'
 import 'vant/lib/index.css';
-import { Radio ,RadioGroup, Checkbox,CheckboxGroup ,Field ,Picker ,Popup ,NoticeBar  } from 'vant';
+import { Radio ,RadioGroup, Checkbox,CheckboxGroup ,Field } from 'vant';
 Vue.use(Radio);
 Vue.use(RadioGroup);
 Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
 Vue.use(Field);
-Vue.use(Picker);
-Vue.use(Popup);
-Vue.use(NoticeBar);
-
 Vue.config.productionTip = false
+Vue.prototype.$ajax=axios
 router.beforeEach((to, from, next) => {
   // 让页面回到顶部
    // chrome

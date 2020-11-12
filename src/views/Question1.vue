@@ -43,8 +43,7 @@
           </div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex2 == 5 ? 'box_options_on' : '', 'box_options']"
+          <div :class="[activeIndex2 == 5 ? 'box_options_on' : '', 'box_options']"
             @click="chooseLevel(5, 2)"
           >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
@@ -1184,19 +1183,19 @@ export default {
       inputVal3: "",
       inputVal4: "",
       radioVal5: "",
-inputVal5:"",
-inputVal6:"",
-inputVal7:"",
-inputVal8:"",
-inputVal9:"",
-inputVal10:"",
-inputVal11:"",
-inputVal12:"",
-inputVal13:"",
-inputVal14:"",
-inputVal16:"",
-inputVal18:"",
-inputVal19:"",
+      inputVal5:"",
+      inputVal6:"",
+      inputVal7:"",
+      inputVal8:"",
+      inputVal9:"",
+      inputVal10:"",
+      inputVal11:"",
+      inputVal12:"",
+      inputVal13:"",
+      inputVal14:"",
+      inputVal16:"",
+      inputVal18:"",
+      inputVal19:"",
       optionVal1: "",
       optionVal2: "",
       optionVal3: "",

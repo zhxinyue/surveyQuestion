@@ -37,9 +37,8 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">02</span>
-          <div class="box_text">
-            您对四维图新导航地图数据在<i class="text_underline">数据准确性</i
-            >方面满意程度如何？
+          <div class="box_text" v-html="cnList.SD2">
+
           </div>
         </div>
         <div class="box_div">
@@ -1130,11 +1129,13 @@
   </div>
 </template>
 <script>
+import list from '../../static/questionList.json'
 import { Dialog } from "vant";
 export default {
   name: "Question1",
   data() {
     return {
+      cnList:[],
       result1: [],
       result18: [],
       result19: [],
@@ -1217,6 +1218,9 @@ export default {
       optionVal19: "",
     };
   },
+  mounted(){
+    this.cnList = list.cn
+  },
   methods: {
     lastStep() {
       this.$router.go(-1);
@@ -1245,8 +1249,7 @@ export default {
         this.optionVal16 == "" ||
         this.radioValue17 == "" ||
         this.optionVal18 == "" ||
-        this.optionVal19 == "" ||
-        this.message20 == ""
+        this.optionVal19 == "" 
       ) {
         this.$dialog.alert({
           message: "您还没有完整填写，请继续完成！",

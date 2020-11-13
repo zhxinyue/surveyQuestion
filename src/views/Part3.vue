@@ -11,38 +11,56 @@
           </div>
         </div>
         <div class="box_div">
-          <div class="box_options">
+          <div :class="[activeIndex1 == 5 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(5, 1)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">5</i>
             <em class="box_em">非常满意</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex1 == 4 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(4, 1)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">4</i>
             <em class="box_em">满意</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex1 == 3 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(3, 1)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">3</i>
             <em class="box_em">一般</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex1 == 2 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(2, 1)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">2</i>
             <em class="box_em">不满意</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex1 == 1 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(1, 1)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">1</i>
             <em class="box_em">非常不满意</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex1 == 0 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(0, 1)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">?</i>
             <em class="box_em">不清楚</em>
           </div>
         </div>
-        <input type="text" class="box_dec" placeholder="原因&合作项目（必填）" v-if="flag"/>
+        <input
+          type="text"
+          class="box_dec"
+          v-model="inputVal1"
+          placeholder="原因&合作项目（必填）"
+          v-if="causeFlag1"
+        />
       </div>
      <div class="question_box">
         <div class="box_title">
@@ -52,79 +70,103 @@
           </div>
         </div>
         <div class="box_div">
-          <div class="box_options">
+          <div :class="[activeIndex2 == 5 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(5, 2)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">5</i>
             <em class="box_em">非常满意</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex2 == 4 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(4, 2)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">4</i>
             <em class="box_em">满意</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex2 == 3 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(3, 2)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">3</i>
             <em class="box_em">一般</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex2 == 2 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(2, 2)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">2</i>
             <em class="box_em">不满意</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex2 == 1 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(1, 2)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">1</i>
             <em class="box_em">非常不满意</em>
           </div>
-          <div class="box_options">
+          <div :class="[activeIndex2 == 0 ? 'box_options_on' : '', 'box_options']"
+            @click="chooseLevel(0, 2)"
+          >
             <img src="../assets/img/icon9.png" alt="" class="box_img" />
             <i class="box_i">?</i>
             <em class="box_em">不清楚</em>
           </div>
         </div>
-        <input type="text" class="box_dec" placeholder="原因&合作项目（必填）" v-if="flag"/>
+        <input
+          type="text"
+          class="box_dec"
+          v-model="inputVal2"
+          placeholder="原因&合作项目（必填）"
+          v-if="causeFlag2"
+        />
       </div>
  <div class="question_box">
         <div class="box_title">
           <span class="box_num">03</span>
           <div class="box_text">您是否能够及时收到四维图新最新产品和服务信息？ </div>
         </div>
-        <van-radio-group v-model="radio" direction="horizontal" class="box_checkbox_group">
-  <van-radio name="1">A.是</van-radio>
-  <van-radio name="2">B.否</van-radio>
+        <van-radio-group
+          v-model="radioValue3"
+          direction="horizontal"
+          class="box_checkbox_group"
+        >
+  <van-radio name="A">A.是</van-radio>
+  <van-radio name="B">B.否</van-radio>
 </van-radio-group>
       </div>
   <div class="question_box">
         <div class="box_title">
           <span class="box_num">04</span>
           <div class="box_text">您是通过以下哪些途径获得四维图新的最新产品和服务信息的？（可多选）
-           
           </div>
         </div>
         <van-checkbox-group
-          v-model="result"
+          v-model="result4"
           class="box_checkbox_group"
           direction="horizontal"
+          @change="checkboxChange(4, 'M')"
         >
-          <van-checkbox name="a">A.线上活动</van-checkbox>
-          <van-checkbox name="b">B.公司产品宣传册</van-checkbox>
-          <van-checkbox name="c">C.公司介绍</van-checkbox>
-          <van-checkbox name="d">D.用户大会</van-checkbox>
-          <van-checkbox name="e">E.产品赏鉴会</van-checkbox>
-          <van-checkbox name="f">F.Workshop/Tech Day</van-checkbox>
-          <van-checkbox name="g">G.企业间访问参观</van-checkbox>
-          <van-checkbox name="h">H.专业展会</van-checkbox>
-          <van-checkbox name="i">I.Newsletter</van-checkbox>
-          <van-checkbox name="i">J.微信/微博</van-checkbox>
-          <van-checkbox name="i">K.第三方媒体渠道</van-checkbox>
-          <van-checkbox name="i">L.客户经理告知</van-checkbox>
-          <van-checkbox name="i">M.其他</van-checkbox>
+          <van-checkbox name="A">A.线上活动</van-checkbox>
+          <van-checkbox name="B">B.公司产品宣传册</van-checkbox>
+          <van-checkbox name="C">C.公司介绍</van-checkbox>
+          <van-checkbox name="D">D.用户大会</van-checkbox>
+          <van-checkbox name="E">E.产品赏鉴会</van-checkbox>
+          <van-checkbox name="F">F.Workshop/Tech Day</van-checkbox>
+          <van-checkbox name="G">G.企业间访问参观</van-checkbox>
+          <van-checkbox name="H">H.专业展会</van-checkbox>
+          <van-checkbox name="I">I.Newsletter</van-checkbox>
+          <van-checkbox name="J">J.微信/微博</van-checkbox>
+          <van-checkbox name="K">K.第三方媒体渠道</van-checkbox>
+          <van-checkbox name="L">L.客户经理告知</van-checkbox>
+          <van-checkbox name="M">M.其他</van-checkbox>
         </van-checkbox-group>
         <input
           type="text"
           class="box_dec"
           placeholder="请在此输入产品名称（必填）"
+          v-if="causeFlag4"
+           v-model="inputVal4"
         />
       </div>
   <div class="question_box">
@@ -134,34 +176,37 @@
           </div>
         </div>
         <van-checkbox-group
-          v-model="result"
+          v-model="result5"
           class="box_checkbox_group"
           direction="horizontal"
+          @change="checkboxChange(5, 'S')"
         >
-          <van-checkbox name="a">A.导航地图</van-checkbox>
-          <van-checkbox name="b">B.导航软件</van-checkbox>
-          <van-checkbox name="c">C.新能源汽车智能出行解决方案</van-checkbox>
-          <van-checkbox name="d">D.乘用车车联网服务</van-checkbox>
-          <van-checkbox name="e">E.商用车车联网服务</van-checkbox>
-          <van-checkbox name="f">F.动态交通信息</van-checkbox>
-          <van-checkbox name="g">G.位置大数据平台</van-checkbox>
-          <van-checkbox name="h">H.语音产品及服务</van-checkbox>
-          <van-checkbox name="h">I.ADAS地图</van-checkbox>
-          <van-checkbox name="h">J.ADASIS</van-checkbox>
-          <van-checkbox name="h">K.高精度地图</van-checkbox>
-          <van-checkbox name="h">L.自动驾驶综合解决方案</van-checkbox>
-          <van-checkbox name="h">M.自动代客泊车解决方案</van-checkbox>
-          <van-checkbox name="h">N.自动驾驶模拟仿真</van-checkbox>
-          <van-checkbox name="h">O.V2X解决方案</van-checkbox>
-          <van-checkbox name="h">P.高精度定位</van-checkbox>
-          <van-checkbox name="h">Q.高精度融合定位</van-checkbox>
-          <van-checkbox name="h">R.芯片产品及服务</van-checkbox>
-          <van-checkbox name="h">S.其他</van-checkbox>
+          <van-checkbox name="A">A.导航地图</van-checkbox>
+          <van-checkbox name="B">B.导航软件</van-checkbox>
+          <van-checkbox name="C">C.新能源汽车智能出行解决方案</van-checkbox>
+          <van-checkbox name="D">D.乘用车车联网服务</van-checkbox>
+          <van-checkbox name="E">E.商用车车联网服务</van-checkbox>
+          <van-checkbox name="F">F.动态交通信息</van-checkbox>
+          <van-checkbox name="G">G.位置大数据平台</van-checkbox>
+          <van-checkbox name="H">H.语音产品及服务</van-checkbox>
+          <van-checkbox name="I">I.ADAS地图</van-checkbox>
+          <van-checkbox name="J">J.ADASIS</van-checkbox>
+          <van-checkbox name="K">K.高精度地图</van-checkbox>
+          <van-checkbox name="L">L.自动驾驶综合解决方案</van-checkbox>
+          <van-checkbox name="M">M.自动代客泊车解决方案</van-checkbox>
+          <van-checkbox name="N">N.自动驾驶模拟仿真</van-checkbox>
+          <van-checkbox name="O">O.V2X解决方案</van-checkbox>
+          <van-checkbox name="P">P.高精度定位</van-checkbox>
+          <van-checkbox name="Q">Q.高精度融合定位</van-checkbox>
+          <van-checkbox name="R">R.芯片产品及服务</van-checkbox>
+          <van-checkbox name="S">S.其他</van-checkbox>
         </van-checkbox-group>
        <input
           type="text"
           class="box_dec"
           placeholder="请在此输入产品名称（必填）"
+          v-if="causeFlag5"
+           v-model="inputVal5"
         />
       </div>
 <div class="question_box question_box_nobor">
@@ -169,7 +214,7 @@
           <span class="left_num">06</span>
           <div class="box_tip">写给我们的悄悄话：</div>
           <van-field
-            v-model="message"
+            v-model="message6"
             rows="2"
             autosize
             type="textarea"
@@ -189,12 +234,28 @@ export default {
   name: "Part3",
   data() {
     return {
-      result: [],
-      radio:'',
-      message:'',
+      result4: [],
+      result5: [],
+      radioValue3:'',
+      message6:'',
       activeIcon: require("../assets/img/icon7.png"),
       inactiveIcon: require("../assets/img/icon6.png"),
-      flag:false
+      flag:false,
+      activeIndex1: 6,
+      activeIndex2: 6,
+      causeFlag1: false,
+      causeFlag2: false,
+      causeFlag4: false,
+      causeFlag5: false,
+      inputVal1: "",
+      inputVal2: "",
+      inputVal4: "",
+      inputVal5: "",
+      optionVal1: "",
+      optionVal2: "",
+      optionVal4: "",
+      optionVal5: "",
+
     };
   },
   methods: {
@@ -202,7 +263,71 @@ export default {
       this.$router.go(-1);
     },
     nextStep(){
-      this.$router.push({name: 'PersonalInfo'})
+       if (
+        this.optionVal1 == "" ||
+        this.optionVal2 == "" ||
+        this.radioValue3 == "" ||
+        this.optionVal4 == "" ||
+        this.optionVal5 == "" ||
+        this.message6 == ""
+      ) {
+        this.$dialog.alert({
+          message: "您还没有完整填写，请继续完成！",
+        });
+        return;
+      }
+      if((this.causeFlag1 && this.inputVal1 == "") || (this.causeFlag2 && this.inputVal2 == "")
+      || (this.causeFlag4 && this.inputVal4 == "") || (this.causeFlag5 && this.inputVal5 == "")){
+        this.$dialog.alert({
+            message: "您还没有完整填写，请继续完成！",
+          });
+          return;
+      }
+       this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
+      this.optionVal2 = this.optionVal2 + "" + this.inputVal2;
+this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
+this.optionVal5 = this.optionVal5 + "" + this.inputVal5;
+
+     var str = this.optionVal1+'-'+this.optionVal2+'-'+this.radioValue3+'-'+this.optionVal4+'-'+this.optionVal5+'-'+
+     this.message6
+     console.log(str)
+     this.$ajax.post('https://result.eolinker.com/fHSq9Erb6b80ebc3e2a059e8b04fcf3bb1e6ae8b8fe238d?uri=/trav/writeAnswer.do',
+     {
+       qAnswers:str,
+       spType:3
+     }
+     ).then((res)=>{
+if(res.data.code == 0){
+var spId = res.data.data.spId
+}
+// this.$router.push({path:'/personalInfo',query:{spId:spId}})
+     })
+    },
+    checkboxChange(idx, option) {
+      var arr = "result" + idx;
+      var onflag = "causeFlag" + idx;
+      var opval = "optionVal" + idx;
+      if (this[arr].indexOf(option) != -1) {
+        this[onflag] = true;
+      } else {
+        this[onflag] = false;
+      }
+      this[opval] = this[arr].join(",");
+    },
+    chooseLevel(idx, num) {
+      var onindex = "activeIndex" + num;
+      var onflag = "causeFlag" + num;
+      var opval = "optionVal" + num;
+      this[onindex] = idx;
+      this[opval] = idx;
+      if (idx == 0) {
+        this[opval] = "?";
+      }
+      if (idx == 3 || idx == 2 || idx == 1) {
+        this[onflag] = true;
+      } else {
+        this[onflag] = false;
+      }
     },
 
   },
@@ -336,10 +461,9 @@ export default {
 }
 .box_div {
   width: 3.3rem;
-  /* height: 1rem; */
   display: flex;
-  margin: 0 auto;
-  padding-top:0.1rem;
+  margin: 0 auto 0.1rem;
+  padding-top: 0.1rem;
 }
 .box_options {
   flex: 1;
@@ -349,6 +473,9 @@ export default {
   flex-direction: column;
   font-size: 0.13rem;
   color: #001a2f;
+}
+.box_options_on {
+  color: #00569c;
 }
 .box_img {
   width: 0.35rem;
@@ -421,6 +548,13 @@ height:0.45rem;
   float: right;
   background: url(../assets/img/next.png) no-repeat center;
 background-size: 100% 100%;
+}
+.van-dialog__message {
+  font-size: 0.16rem;
+}
+.van-dialog__confirm,
+.van-dialog__confirm:active {
+  color: #0189f9;
 }
 </style>
 

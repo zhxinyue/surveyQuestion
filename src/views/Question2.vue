@@ -1856,5 +1856,12 @@ export default {
   background: url(../assets/img/next.png) no-repeat center;
   background-size: 100% 100%;
 }
+.van-dialog__message {
+  font-size: 0.16rem;
+}
+.van-dialog__confirm,
+.van-dialog__confirm:active {
+  color: #0189f9;
+}
 </style>
 

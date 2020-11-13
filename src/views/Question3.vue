@@ -382,7 +382,6 @@
           placeholder="原因&合作项目（必填）"
           v-if="causeFlag6"
            v-model="inputVal6"
-
         />
       </div>
        <div class="question_box">
@@ -955,7 +954,6 @@ export default {
       inactiveIcon: require("../assets/img/icon6.png"),
       radioValue5: "",
       radioValue6: "",
-      radioValue17: "",
       recognizedMsg14: "",
       improvedMsg14: "",
       activeIndex2: 6,
@@ -1001,7 +999,6 @@ export default {
       inputVal12:"",
       inputVal13:"",
       inputVal15:"",
-      inputVal16:"",
       optionVal1: "",
       optionVal2: "",
       optionVal3: "",
@@ -1017,7 +1014,7 @@ export default {
       optionVal12: "",
       optionVal13: "",
       optionVal14: "",
-       optionVal15: "",
+      optionVal15: "",
     };
   },
   methods: {
@@ -1025,9 +1022,109 @@ export default {
       this.$router.go(-1);
     },
     nextStep(){
-      this.$router.push({name: 'Part2'})
-    },
+      if (
+        this.optionVal1 == "" ||
+        this.optionVal2 == "" ||
+        this.optionVal3 == "" ||
+        this.optionVal4 == "" ||
+        this.radioValue5 == "" ||
+        this.optionVal5 == "" ||
+        this.radioValue6 == "" ||
+        this.optionVal6 == "" ||
+        this.optionVal7 == "" ||
+        this.optionVal8 == "" ||
+        this.optionVal9 == "" ||
+        this.optionVal10 == "" ||
+        this.optionVal11 == "" ||
+        this.optionVal12 == "" ||
+        this.optionVal13 == "" ||
+        this.recognizedMsg14 == "" ||
+        this.improvedMsg14 == "" ||
+        this.optionVal15 == "" ) {
+        this.$dialog.alert({
+          message: "您还没有完整填写，请继续完成！",
+        });
+        return;
+      }
+      if((this.causeFlag1 && this.inputVal1 == "") || (this.causeFlag2 && this.inputVal2 == "")
+      || (this.causeFlag3 && this.inputVal3 == "") || (this.causeFlag4 && this.inputVal4 == "")
+      || (this.radioFlag5 && this.radioVal5 == "") || (this.causeFlag5 && this.inputVal5 == "")
+      || (this.causeFlag6 && this.inputVal6 == "") ||(this.causeFlag7 && this.inputVal7 == "") 
+      || (this.causeFlag8 && this.inputVal8 == "") ||(this.causeFlag9 && this.inputVal9 == "") 
+      || (this.causeFlag10 && this.inputVal10 == "") ||(this.causeFlag11 && this.inputVal11== "")
+      || (this.causeFlag12 && this.inputVal12 == "") ||(this.causeFlag13 && this.inputVal13== "")
+      || (this.causeFlag15 && this.inputVal15 == "") ){
+this.$dialog.alert({
+            message: "您还没有完整填写，请继续完成！",
+          });
+          return;
+      }
+       this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
+      this.optionVal2 = this.optionVal2 + "" + this.inputVal2;
+this.optionVal3 = this.optionVal3 + "" + this.inputVal3;
+this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
+      this.question5 = this.radioValue5+''+this.radioVal5+','+this.optionVal5+''+this.inputVal5
+this.optionVal6 = this.optionVal6 + "" + this.inputVal6;
+this.optionVal7 = this.optionVal7 + "" + this.inputVal7;
+this.optionVal8 = this.optionVal8 + "" + this.inputVal8;
+this.optionVal9 = this.optionVal9 + "" + this.inputVal9;
+this.optionVal10 = this.optionVal10 + "" + this.inputVal10;
+this.optionVal11 = this.optionVal11 + "" + this.inputVal11;
+this.optionVal12 = this.optionVal12 + "" + this.inputVal12;
+this.optionVal13 = this.optionVal13 + "" + this.inputVal13;
+this.optionVal14 = this.recognizedMsg14+","+this.improvedMsg14;
+this.optionVal15 = this.optionVal15+""+this.inputVal15;
 
+     var str = this.optionVal1+'-'+this.optionVal2+'-'+this.optionVal3+'-'+this.optionVal4+'-'+this.question5+'-'+
+     this.optionVal6+'-'+this.optionVal7+'-'+this.optionVal8+'-'+this.optionVal9+'-'+this.optionVal10+'-'+this.optionVal11
+     +'-'+this.optionVal12+'-'+this.optionVal13+'-'+this.optionVal14+'-'+this.optionVal15
+     console.log(str)
+     this.$ajax.post('https://result.eolinker.com/fHSq9Erb6b80ebc3e2a059e8b04fcf3bb1e6ae8b8fe238d?uri=/trav/writeAnswer.do',
+     {
+       qAnswers:str,
+       spType:1
+     }
+     ).then((res)=>{
+if(res.data.code == 0){
+var spId = res.data.data.spId
+}
+ this.$router.push({name: 'Part2'})
+     })
+
+    },
+    checkboxChange(idx, option) {
+      var arr = "result" + idx;
+      var onflag = "causeFlag" + idx;
+      var opval = "optionVal" + idx;
+      if (this[arr].indexOf(option) != -1) {
+        this[onflag] = true;
+      } else {
+        this[onflag] = false;
+      }
+      this[opval] = this[arr].join(",");
+    },
+    radioChange() {
+      if (this.radioValue5 == 'D') {
+        this.radioFlag5 = true;
+      } else {
+        this.radioFlag5 = false;
+      }
+    },
+    chooseLevel(idx, num) {
+      var onindex = "activeIndex" + num;
+      var onflag = "causeFlag" + num;
+      var opval = "optionVal" + num;
+      this[onindex] = idx;
+      this[opval] = idx;
+      if (idx == 0) {
+        this[opval] = "?";
+      }
+      if (idx == 3 || idx == 2 || idx == 1) {
+        this[onflag] = true;
+      } else {
+        this[onflag] = false;
+      }
+    },
   },
 };
 </script>
@@ -1160,10 +1257,9 @@ export default {
 }
 .box_div {
   width: 3.3rem;
-  /* height: 1rem; */
   display: flex;
-  margin: 0 auto;
-  padding-top:0.1rem;
+  margin: 0 auto 0.1rem;
+  padding-top: 0.1rem;
 }
 .box_options {
   flex: 1;
@@ -1173,6 +1269,9 @@ export default {
   flex-direction: column;
   font-size: 0.13rem;
   color: #001a2f;
+}
+.box_options_on {
+  color: #00569c;
 }
 .box_img {
   width: 0.35rem;
@@ -1245,6 +1344,13 @@ height:0.45rem;
   float: right;
   background: url(../assets/img/next.png) no-repeat center;
 background-size: 100% 100%;
+}
+.van-dialog__message {
+  font-size: 0.16rem;
+}
+.van-dialog__confirm,
+.van-dialog__confirm:active {
+  color: #0189f9;
 }
 </style>
 

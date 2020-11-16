@@ -1,4 +1,44 @@
 {
+    "cnArea":{
+        "title":"贵司与四维图新合作的领域是：",
+        "list":["核心地图","高精度地图","核心地图+高精度地图"]
+    },
+    "enArea":{
+        "title":"In which areas that your company have cooperated with NavInfo?",
+        "list":["SD Map","HD Map","SD Map+HD Map"]
+    },
+    "cnTitle1":"核心地图",
+    "enTitle1":"SD Map",
+    "cnTitle2":"高精度地图",
+    "enTitle2":"HD Map",
+    "cnDialog":"您还没有完整填写，请继续完成！",
+    "enDialog":"You do not complete yet, please continue!",
+    "cnPerTitle":"个人信息填写",
+    "enPerTitle":"personal information",
+    "cnPerTip":"感谢您的反馈！请留下您的联系方式，我们会 为您寄送精美礼品哦~",
+    "enPerTip":"Thanks for your feedback! If possible, please leave your information, thank you again~",
+    "cnTel":"您输入的手机号不合法！",
+    "enTel":"The mobile number you entered is not legal！",
+    "cnPerlist":{
+        "suCompany":"公司名称：",
+        "suBumen":"部门名称：",
+        "suName":"姓名：",
+        "suTelephone":"联系电话：",
+        "suAddress":"邮寄地址："
+    },
+    "enPerlist":{
+        "suCompany":"Company：",
+        "suBumen":"Dept.：",
+        "suName":"Name：",
+        "suTelephone":"Phone No.：",
+        "suAddress":"Address："
+    },
+    "cnThanks1":"您已提交成功，再次感谢您的反馈！",
+    "cnThanks2":"我们会委托快递小哥将礼品寄送到您的手中",
+    "enThanks1":"You have submitted successfully",
+    "enThanks2":"thank you again for your feedback!",
+
+
     "cn":{
         "SD1":"贵司目前与四维图新在地图方面合作的产品是以下哪些？（可多选）",
         "SD2":"您对四维图新导航地图数据在<i class='text_underline'>数据准确性</i>数据准确性方面满意程度如何？",
@@ -65,52 +105,52 @@
             "text":"I.其他"
         }],
         "answer2":[{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"5",
             "text":"非常满意"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"4",
             "text":"满意"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"3",
             "text":"一般"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"2",
             "text":"不满意"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"1",
             "text":"非常不满意"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"?",
             "text":"不清楚"
         }],
         "answer3":[{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"5",
             "text":"未发生过且非常满意"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"4",
             "text":"发生过且满意"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"3",
             "text":"未发生且一般"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"2",
             "text":"发生过且不满意"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"1",
             "text":"发生过且非常不满意"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"?",
             "text":"不清楚"
         }],
@@ -241,7 +281,11 @@
         },{
             "name":"S",
             "text":"S.其他"
-        }]
+        }],
+        "answer9":"值得认可：",
+        "answer10":"需要改进：",
+        "answer11":"原因&合作项目",
+        "answer12":"请输入"
 
 
     },
@@ -311,52 +355,52 @@
             "text":"I.Others"
         }],
         "answer2":[{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"5",
             "text":"Very Satisfied"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"4",
             "text":"Satisfied"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"3",
             "text":"Neutral"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"2",
             "text":"Dissatisfied"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"1",
             "text":"Very Dissatisfied"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"?",
             "text":"Not Clear"
         }],
         "answer3":[{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"5",
             "text":"No & Very satisfied"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"4",
             "text":"No & satisfied"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"3",
             "text":"No & Neutral"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"2",
             "text":"Yes & Dissatisfied"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"1",
             "text":"Yes & Very Dissatisfied"
         },{
-            "img":"src/assets/img/icon9.png",
+            "img":"../static/img/icon9.png",
             "score":"?",
             "text":"Not clear"
         }],
@@ -487,6 +531,11 @@
         },{
             "name":"S",
             "text":"S.Others"
-        }]
+        }],
+        "answer9":"Being Recognized：",
+        "answer10":"To be Improved：",
+        "answer11":"Reasons &Cooperation Projects",
+        "answer12":"please enter"
+        
     }
 }

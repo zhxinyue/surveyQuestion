@@ -2,69 +2,27 @@
   <div id="question_wrap">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="question_content">
-      <div class="question_title">高精度地图-HD Map</div>
+      <div class="question_title">{{title}}</div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">01</span>
-          <div class="box_text">
-            您对四维图新高精度地图数据在<i class="text_underline">数据准确性</i
-            >方面满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD1"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex1 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 1)"
+<div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex1 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 1)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex1 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex1 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex1 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex1 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex1 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
+       
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag1"
           v-model="inputVal1"
         />
@@ -72,133 +30,45 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">02</span>
-          <div class="box_text">
-            您对四维图新高精度地图数据在<i class="text_underline">数据丰富度</i
-            >方面满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD2"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex2 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 2)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex2 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 2)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex2 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex2 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex2 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex2 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex2 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag2"
           v-model="inputVal2"
         />
       </div>
       <div class="question_box">
-        <div class="box_title box_title2">
+        <div :class="[lanIdx==1?'box_title2':'box_title4']">
           <span class="box_num">03</span>
-          <div class="box_text">
-            在过去一年的高精度地图项目合作中，是否发生过对贵司影响重大的<i
-              class="text_underline"
-              >数据品质</i
-            >问题？满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD3"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex3 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 3)"
+          <div v-for="(item,index) in dataList.answer3" :key="index" :class="[activeIndex3 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 3)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">未发生过且非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex3 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 3)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">发生过且满意</em>
-          </div>
-          <div
-            :class="[activeIndex3 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 3)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">未发生且一般</em>
-          </div>
-          <div
-            :class="[activeIndex3 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 3)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">发生过且不满意</em>
-          </div>
-          <div
-            :class="[activeIndex3 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 3)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">发生过且非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex3 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 3)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag3"
           v-model="inputVal3"
         />
@@ -206,65 +76,22 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">04</span>
-          <div class="box_text">
-            您对四维图新高精度地图的<i class="text_underline">产品设计</i
-            >的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD4"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex4 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 4)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex4 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 4)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex4 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 4)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex4 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 4)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex4 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 4)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex4 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 4)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex4 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 4)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag4"
           v-model="inputVal4"
         />
@@ -272,65 +99,22 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">05</span>
-          <div class="box_text">
-            您对四维图新高精度地图的<i class="text_underline">产品功能</i
-            >的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD5"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex5 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 5)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex5 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 5)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex5 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 5)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex5 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 5)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex5 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 5)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex5 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 5)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex5 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 5)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag5"
           v-model="inputVal5"
         />
@@ -338,65 +122,22 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">06</span>
-          <div class="box_text">
-            您对四维图新高精度地图的<i class="text_underline">产品安全</i
-            >的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD6"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex6 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 6)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex6 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 6)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex6 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 6)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex6 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 6)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex6 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 6)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex6 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 6)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex6 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 6)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag6"
           v-model="inputVal6"
         />
@@ -404,197 +145,68 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">07</span>
-          <div class="box_text">
-            您对四维图新高精度地图的<i class="text_underline">产品交付及时性</i
-            >方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD7"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex7 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 7)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex7 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 7)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex7 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 7)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex7 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 7)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex7 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 7)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex7 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 7)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex7 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 7)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag7"
           v-model="inputVal7"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">08</span>
-          <div class="box_text">
-            您对四维图新高精度地图<i class="text_underline">运维响应速度</i
-            >方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD8"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex8 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 8)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex8 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 8)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex8 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 8)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex8 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 8)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex8 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 8)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex8 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 8)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex8 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 8)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag8"
           v-model="inputVal8"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">09</span>
-          <div class="box_text">
-            您对四维图新高精度地图<i class="text_underline">运维系统监控</i
-            >方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD9"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex9 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 9)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex9 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 9)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex9 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 9)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex9 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 9)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex9 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 9)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex9 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 9)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex9 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 9)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag9"
           v-model="inputVal9"
         />
@@ -602,65 +214,22 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">10</span>
-          <div class="box_text">
-            您对四维图新高精度地图<i class="text_underline">产品维护</i
-            >更新方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD10"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex10 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 10)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex10 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 10)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex10 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 10)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex10 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 10)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex10 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 10)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex10 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 10)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex10 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 10)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag10"
           v-model="inputVal10"
         />
@@ -668,199 +237,68 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">11</span>
-          <div class="box_text">
-            您对四维图新高精度地图<i class="text_underline">产品推送下载</i
-            >方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD11"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex11 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 11)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex11 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 11)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex11 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 11)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex11 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 11)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex11 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 11)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex11 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 11)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex11 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 11)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag11"
           v-model="inputVal11"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">12</span>
-          <div class="box_text">
-            您对四维图新高精度地图项目团队的<i class="text_underline"
-              >问联响应速度</i
-            >的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD12"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex12 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 12)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex12 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 12)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex12 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 12)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex12 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 12)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex12 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 12)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex12 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 12)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex12 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 12)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag12"
           v-model="inputVal12"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">13</span>
-          <div class="box_text">
-            您对四维图新高精度地图项目团队的<i class="text_underline"
-              >问联答复内容</i
-            >的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD13"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex13 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 13)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex13 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 13)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex13 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 13)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex13 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 13)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex13 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 13)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex13 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 13)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex13 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 13)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag13"
           v-model="inputVal13"
         />
@@ -868,65 +306,22 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">14</span>
-          <div class="box_text">
-            您对四维图新高精度地图的<i class="text_underline">现有质量体系</i
-            >方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD14"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex14 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 14)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex14 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 14)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex14 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 14)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex14 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 14)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex14 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 14)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex14 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 14)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex14 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 14)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag14"
           v-model="inputVal14"
         />
@@ -934,355 +329,143 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">15</span>
-          <div class="box_text">
-            您对四维图新高精度地图的<i class="text_underline">质量体系改进</i
-            >方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD15"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex15 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 15)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex15 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 15)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex15 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 15)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex15 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 15)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex15 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 15)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex15 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 15)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex15 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 15)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag15"
           v-model="inputVal15"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">16</span>
-          <div class="box_text">
-            在<i class="text_underline">项目接洽</i
-            >过程中，您对四维图新项目团队人员的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.SD12"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex16 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 16)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex16 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 16)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex16 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 16)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex16 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 16)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex16 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 16)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex16 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 16)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex16 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 16)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag16"
           v-model="inputVal16"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">17</span>
-          <div class="box_text">
-            在<i class="text_underline">需求沟通</i
-            >过程中，您对四维图新项目团队人员的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.SD13"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex17 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 17)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex17 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 17)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex17 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 17)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex17 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 17)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex17 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 17)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex17 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 17)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex17 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 17)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag17"
           v-model="inputVal17"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">18</span>
-          <div class="box_text">
-            在<i class="text_underline">项目执行</i
-            >过程中，您对四维图新项目团队人员的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.SD14"></div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex18 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 18)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex18 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 18)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex18 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 18)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex18 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 18)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex18 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 18)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex18 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 18)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex18 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 18)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag18"
           v-model="inputVal18"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">19</span>
           <div class="box_text">
-            您认为四维图新的高精度地图产品和服务在哪些方面值得认可？哪些方面还需要改进？
+            {{dataList.HD19}}
           </div>
         </div>
         <div class="box_div_textarea">
+          <div class="message_tip">{{dataList.answer9}}</div>
           <van-field
             v-model="recognizedMsg19"
             rows="2"
             autosize
-            label="值得认可："
             type="textarea"
-            placeholder="请输入留言"
+            :placeholder="dataList.answer12"
           />
+          <div class="message_tip">{{dataList.answer10}}</div>
           <van-field
             v-model="improvedMsg19"
             rows="2"
             autosize
-            label="需要改进："
             type="textarea"
-            placeholder="请输入留言"
+            :placeholder="dataList.answer12"
           />
         </div>
       </div>
 
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">20</span>
           <div class="box_text">
-            与其他公司同类产品相比，您对四维图新产品的价格满意程度如何？
+            {{dataList.SD16}}
           </div>
         </div>
         <div class="box_div">
-          <div
-            :class="[activeIndex20 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 20)"
+          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex20 == item.score ? 'box_options_on' : '', 'box_options']"
+          @click="chooseLevel(item.score, 20)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{item.score}}</i>
+            <em class="box_em">{{item.text}}</em>
           </div>
-          <div
-            :class="[activeIndex20 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 20)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div
-            :class="[activeIndex20 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 20)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div
-            :class="[activeIndex20 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 20)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div
-            :class="[activeIndex20 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 20)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div
-            :class="[activeIndex20 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 20)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
-          </div>
+
         </div>
         <input
           type="text"
           class="box_dec"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag20"
           v-model="inputVal20"
         />
@@ -1291,7 +474,7 @@
         <div class="box_title">
           <span class="box_num">21</span>
           <div class="box_text">
-            您是否能够及时收到四维图新最新产品和服务信息？
+           {{dataList.SD17}}
           </div>
         </div>
         <van-radio-group
@@ -1299,15 +482,14 @@
           direction="horizontal"
           class="box_checkbox_group"
         >
-          <van-radio name="A">A.是</van-radio>
-          <van-radio name="B">B.否</van-radio>
+        <van-radio v-for="(item,index) in dataList.answer6" :key="index" :name="item.name">{{item.text}}</van-radio>
         </van-radio-group>
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title3']">
           <span class="box_num">22</span>
           <div class="box_text">
-            您是通过以下哪些途径获得四维图新的最新产品和服务信息的？（可多选）
+            {{dataList.SD18}}
           </div>
         </div>
         <van-checkbox-group
@@ -1316,33 +498,21 @@
           direction="horizontal"
           @change="checkboxChange(22, 'M')"
         >
-          <van-checkbox name="A">A.线上活动</van-checkbox>
-          <van-checkbox name="B">B.公司产品宣传册</van-checkbox>
-          <van-checkbox name="C">C.公司介绍</van-checkbox>
-          <van-checkbox name="D">D.用户大会</van-checkbox>
-          <van-checkbox name="E">E.产品赏鉴会</van-checkbox>
-          <van-checkbox name="F">F.Workshop/Tech Day</van-checkbox>
-          <van-checkbox name="G">G.企业间访问参观</van-checkbox>
-          <van-checkbox name="H">H.专业展会</van-checkbox>
-          <van-checkbox name="I">I.Newsletter</van-checkbox>
-          <van-checkbox name="J">J.微信/微博</van-checkbox>
-          <van-checkbox name="K">K.第三方媒体渠道</van-checkbox>
-          <van-checkbox name="L">L.客户经理告知</van-checkbox>
-          <van-checkbox name="M">M.其他</van-checkbox>
+         <van-checkbox v-for="(item,index) in dataList.answer7" :key="index" :name="item.name">{{item.text}}</van-checkbox>
         </van-checkbox-group>
         <input
           type="text"
           class="box_dec"
-          placeholder="请在此输入产品名称（必填）"
+          :placeholder="dataList.answer12"
           v-if="causeFlag22"
           v-model="inputVal22"
         />
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div :class="[lanIdx==1?'box_title':'box_title4']">
           <span class="box_num">23</span>
           <div class="box_text">
-            以下四维图新产品和服务中，您认为可能与贵司建立合作的领域有哪些？（可多选）
+           {{dataList.SD19}}
           </div>
         </div>
         <van-checkbox-group
@@ -1351,30 +521,12 @@
           direction="horizontal"
           @change="checkboxChange(23, 'S')"
         >
-          <van-checkbox name="A">A.导航地图</van-checkbox>
-          <van-checkbox name="B">B.导航软件</van-checkbox>
-          <van-checkbox name="C">C.新能源汽车智能出行解决方案</van-checkbox>
-          <van-checkbox name="D">D.乘用车车联网服务</van-checkbox>
-          <van-checkbox name="E">E.商用车车联网服务</van-checkbox>
-          <van-checkbox name="F">F.动态交通信息</van-checkbox>
-          <van-checkbox name="G">G.位置大数据平台</van-checkbox>
-          <van-checkbox name="H">H.语音产品及服务</van-checkbox>
-          <van-checkbox name="I">I.ADAS地图</van-checkbox>
-          <van-checkbox name="J">J.ADASIS</van-checkbox>
-          <van-checkbox name="K">K.高精度地图</van-checkbox>
-          <van-checkbox name="L">L.自动驾驶综合解决方案</van-checkbox>
-          <van-checkbox name="M">M.自动代客泊车解决方案</van-checkbox>
-          <van-checkbox name="N">N.自动驾驶模拟仿真</van-checkbox>
-          <van-checkbox name="O">O.V2X解决方案</van-checkbox>
-          <van-checkbox name="P">P.高精度定位</van-checkbox>
-          <van-checkbox name="Q">Q.高精度融合定位</van-checkbox>
-          <van-checkbox name="R">R.芯片产品及服务</van-checkbox>
-          <van-checkbox name="S">S.其他</van-checkbox>
+        <van-checkbox v-for="(item,index) in dataList.answer8" :key="index" :name="item.name">{{item.text}}</van-checkbox>
         </van-checkbox-group>
         <input
           type="text"
           class="box_dec"
-          placeholder="请在此输入产品名称（必填）"
+          :placeholder="dataList.answer12"
           v-if="causeFlag23"
           v-model="inputVal23"
         />
@@ -1382,28 +534,32 @@
       <div class="question_box question_box_nobor">
         <div class="box_div_textarea box_div_textarea2">
           <span class="left_num">24</span>
-          <div class="box_tip">写给我们的悄悄话：</div>
+          <div class="box_tip">{{dataList.SD20}}</div>
           <van-field
             v-model="message24"
             rows="2"
             autosize
             type="textarea"
-            placeholder="请输入留言"
           />
         </div>
       </div>
     </div>
     <div class="bottom_btn">
-      <div class="left_btn" @click="lastStep"></div>
-      <div class="right_btn" @click="nextStep"></div>
+      <div :class="[lanIdx==1?'left_btn':'left_btn1']" @click="lastStep"></div>
+      <div :class="[lanIdx==1?'right_btn':'right_btn1']" @click="nextStep"></div>
     </div>
   </div>
 </template>
 <script>
+import list from '../../static/questionList.json'
 export default {
   name: "Question2",
   data() {
     return {
+      dataList:[],
+      lanIdx:'',
+      title:'',
+      dialogText:'',
       result22: [],
       result23: [],
       radioVal21: "",
@@ -1495,6 +651,18 @@ export default {
       optionVal22: "",
       optionVal23: "",
     };
+  },
+  created(){
+    this.lanIdx = this.$route.query.idx
+    if(this.$route.query.idx == 1){
+      this.dataList = list.cn
+      this.title = list.cnTitle2
+      this.dialogText = list.cnDialog
+    }else if(this.$route.query.idx == 2){
+      this.dataList = list.en
+      this.title = list.enTitle2
+      this.dialogText = list.enDialog
+    }
   },
   methods: {
     lastStep() {
@@ -1682,16 +850,35 @@ export default {
 }
 .box_title {
   width: 3.3rem;
-  height: 0.74rem;
+  height:0.74rem;
   background: url(../assets/img/icon5.png) no-repeat 0.01rem center;
-  background-size: 3.15rem 0.74rem;
+  background-size: 3.15rem 100%;
   margin: 0.1rem auto;
   position: relative;
 }
-.box_title.box_title2 {
+.box_title2 {
+  width: 3.3rem;
   height: 0.94rem;
   background: url(../assets/img/icon10.png) no-repeat 0.01rem center;
-  background-size: 3.15rem 0.94rem;
+  background-size: 3.15rem 100%;
+  margin: 0.1rem auto;
+  position: relative;
+}
+.box_title3 {
+  width: 3.3rem;
+  height:1rem;
+  background: url(../assets/img/icon17.png) no-repeat 0.01rem center;
+  background-size: 3.15rem 100%;
+  margin: 0.1rem auto;
+  position: relative;
+}
+.box_title4 {
+  width: 3.3rem;
+  height:1.3rem;
+  background: url(../assets/img/icon18.png) no-repeat 0.01rem center;
+  background-size: 3.15rem 100%;
+  margin: 0.1rem auto;
+  position: relative;
 }
 .box_num {
   position: absolute;
@@ -1805,6 +992,7 @@ export default {
   background-size: 100% 100%;
   margin: 0 auto;
   position: relative;
+    padding-top:0.2rem;
 }
 .box_div_textarea .van-cell {
   background: none;
@@ -1832,7 +1020,7 @@ export default {
   font-weight: bold;
 }
 .box_tip {
-  padding: 0.15rem 0 0 0.15rem;
+  padding-left:0.15rem;
   color: #00569c;
   font-size: 0.14rem;
 }
@@ -1849,11 +1037,25 @@ export default {
   background: url(../assets/img/last.png) no-repeat center;
   background-size: 100% 100%;
 }
+.left_btn1 {
+  width: 1.25rem;
+  height: 0.45rem;
+  float: left;
+  background: url(../assets/img/last1.png) no-repeat center;
+  background-size: 100% 100%;
+}
 .right_btn {
   width: 1.25rem;
   height: 0.45rem;
   float: right;
   background: url(../assets/img/next.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.right_btn1 {
+  width: 1.25rem;
+  height: 0.45rem;
+  float: right;
+  background: url(../assets/img/next1.png) no-repeat center;
   background-size: 100% 100%;
 }
 .van-dialog__message {
@@ -1862,6 +1064,11 @@ export default {
 .van-dialog__confirm,
 .van-dialog__confirm:active {
   color: #0189f9;
+}
+.message_tip{
+  padding:0 0.16rem;
+  color: #00569c;
+  font-size: 0.14rem;
 }
 </style>
 

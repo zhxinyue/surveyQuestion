@@ -2,90 +2,113 @@
   <div id="personal_wrap">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="personal_content">
-      <div class="personal_title">个人信息填写</div>
+      <div class="personal_title">{{title}}</div>
       <img src="../assets/img/icon12.png" alt="" class="img_icon" />
-      <div class="personal_tip">
-        感谢您的反馈！请留下您的联系方式，我们会 为您寄送精美礼品哦~
-      </div>
+      <div class="personal_tip">{{tip}}</div>
 
       <div class="heng"></div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          公司名称：<img
+          {{dataList.suCompany}}<img
             src="../assets/img/icon14.png"
             alt=""
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="suCompany"/>
+        <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suCompany"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          部门名称：<img
+          {{dataList.suBumen}}<img
             src="../assets/img/icon14.png"
             alt=""
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="suBumen"/>
+        <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suBumen"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          姓名：<img
+          {{dataList.suName}}<img
             src="../assets/img/icon14.png"
             alt=""
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="suName"/>
+        <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suName"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          联系电话：<img
+          {{dataList.suTelephone}}<img
             src="../assets/img/icon14.png"
             alt=""
             class="img_star"
           />
         </div>
-        <input type="number" class="box_dec" placeholder="请点击输入（必填）" v-model="suTelephone"/>
+        <input type="number" class="box_dec" :placeholder="iptPlace" v-model="suTelephone"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          邮寄地址：<img
+          {{dataList.suAddress}}<img
             src="../assets/img/icon14.png"
             alt=""
             class="img_star"
           />
         </div>
-        <input type="text" class="box_dec" placeholder="请点击输入（必填）" v-model="suAddress"/>
+        <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suAddress"/>
       </div>
     </div>
     <div class="bottom_btn">
-      <div class="left_btn" @click="lastStep"></div>
-      <div class="right_btn" @click="nextStep"></div>
+      <div :class="[lanIdx==1?'left_btn':'left_btn1']" @click="lastStep"></div>
+      <div :class="[lanIdx==1?'right_btn':'right_btn1']" @click="nextStep"></div>
+     
     </div>
   </div>
 </template>
 <script>
+import list from '../../static/questionList.json'
 export default {
   name: "PersonalInfo",
   data() {
     return {
+      lanIdx:'',
+      title:'',
+      tip:'',
+       dialogText:'',
+       dataList:{},
+       iptPlace:'',
         suCompany:'',
         suBumen:'',
         suName:'',
         suTelephone:'',
         suAddress:'',
-
+telTip:''
     };
   },
   created(){
-    console.log(this.$route.query.spId)
+    this.lanIdx = this.$route.query.idx
+    if(this.$route.query.idx == 1){
+      this.dataList = list.cnPerlist
+       this.title = list.cnPerTitle
+       this.tip = list.cnPerTip
+      this.dialogText = list.cnDialog
+      this.iptPlace = list.cn.answer12
+      this.telTip = list.cnTel
+
+    }else if(this.$route.query.idx == 2){
+      this.dataList = list.enPerlist
+      this.title = list.enPerTitle
+      this.tip = list.enPerTip
+      this.dialogText = list.enDialog
+      this.iptPlace = list.en.answer12
+      this.telTip = list.enTel
+    }
+
   },
   methods: {
     lastStep() {
@@ -94,14 +117,14 @@ export default {
     nextStep() {
       if(this.suCompany=='' || this.suBumen=='' ||this.suName=='' ||this.suTelephone=='' ||this.suAddress==''){
         this.$dialog.alert({
-            message: "您还没有完整填写，请继续完成！",
+            message: this.dialogText,
           });
           return;
       }
        var phone = Number(this.suTelephone)
       if(!(/^[1][3,4,5,6,7,8][0-9]{9}$/.test(phone))){ 
         this.$dialog.alert({
-            message: "您输入的手机号不合法！",
+            message: this.telTip,
           });
           return;
       }
@@ -116,7 +139,7 @@ export default {
      }
      ).then((res)=>{
 if(res.data.code == 0){
- this.$router.push({name: 'Thanks'})
+  this.$router.push({path:'/thanks',query:{idx:this.$route.query.idx}})
 }
 
      })
@@ -231,6 +254,13 @@ if(res.data.code == 0){
   background: url(../assets/img/last.png) no-repeat center;
   background-size: 100% 100%;
 }
+.left_btn1 {
+  width: 1.25rem;
+  height: 0.45rem;
+  float: left;
+  background: url(../assets/img/last1.png) no-repeat center;
+  background-size: 100% 100%;
+}
 .right_btn {
   width: 1.25rem;
   height: 0.45rem;
@@ -238,6 +268,15 @@ if(res.data.code == 0){
   background: url(../assets/img/confirm.png) no-repeat center;
   background-size: 100% 100%;
 }
+.right_btn1 {
+  width: 1.25rem;
+  height: 0.45rem;
+  float: right;
+  background: url(../assets/img/confirm1.png) no-repeat center;
+  background-size: 100% 100%;
+}
+
+
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #bababa;
@@ -256,6 +295,13 @@ textarea::-moz-placeholder {
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   color: #bababa;
+}
+.van-dialog__message {
+  font-size: 0.16rem;
+}
+.van-dialog__confirm,
+.van-dialog__confirm:active {
+  color: #0189f9;
 }
 </style>
 

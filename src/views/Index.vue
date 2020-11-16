@@ -1,8 +1,8 @@
 <template>
   <div id="index_wrap">
     <div class="index_btn"> 
-      <div class="btn cn_btn" @click="nextStep">中文</div>
-      <div class="btn en_btn">English</div>
+      <div class="btn cn_btn" @click="nextStep(1)">中文</div>
+      <div class="btn en_btn" @click="nextStep(2)">English</div>
     </div>
    
   </div>
@@ -16,8 +16,8 @@ export default {
     };
   },
   methods: {
-    nextStep(){
-      this.$router.push({name: 'CooperationArea'})
+    nextStep(idx){
+      this.$router.push({path:'/cooperationArea',query:{idx:idx}})
     }
     
   }

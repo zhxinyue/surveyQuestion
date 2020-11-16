@@ -1,9 +1,9 @@
 <template>
   <div id="area_wrap">
     <div class="area_content">
-      <h4 class="area_title">贵司与四维图新合作的领域是：</h4>
+      <h4 class="area_title">{{dataList.title}}</h4>
       <div class="area_options" @click="chooseArea(1)">
-        核心地图<img
+        {{dataList.list[0]}}<img
           src="../assets/img/icon.png"
           alt=""
           class="dui_img"
@@ -11,7 +11,7 @@
         />
       </div>
       <div class="area_options" @click="chooseArea(2)">
-        高精度地图<img
+        {{dataList.list[1]}}<img
           src="../assets/img/icon.png"
           alt=""
           class="dui_img"
@@ -19,7 +19,7 @@
         />
       </div>
       <div class="area_options" @click="chooseArea(3)">
-        核心地图+高精度地图<img
+        {{dataList.list[2]}}<img
           src="../assets/img/icon.png"
           alt=""
           class="dui_img"
@@ -31,15 +31,24 @@
   </div>
 </template>
 <script>
+import list from '../../static/questionList.json'
 export default {
   name: "CooperationArea",
   data() {
     return {
+      dataList:[],
       chooseFlag1: true,
       chooseFlag2: false,
       chooseFlag3: false,
       page:1
     };
+  },
+  created(){
+    if(this.$route.query.idx == 1){
+      this.dataList = list.cnArea
+    }else if(this.$route.query.idx == 2){
+      this.dataList = list.enArea
+    }
   },
   methods: {
     chooseArea(ind) {
@@ -66,7 +75,7 @@ export default {
       }
     },
     nextStep(){
-        this.$router.push({name: 'Question'+this.page})
+      this.$router.push({path:'/question'+this.page,query:{idx:this.$route.query.idx}})
     }
   },
 };
@@ -89,9 +98,12 @@ export default {
   transform: translateX(-50%);
 }
 .area_title {
+  height:0.54rem;
   font-size: 0.18rem;
   color: #333c82;
   margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
 }
 .area_options {
   width: 2.25rem;
@@ -99,7 +111,7 @@ export default {
   line-height: 0.34rem;
   border: 0.01rem solid #333c82;
   border-radius: 0.05rem;
-  margin: 0 auto 0.3rem;
+  margin: 0 auto 0.2rem;
   box-sizing: border-box;
   padding-left: 0.2rem;
   font-size: 0.16rem;

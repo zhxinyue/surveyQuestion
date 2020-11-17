@@ -1,29 +1,17 @@
 <template>
-  <div id="thanks_wrap">
- <img src="../assets/img/icon15.png" alt="" class="duihao_img">
-     <div class="thanks_tip">{{tip1}}</div>
-     <div class="thanks_tip">{{tip2}}</div>
+  <div id="thanks_wrap" :class="[lanIdx==1?'cnbg':'enbg']">
   </div>
 </template>
 <script>
-import list from '../../static/questionList.json'
 export default {
   name: "Thanks",
   data() {
     return {
-      tip1:'',
-      tip2:''
+      lanIdx:''
     };
   },
   created(){
-    if(this.$route.query.idx == 1){
-      this.tip1 = list.cnThanks1
-      this.tip2 = list.cnThanks2
-
-    }else if(this.$route.query.idx == 2){
-      this.tip1 = list.enThanks1
-      this.tip2 = list.enThanks2
-    }
+    this.lanIdx = this.$route.query.idx
 
   }
 };
@@ -31,13 +19,19 @@ export default {
 <style>
 @import url("../assets/css/reset.css");
 #thanks_wrap{
-    position: absolute;
+    position: fixed;
     left:0;
     top:0;
     width:100%;
     height:100%;
-    background: rgb(245, 192, 192);
-
+}
+.cnbg{
+  background: url(../assets/img/cnthanks.jpg) no-repeat center;
+  background-size: 100% 100%;
+}
+.enbg{
+  background: url(../assets/img/enthanks.jpg) no-repeat center;
+  background-size: 100% 100%;
 }
 .duihao_img{
 display: block;

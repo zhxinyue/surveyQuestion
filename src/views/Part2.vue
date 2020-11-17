@@ -478,7 +478,7 @@
         </div>
       </div>
 
-      <div class="question_box">
+      <div class="question_box question_box_nobor">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">18</span>
           <div class="box_text">
@@ -508,6 +508,10 @@
           v-model="inputVal18"
         />
       </div>
+      <span class="circle circle1"></span>
+    <span class="circle circle2"></span>
+    <span class="circle circle3"></span>
+    <span class="circle circle4"></span>
     </div>
     <div class="bottom_btn">
       <div
@@ -1024,6 +1028,25 @@ export default {
   padding: 0 0.16rem;
   color: #00569c;
   font-size: 0.14rem;
+}
+.box_div_textarea .van-cell::after{
+  border-bottom:none;
+}
+.circle.circle1{
+ left:-0.06rem;
+  top:-0.06rem;
+}
+.circle.circle2{
+  top:-0.06rem;
+  right: -0.06rem;
+}
+.circle.circle3{
+  bottom:-0.06rem;
+  right: -0.06rem;
+}
+.circle.circle4{
+  bottom: -0.06rem;
+  left:-0.06rem;
 }
 </style>
 

@@ -62,7 +62,14 @@
         </div>
         <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suAddress"/>
       </div>
+    
+
+    <span class="circle circle1"></span>
+    <span class="circle circle2"></span>
+    <span class="circle circle3"></span>
+    <span class="circle circle4"></span>
     </div>
+
     <div class="bottom_btn">
       <div :class="[lanIdx==1?'left_btn':'left_btn1']" @click="lastStep"></div>
       <div :class="[lanIdx==1?'right_btn':'right_btn1']" @click="nextStep"></div>
@@ -302,6 +309,30 @@ textarea:-ms-input-placeholder {
 .van-dialog__confirm,
 .van-dialog__confirm:active {
   color: #0189f9;
+}
+.circle{
+  width:0.12rem;
+  height:0.12rem;
+  background: url(../assets/img/circle.png) no-repeat center;
+  background-size: 100%;
+  position: absolute;
+ 
+}
+.circle.circle1{
+ left:-0.06rem;
+  top:-0.06rem;
+}
+.circle.circle2{
+  top:-0.06rem;
+  right: -0.06rem;
+}
+.circle.circle3{
+  bottom:-0.06rem;
+  right: -0.06rem;
+}
+.circle.circle4{
+  bottom: -0.06rem;
+  left:-0.06rem;
 }
 </style>
 

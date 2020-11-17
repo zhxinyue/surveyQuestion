@@ -1,8 +1,8 @@
 <template>
   <div id="index_wrap">
     <div class="index_btn">
-      <div class="btn cn_btn" @click="nextStep(1)">中文</div>
-      <div class="btn en_btn" @click="nextStep(2)">English</div>
+      <div class="btn cn_btn" @click="nextStep(1)"></div>
+      <div class="btn en_btn" @click="nextStep(2)"></div>
     </div>
   </div>
 </template>
@@ -22,33 +22,31 @@ export default {
 <style>
 @import url("../assets/css/reset.css");
 #index_wrap {
+  position:fixed;
+  top:0;
+  left:0;
   width: 100%;
-  height: 6.04rem;
+  height:100%;
+  /* height: 6.67rem; */
   background: url(../assets/img/bg.png) no-repeat;
-  position: relative;
+  background-size: 100% 100%;
 }
 .index_btn {
-  width: 60%;
+  width: 80%;
   position: absolute;
   bottom: 0.9rem;
-  left: 20%;
+  left: 10%;
 }
 .btn {
-  width: 0.9rem;
-  height: 0.26rem;
+  width: 1.25rem;
+  height: 0.45rem;
   float: left;
-  background: #3047F4;
-  border-radius: 0.05rem;
-  text-align: center;
-  line-height: 0.26rem;
-  color: #fff;
-  font-size: 0.14rem;
+  background: url(../assets/img/cn.png) no-repeat center;
+  background-size: 100% 100%;
 }
 .btn.en_btn {
   float: right;
-
-  background: #E0E0E0;
-  color: #636363;
+  background-image: url(../assets/img/en.png);
 }
 </style>
 

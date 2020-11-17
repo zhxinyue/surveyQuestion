@@ -142,6 +142,10 @@
           <van-field v-model="message6" rows="2" autosize type="textarea" />
         </div>
       </div>
+      <span class="circle circle1"></span>
+    <span class="circle circle2"></span>
+    <span class="circle circle3"></span>
+    <span class="circle circle4"></span>
     </div>
     <div class="bottom_btn">
       <div
@@ -548,6 +552,25 @@ export default {
 .van-dialog__confirm,
 .van-dialog__confirm:active {
   color: #0189f9;
+}
+.box_div_textarea .van-cell::after{
+  border-bottom:none;
+}
+.circle.circle1{
+ left:-0.06rem;
+  top:-0.06rem;
+}
+.circle.circle2{
+  top:-0.06rem;
+  right: -0.06rem;
+}
+.circle.circle3{
+  bottom:-0.06rem;
+  right: -0.06rem;
+}
+.circle.circle4{
+  bottom: -0.06rem;
+  left:-0.06rem;
 }
 </style>
 

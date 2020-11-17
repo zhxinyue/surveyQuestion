@@ -89,11 +89,13 @@ export default {
 <style>
 @import url("../assets/css/reset.css");
 #area_wrap {
+  position:fixed;
+  top:0;
+  left:0;
   width: 100%;
-  height: 6.22rem;
+  height:100%;
   background: url(../assets/img/bg2.png) no-repeat;
   background-size: 100% 100%;
-  position: relative;
 }
 .area_content {
   width: 2.6rem;

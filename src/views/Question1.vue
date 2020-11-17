@@ -557,6 +557,12 @@
           <van-field v-model="message20" rows="2" autosize type="textarea" />
         </div>
       </div>
+    
+    <span class="circle circle1"></span>
+    <span class="circle circle2"></span>
+    <span class="circle circle3"></span>
+    <span class="circle circle4"></span>
+    
     </div>
     <div class="bottom_btn">
       <div
@@ -568,6 +574,7 @@
         @click="nextStep"
       ></div>
     </div>
+
   </div>
 </template>
 <script>
@@ -1116,6 +1123,33 @@ export default {
   padding: 0 0.16rem;
   color: #00569c;
   font-size: 0.14rem;
+}
+.box_div_textarea .van-cell::after{
+  border-bottom:none;
+}
+.circle{
+  width:0.12rem;
+  height:0.12rem;
+  background: url(../assets/img/circle.png) no-repeat center;
+  background-size: 100%;
+  position: absolute;
+ 
+}
+.circle.circle1{
+ left:-0.06rem;
+  top:-0.06rem;
+}
+.circle.circle2{
+  top:-0.06rem;
+  right: -0.06rem;
+}
+.circle.circle3{
+  bottom:-0.06rem;
+  right: -0.06rem;
+}
+.circle.circle4{
+  bottom: -0.06rem;
+  left:-0.06rem;
 }
 </style>
 

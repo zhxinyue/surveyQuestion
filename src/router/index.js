@@ -16,22 +16,35 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Index
+      component: Index,
+      meta: {
+        title: '四维图新首页'
+      }
+
     },
     {
       path: '/cooperationArea',
       name: 'CooperationArea',
-      component: CooperationArea
+      component: CooperationArea,
+      meta: {
+        title: '四维图新-2020客户满意度问卷调查'
+      }
     },
     {
       path: '/question1',
       name: 'Question1',
-      component: Question1
+      component: Question1,
+      meta: {
+        title: '四维图新-核心地图'
+      }
     },
     {
       path: '/question2',
       name: 'Question2',
-      component: Question2
+      component: Question2,
+      meta: {
+        title: '四维图新-高精度地图'
+      }
     },
     {
       path: '/question3',

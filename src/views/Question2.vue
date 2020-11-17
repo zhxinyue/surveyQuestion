@@ -2,22 +2,26 @@
   <div id="question_wrap">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="question_content">
-      <div class="question_title">{{title}}</div>
+      <div class="question_title">{{ title }}</div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">01</span>
           <div class="box_text" v-html="dataList.HD1"></div>
         </div>
         <div class="box_div">
-<div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex1 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 1)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex1 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 1)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
-       
         </div>
         <input
           type="text"
@@ -33,14 +37,19 @@
           <div class="box_text" v-html="dataList.HD2"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex2 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 2)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex2 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 2)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -51,19 +60,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title2':'box_title4']">
+        <div :class="[lanIdx == 1 ? 'box_title2' : 'box_title4']">
           <span class="box_num">03</span>
           <div class="box_text" v-html="dataList.HD3"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer3" :key="index" :class="[activeIndex3 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 3)"
+          <div
+            v-for="(item, index) in dataList.answer3"
+            :key="index"
+            :class="[
+              activeIndex3 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 3)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -79,14 +93,19 @@
           <div class="box_text" v-html="dataList.HD4"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex4 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 4)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex4 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 4)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -102,14 +121,19 @@
           <div class="box_text" v-html="dataList.HD5"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex5 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 5)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex5 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 5)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -125,14 +149,19 @@
           <div class="box_text" v-html="dataList.HD6"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex6 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 6)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex6 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 6)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -148,14 +177,19 @@
           <div class="box_text" v-html="dataList.HD7"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex7 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 7)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex7 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 7)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -166,19 +200,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">08</span>
           <div class="box_text" v-html="dataList.HD8"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex8 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 8)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex8 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 8)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -189,19 +228,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">09</span>
           <div class="box_text" v-html="dataList.HD9"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex9 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 9)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex9 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 9)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -217,14 +261,19 @@
           <div class="box_text" v-html="dataList.HD10"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex10 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 10)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex10 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 10)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -240,14 +289,19 @@
           <div class="box_text" v-html="dataList.HD11"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex11 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 11)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex11 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 11)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -258,19 +312,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">12</span>
           <div class="box_text" v-html="dataList.HD12"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex12 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 12)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex12 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 12)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -281,19 +340,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">13</span>
           <div class="box_text" v-html="dataList.HD13"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex13 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 13)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex13 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 13)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -309,14 +373,19 @@
           <div class="box_text" v-html="dataList.HD14"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex14 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 14)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex14 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 14)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -332,14 +401,19 @@
           <div class="box_text" v-html="dataList.HD15"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex15 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 15)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex15 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 15)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -350,19 +424,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">16</span>
           <div class="box_text" v-html="dataList.SD12"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex16 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 16)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex16 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 16)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -373,19 +452,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">17</span>
           <div class="box_text" v-html="dataList.SD13"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex17 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 17)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex17 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 17)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -396,19 +480,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">18</span>
           <div class="box_text" v-html="dataList.SD14"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex18 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 18)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex18 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 18)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -419,14 +508,14 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">19</span>
           <div class="box_text">
-            {{dataList.HD19}}
+            {{ dataList.HD19 }}
           </div>
         </div>
         <div class="box_div_textarea">
-          <div class="message_tip">{{dataList.answer9}}</div>
+          <div class="message_tip">{{ dataList.answer9 }}</div>
           <van-field
             v-model="recognizedMsg19"
             rows="2"
@@ -434,7 +523,7 @@
             type="textarea"
             :placeholder="dataList.answer12"
           />
-          <div class="message_tip">{{dataList.answer10}}</div>
+          <div class="message_tip">{{ dataList.answer10 }}</div>
           <van-field
             v-model="improvedMsg19"
             rows="2"
@@ -446,21 +535,26 @@
       </div>
 
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">20</span>
           <div class="box_text">
-            {{dataList.SD16}}
+            {{ dataList.SD16 }}
           </div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex20 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 20)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex20 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 20)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -474,7 +568,7 @@
         <div class="box_title">
           <span class="box_num">21</span>
           <div class="box_text">
-           {{dataList.SD17}}
+            {{ dataList.SD17 }}
           </div>
         </div>
         <van-radio-group
@@ -482,14 +576,19 @@
           direction="horizontal"
           class="box_checkbox_group"
         >
-        <van-radio v-for="(item,index) in dataList.answer6" :key="index" :name="item.name">{{item.text}}</van-radio>
+          <van-radio
+            v-for="(item, index) in dataList.answer6"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-radio
+          >
         </van-radio-group>
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">22</span>
           <div class="box_text">
-            {{dataList.SD18}}
+            {{ dataList.SD18 }}
           </div>
         </div>
         <van-checkbox-group
@@ -498,7 +597,12 @@
           direction="horizontal"
           @change="checkboxChange(22, 'M')"
         >
-         <van-checkbox v-for="(item,index) in dataList.answer7" :key="index" :name="item.name">{{item.text}}</van-checkbox>
+          <van-checkbox
+            v-for="(item, index) in dataList.answer7"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-checkbox
+          >
         </van-checkbox-group>
         <input
           type="text"
@@ -509,10 +613,10 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title4']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
           <span class="box_num">23</span>
           <div class="box_text">
-           {{dataList.SD19}}
+            {{ dataList.SD19 }}
           </div>
         </div>
         <van-checkbox-group
@@ -521,7 +625,12 @@
           direction="horizontal"
           @change="checkboxChange(23, 'S')"
         >
-        <van-checkbox v-for="(item,index) in dataList.answer8" :key="index" :name="item.name">{{item.text}}</van-checkbox>
+          <van-checkbox
+            v-for="(item, index) in dataList.answer8"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-checkbox
+          >
         </van-checkbox-group>
         <input
           type="text"
@@ -534,32 +643,33 @@
       <div class="question_box question_box_nobor">
         <div class="box_div_textarea box_div_textarea2">
           <span class="left_num">24</span>
-          <div class="box_tip">{{dataList.SD20}}</div>
-          <van-field
-            v-model="message24"
-            rows="2"
-            autosize
-            type="textarea"
-          />
+          <div class="box_tip">{{ dataList.SD20 }}</div>
+          <van-field v-model="message24" rows="2" autosize type="textarea" />
         </div>
       </div>
     </div>
     <div class="bottom_btn">
-      <div :class="[lanIdx==1?'left_btn':'left_btn1']" @click="lastStep"></div>
-      <div :class="[lanIdx==1?'right_btn':'right_btn1']" @click="nextStep"></div>
+      <div
+        :class="[lanIdx == 1 ? 'left_btn' : 'left_btn1']"
+        @click="lastStep"
+      ></div>
+      <div
+        :class="[lanIdx == 1 ? 'right_btn' : 'right_btn1']"
+        @click="nextStep"
+      ></div>
     </div>
   </div>
 </template>
 <script>
-import list from '../../static/questionList.json'
+import list from "../../static/questionList.json";
 export default {
   name: "Question2",
   data() {
     return {
-      dataList:[],
-      lanIdx:'',
-      title:'',
-      dialogText:'',
+      dataList: [],
+      lanIdx: "",
+      title: "",
+      dialogText: "",
       result22: [],
       result23: [],
       radioVal21: "",
@@ -652,16 +762,16 @@ export default {
       optionVal23: "",
     };
   },
-  created(){
-    this.lanIdx = this.$route.query.idx
-    if(this.$route.query.idx == 1){
-      this.dataList = list.cn
-      this.title = list.cnTitle2
-      this.dialogText = list.cnDialog
-    }else if(this.$route.query.idx == 2){
-      this.dataList = list.en
-      this.title = list.enTitle2
-      this.dialogText = list.enDialog
+  created() {
+    this.lanIdx = this.$route.query.idx;
+    if (this.$route.query.idx == 1) {
+      this.dataList = list.cn;
+      this.title = list.cnTitle2;
+      this.dialogText = list.cnDialog;
+    } else if (this.$route.query.idx == 2) {
+      this.dataList = list.en;
+      this.title = list.enTitle2;
+      this.dialogText = list.enDialog;
     }
   },
   methods: {
@@ -693,11 +803,10 @@ export default {
         this.optionVal20 == "" ||
         this.radioVal21 == "" ||
         this.optionVal22 == "" ||
-        this.optionVal23 == "" ||
-        this.message24 == ""
+        this.optionVal23 == ""
       ) {
         this.$dialog.alert({
-          message: "您还没有完整填写，请继续完成！",
+          message: this.dialogText
         });
         return;
       }
@@ -726,7 +835,7 @@ export default {
         (this.causeFlag23 && this.inputVal23 == "")
       ) {
         this.$dialog.alert({
-          message: "您还没有完整填写，请继续完成！",
+          message: this.dialogText
         });
         return;
       }
@@ -753,26 +862,68 @@ export default {
       this.optionVal22 = this.optionVal22 + "" + this.inputVal22;
       this.optionVal23 = this.optionVal23 + "" + this.inputVal23;
 
-      var str =  this.optionVal1 + "-" + this.optionVal2 +  "-" + this.optionVal3 +  "-" +  this.optionVal4 + "-" +
-        this.optionVal5 + "-" +  this.optionVal6 +  "-" +  this.optionVal7 +  "-" +  this.optionVal8 +  "-" +
-        this.optionVal9 +  "-" +  this.optionVal10 +  "-" + this.optionVal11 +  "-" + this.optionVal12 + "-" +
-        this.optionVal13 +  "-" + this.optionVal14 + "-" + this.optionVal15 + "-" + this.optionVal16 + "-" +
-        this.optionVal17 + "-" + this.optionVal18 + "-" + this.optionVal19 + "-" + this.optionVal20 + "-" +
-        this.radioVal21 + "-" + this.optionVal22 + "-" +this.optionVal23 + "-" + this.message24;
+      var str =
+        this.optionVal1 +
+        "-" +
+        this.optionVal2 +
+        "-" +
+        this.optionVal3 +
+        "-" +
+        this.optionVal4 +
+        "-" +
+        this.optionVal5 +
+        "-" +
+        this.optionVal6 +
+        "-" +
+        this.optionVal7 +
+        "-" +
+        this.optionVal8 +
+        "-" +
+        this.optionVal9 +
+        "-" +
+        this.optionVal10 +
+        "-" +
+        this.optionVal11 +
+        "-" +
+        this.optionVal12 +
+        "-" +
+        this.optionVal13 +
+        "-" +
+        this.optionVal14 +
+        "-" +
+        this.optionVal15 +
+        "-" +
+        this.optionVal16 +
+        "-" +
+        this.optionVal17 +
+        "-" +
+        this.optionVal18 +
+        "-" +
+        this.optionVal19 +
+        "-" +
+        this.optionVal20 +
+        "-" +
+        this.radioVal21 +
+        "-" +
+        this.optionVal22 +
+        "-" +
+        this.optionVal23 +
+        "-" +
+        this.message24;
       console.log(str);
       this.$ajax
-        .post(
-          "https://result.eolinker.com/fHSq9Erb6b80ebc3e2a059e8b04fcf3bb1e6ae8b8fe238d?uri=/trav/writeAnswer.do",
-          {
-            qAnswers: str,
-            spType: 2,
-          }
-        )
+        .post("http://qa.travbao.com/goabraod/trav/writeAnswer.do", {
+          qAnswers: str,
+          spType: 2,
+        })
         .then((res) => {
           if (res.data.code == 0) {
             var spId = res.data.data.spId;
           }
-          this.$router.push({ path: "/personalInfo", query: { spId: spId } });
+          this.$router.push({
+            path: "/personalInfo",
+            query: { spId: spId, idx: this.lanIdx },
+          });
         });
     },
     checkboxChange(idx, option) {
@@ -850,7 +1001,7 @@ export default {
 }
 .box_title {
   width: 3.3rem;
-  height:0.74rem;
+  height: 0.74rem;
   background: url(../assets/img/icon5.png) no-repeat 0.01rem center;
   background-size: 3.15rem 100%;
   margin: 0.1rem auto;
@@ -866,7 +1017,7 @@ export default {
 }
 .box_title3 {
   width: 3.3rem;
-  height:1rem;
+  height: 1rem;
   background: url(../assets/img/icon17.png) no-repeat 0.01rem center;
   background-size: 3.15rem 100%;
   margin: 0.1rem auto;
@@ -874,7 +1025,7 @@ export default {
 }
 .box_title4 {
   width: 3.3rem;
-  height:1.3rem;
+  height: 1.3rem;
   background: url(../assets/img/icon18.png) no-repeat 0.01rem center;
   background-size: 3.15rem 100%;
   margin: 0.1rem auto;
@@ -974,7 +1125,7 @@ export default {
 }
 .box_img {
   width: 0.35rem;
-  height: 0.28rem;
+  height: 0.3rem;
 }
 .box_em {
   text-align: center;
@@ -992,7 +1143,7 @@ export default {
   background-size: 100% 100%;
   margin: 0 auto;
   position: relative;
-    padding-top:0.2rem;
+  padding-top: 0.2rem;
 }
 .box_div_textarea .van-cell {
   background: none;
@@ -1020,7 +1171,7 @@ export default {
   font-weight: bold;
 }
 .box_tip {
-  padding-left:0.15rem;
+  padding-left: 0.15rem;
   color: #00569c;
   font-size: 0.14rem;
 }
@@ -1065,8 +1216,8 @@ export default {
 .van-dialog__confirm:active {
   color: #0189f9;
 }
-.message_tip{
-  padding:0 0.16rem;
+.message_tip {
+  padding: 0 0.16rem;
   color: #00569c;
   font-size: 0.14rem;
 }

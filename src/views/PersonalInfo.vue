@@ -128,7 +128,7 @@ telTip:''
           });
           return;
       }
-      this.$ajax.post('https://result.eolinker.com/fHSq9Erb6b80ebc3e2a059e8b04fcf3bb1e6ae8b8fe238d?uri=/trav/writeAnswerUser.do',
+      this.$ajax.post('http://qa.travbao.com/goabraod/trav/writeAnswerUser.do',
      {
        suCompany:this.suCompany,
         suBumen:this.suBumen,

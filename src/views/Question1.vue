@@ -2,11 +2,11 @@
   <div id="question_wrap">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="question_content">
-      <div class="question_title">{{title}}</div>
+      <div class="question_title">{{ title }}</div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">01</span>
-          <div class="box_text">{{dataList.SD1}}</div>
+          <div class="box_text">{{ dataList.SD1 }}</div>
         </div>
         <van-checkbox-group
           v-model="result1"
@@ -14,7 +14,12 @@
           direction="horizontal"
           @change="checkboxChange(1, 'I')"
         >
-          <van-checkbox v-for="(item,index) in dataList.answer1" :key="index" :name="item.name">{{item.text}}</van-checkbox>
+          <van-checkbox
+            v-for="(item, index) in dataList.answer1"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-checkbox
+          >
         </van-checkbox-group>
         <input
           type="text"
@@ -27,17 +32,21 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">02</span>
-          <div class="box_text" v-html="dataList.SD2">
-
-          </div>
+          <div class="box_text" v-html="dataList.SD2"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex2 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 2)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex2 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 2)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
         <input
@@ -54,12 +63,18 @@
           <div class="box_text" v-html="dataList.SD3"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex3 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 3)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex3 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 3)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
         <input
@@ -71,19 +86,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title2':'box_title4']">
+        <div :class="[lanIdx == 1 ? 'box_title2' : 'box_title4']">
           <span class="box_num">04</span>
           <div class="box_text" v-html="dataList.SD4"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer3" :key="index" :class="[activeIndex4 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 4)"
+          <div
+            v-for="(item, index) in dataList.answer3"
+            :key="index"
+            :class="[
+              activeIndex4 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 4)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -94,7 +114,7 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title4']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
           <span class="box_num">05</span>
           <div class="box_text" v-html="dataList.SD5"></div>
         </div>
@@ -104,7 +124,12 @@
           class="box_checkbox_group"
           @change="radioChange()"
         >
-          <van-radio v-for="(item,index) in dataList.answer4" :key="index" :name="item.name">{{item.text}}</van-radio>
+          <van-radio
+            v-for="(item, index) in dataList.answer4"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-radio
+          >
         </van-radio-group>
         <input
           type="text"
@@ -115,14 +140,19 @@
         />
 
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex5 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 5)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex5 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 5)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -133,52 +163,66 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">06</span>
-          <div class="box_text">{{dataList.SD6}}</div>
+          <div class="box_text">{{ dataList.SD6 }}</div>
         </div>
         <van-radio-group
           v-model="radioValue6"
           direction="horizontal"
           class="box_checkbox_group"
         >
-          <van-radio v-for="(item,index) in dataList.answer5" :key="index" :name="item.name" :style="index==2?'width: 60%':''">{{item.text}}</van-radio>
+          <van-radio
+            v-for="(item, index) in dataList.answer5"
+            :key="index"
+            :name="item.name"
+            :style="index == 2 ? 'width: 60%' : ''"
+            >{{ item.text }}</van-radio
+          >
         </van-radio-group>
 
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex6 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 6)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex6 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 6)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
           class="box_dec"
           :placeholder="dataList.answer11"
           v-if="causeFlag6"
-           v-model="inputVal6"
-
+          v-model="inputVal6"
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">07</span>
           <div class="box_text" v-html="dataList.SD7"></div>
         </div>
         <div class="box_div">
-           <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex7 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 7)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex7 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 7)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
-         
         </div>
         <input
           type="text"
@@ -194,14 +238,19 @@
           <div class="box_text" v-html="dataList.SD8"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex8 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 8)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex8 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 8)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -212,19 +261,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">09</span>
           <div class="box_text" v-html="dataList.SD9"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex9 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 9)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex9 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 9)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -235,19 +289,24 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">10</span>
           <div class="box_text" v-html="dataList.SD10"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex10 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 10)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex10 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 10)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
@@ -258,104 +317,124 @@
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">11</span>
           <div class="box_text" v-html="dataList.SD11"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex11 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 11)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex11 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 11)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
           class="box_dec"
           :placeholder="dataList.answer11"
           v-if="causeFlag11"
-           v-model="inputVal11"
+          v-model="inputVal11"
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">12</span>
           <div class="box_text" v-html="dataList.SD12"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex12 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 12)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex12 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 12)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
           class="box_dec"
           :placeholder="dataList.answer11"
           v-if="causeFlag12"
-           v-model="inputVal12"
+          v-model="inputVal12"
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">13</span>
           <div class="box_text" v-html="dataList.SD13"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex13 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 13)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex13 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 13)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
           class="box_dec"
           :placeholder="dataList.answer11"
           v-if="causeFlag13"
-           v-model="inputVal13"
+          v-model="inputVal13"
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">14</span>
           <div class="box_text" v-html="dataList.SD14"></div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex14 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 14)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex14 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 14)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-
         </div>
         <input
           type="text"
           class="box_dec"
           :placeholder="dataList.answer11"
           v-if="causeFlag14"
-           v-model="inputVal14"
+          v-model="inputVal14"
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title4']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
           <span class="box_num">15</span>
-          <div class="box_text">{{dataList.SD15}}</div>
+          <div class="box_text">{{ dataList.SD15 }}</div>
         </div>
         <div class="box_div_textarea">
-          <div class="message_tip">{{dataList.answer9}}</div>
+          <div class="message_tip">{{ dataList.answer9 }}</div>
           <van-field
             v-model="recognizedMsg15"
             rows="2"
@@ -363,7 +442,7 @@
             type="textarea"
             :placeholder="dataList.answer12"
           />
-          <div class="message_tip">{{dataList.answer10}}</div>
+          <div class="message_tip">{{ dataList.answer10 }}</div>
           <van-field
             v-model="improvedMsg15"
             rows="2"
@@ -374,45 +453,55 @@
         </div>
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">16</span>
-          <div class="box_text">{{dataList.SD16}}</div>
+          <div class="box_text">{{ dataList.SD16 }}</div>
         </div>
         <div class="box_div">
-          <div v-for="(item,index) in dataList.answer2" :key="index" :class="[activeIndex16 == item.score ? 'box_options_on' : '', 'box_options']"
-          @click="chooseLevel(item.score, 16)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex16 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 16)"
           >
             <img :src="item.img" alt="" class="box_img" />
-            <i class="box_i">{{item.score}}</i>
-            <em class="box_em">{{item.text}}</em>
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
-        
         </div>
         <input
           type="text"
           class="box_dec"
           :placeholder="dataList.answer11"
           v-if="causeFlag16"
-           v-model="inputVal16"
+          v-model="inputVal16"
         />
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">17</span>
-          <div class="box_text">{{dataList.SD17}}</div>
+          <div class="box_text">{{ dataList.SD17 }}</div>
         </div>
         <van-radio-group
           v-model="radioValue17"
           direction="horizontal"
           class="box_checkbox_group"
         >
-        <van-radio v-for="(item,index) in dataList.answer6" :key="index" :name="item.name">{{item.text}}</van-radio>
+          <van-radio
+            v-for="(item, index) in dataList.answer6"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-radio
+          >
         </van-radio-group>
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title3']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">18</span>
-          <div class="box_text">{{dataList.SD18}}</div>
+          <div class="box_text">{{ dataList.SD18 }}</div>
         </div>
         <van-checkbox-group
           v-model="result18"
@@ -420,20 +509,25 @@
           direction="horizontal"
           @change="checkboxChange(18, 'M')"
         >
-        <van-checkbox v-for="(item,index) in dataList.answer7" :key="index" :name="item.name">{{item.text}}</van-checkbox>
+          <van-checkbox
+            v-for="(item, index) in dataList.answer7"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-checkbox
+          >
         </van-checkbox-group>
         <input
           type="text"
           class="box_dec"
           :placeholder="dataList.answer12"
           v-if="causeFlag18"
-           v-model="inputVal18"
+          v-model="inputVal18"
         />
       </div>
       <div class="question_box">
-        <div :class="[lanIdx==1?'box_title':'box_title4']">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
           <span class="box_num">19</span>
-          <div class="box_text">{{dataList.SD19}}</div>
+          <div class="box_text">{{ dataList.SD19 }}</div>
         </div>
         <van-checkbox-group
           v-model="result19"
@@ -441,46 +535,52 @@
           direction="horizontal"
           @change="checkboxChange(19, 'S')"
         >
-        <van-checkbox v-for="(item,index) in dataList.answer8" :key="index" :name="item.name">{{item.text}}</van-checkbox>
+          <van-checkbox
+            v-for="(item, index) in dataList.answer8"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-checkbox
+          >
         </van-checkbox-group>
         <input
           type="text"
           class="box_dec"
           :placeholder="dataList.answer12"
           v-if="causeFlag19"
-           v-model="inputVal19"
+          v-model="inputVal19"
         />
       </div>
       <div class="question_box question_box_nobor">
         <div class="box_div_textarea box_div_textarea2">
           <span class="left_num">20</span>
-          <div class="box_tip">{{dataList.SD20}}</div>
-          <van-field
-            v-model="message20"
-            rows="2"
-            autosize
-            type="textarea"
-          />
+          <div class="box_tip">{{ dataList.SD20 }}</div>
+          <van-field v-model="message20" rows="2" autosize type="textarea" />
         </div>
       </div>
     </div>
     <div class="bottom_btn">
-      <div :class="[lanIdx==1?'left_btn':'left_btn1']" @click="lastStep"></div>
-      <div :class="[lanIdx==1?'right_btn':'right_btn1']" @click="nextStep"></div>
+      <div
+        :class="[lanIdx == 1 ? 'left_btn' : 'left_btn1']"
+        @click="lastStep"
+      ></div>
+      <div
+        :class="[lanIdx == 1 ? 'right_btn' : 'right_btn1']"
+        @click="nextStep"
+      ></div>
     </div>
   </div>
 </template>
 <script>
-import list from '../../static/questionList.json'
+import list from "../../static/questionList.json";
 import { Dialog } from "vant";
 export default {
   name: "Question1",
   data() {
     return {
-      dataList:[],
-      lanIdx:'',
-      title:'',
-      dialogText:'',
+      dataList: [],
+      lanIdx: "",
+      title: "",
+      dialogText: "",
       result1: [],
       result18: [],
       result19: [],
@@ -529,25 +629,25 @@ export default {
       inputVal3: "",
       inputVal4: "",
       radioVal5: "",
-      inputVal5:"",
-      inputVal6:"",
-      inputVal7:"",
-      inputVal8:"",
-      inputVal9:"",
-      inputVal10:"",
-      inputVal11:"",
-      inputVal12:"",
-      inputVal13:"",
-      inputVal14:"",
-      inputVal16:"",
-      inputVal18:"",
-      inputVal19:"",
+      inputVal5: "",
+      inputVal6: "",
+      inputVal7: "",
+      inputVal8: "",
+      inputVal9: "",
+      inputVal10: "",
+      inputVal11: "",
+      inputVal12: "",
+      inputVal13: "",
+      inputVal14: "",
+      inputVal16: "",
+      inputVal18: "",
+      inputVal19: "",
       optionVal1: "",
       optionVal2: "",
       optionVal3: "",
       optionVal4: "",
       optionVal5: "",
-      question5:"",
+      question5: "",
       optionVal6: "",
       optionVal7: "",
       optionVal8: "",
@@ -557,22 +657,22 @@ export default {
       optionVal12: "",
       optionVal13: "",
       optionVal14: "",
-       optionVal15: "",
+      optionVal15: "",
       optionVal16: "",
       optionVal18: "",
       optionVal19: "",
     };
   },
-  created(){
-    this.lanIdx = this.$route.query.idx
-    if(this.$route.query.idx == 1){
-      this.dataList = list.cn
-      this.title = list.cnTitle1
-      this.dialogText = list.cnDialog
-    }else if(this.$route.query.idx == 2){
-      this.dataList = list.en
-      this.title = list.enTitle1
-      this.dialogText = list.enDialog
+  created() {
+    this.lanIdx = this.$route.query.idx;
+    if (this.$route.query.idx == 1) {
+      this.dataList = list.cn;
+      this.title = list.cnTitle1;
+      this.dialogText = list.cnDialog;
+    } else if (this.$route.query.idx == 2) {
+      this.dataList = list.en;
+      this.title = list.enTitle1;
+      this.dialogText = list.enDialog;
     }
   },
   methods: {
@@ -602,62 +702,119 @@ export default {
         this.optionVal16 == "" ||
         this.radioValue17 == "" ||
         this.optionVal18 == "" ||
-        this.optionVal19 == "" 
+        this.optionVal19 == ""
       ) {
         this.$dialog.alert({
           message: this.dialogText,
         });
         return;
       }
-      if((this.causeFlag1 && this.inputVal1 == "") || (this.causeFlag2 && this.inputVal2 == "")
-      || (this.causeFlag3 && this.inputVal3 == "") || (this.causeFlag4 && this.inputVal4 == "")
-      || (this.radioFlag5 && this.radioVal5 == "") || (this.causeFlag5 && this.inputVal5 == "")
-      || (this.causeFlag6 && this.inputVal6 == "") ||(this.causeFlag7 && this.inputVal7 == "") 
-      || (this.causeFlag8 && this.inputVal8 == "") ||(this.causeFlag9 && this.inputVal9 == "") 
-      || (this.causeFlag10 && this.inputVal10 == "") ||(this.causeFlag11 && this.inputVal11== "")
-      || (this.causeFlag12 && this.inputVal12 == "") ||(this.causeFlag13 && this.inputVal13== "")
-      || (this.causeFlag14 && this.inputVal14 == "") ||(this.causeFlag16 && this.inputVal16== "")
-      || (this.causeFlag18 && this.inputVal18 == "") ||(this.causeFlag19 && this.inputVal19== "")){
-this.$dialog.alert({
-            message: this.dialogText,
-          });
-          return;
+      if (
+        (this.causeFlag1 && this.inputVal1 == "") ||
+        (this.causeFlag2 && this.inputVal2 == "") ||
+        (this.causeFlag3 && this.inputVal3 == "") ||
+        (this.causeFlag4 && this.inputVal4 == "") ||
+        (this.radioFlag5 && this.radioVal5 == "") ||
+        (this.causeFlag5 && this.inputVal5 == "") ||
+        (this.causeFlag6 && this.inputVal6 == "") ||
+        (this.causeFlag7 && this.inputVal7 == "") ||
+        (this.causeFlag8 && this.inputVal8 == "") ||
+        (this.causeFlag9 && this.inputVal9 == "") ||
+        (this.causeFlag10 && this.inputVal10 == "") ||
+        (this.causeFlag11 && this.inputVal11 == "") ||
+        (this.causeFlag12 && this.inputVal12 == "") ||
+        (this.causeFlag13 && this.inputVal13 == "") ||
+        (this.causeFlag14 && this.inputVal14 == "") ||
+        (this.causeFlag16 && this.inputVal16 == "") ||
+        (this.causeFlag18 && this.inputVal18 == "") ||
+        (this.causeFlag19 && this.inputVal19 == "")
+      ) {
+        this.$dialog.alert({
+          message: this.dialogText,
+        });
+        return;
       }
-       this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
+      this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
       this.optionVal2 = this.optionVal2 + "" + this.inputVal2;
-this.optionVal3 = this.optionVal3 + "" + this.inputVal3;
-this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
-      this.question5 = this.radioValue5+''+this.radioVal5+','+this.optionVal5+''+this.inputVal5
-this.optionVal6 = this.optionVal6 + "" + this.inputVal6;
-this.optionVal7 = this.optionVal7 + "" + this.inputVal7;
-this.optionVal8 = this.optionVal8 + "" + this.inputVal8;
-this.optionVal9 = this.optionVal9 + "" + this.inputVal9;
-this.optionVal10 = this.optionVal10 + "" + this.inputVal10;
-this.optionVal11 = this.optionVal11 + "" + this.inputVal11;
-this.optionVal12 = this.optionVal12 + "" + this.inputVal12;
-this.optionVal13 = this.optionVal13 + "" + this.inputVal13;
-this.optionVal14 = this.optionVal14 + "" + this.inputVal14;
-this.optionVal15 = this.recognizedMsg15+","+this.improvedMsg15;
- this.optionVal16 = this.optionVal16 + "" + this.inputVal16;
-this.optionVal18 = this.optionVal18 + "" + this.inputVal18;
-this.optionVal19 = this.optionVal19 + "" + this.inputVal19;
+      this.optionVal3 = this.optionVal3 + "" + this.inputVal3;
+      this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
+      this.question5 =
+        this.radioValue5 +
+        "" +
+        this.radioVal5 +
+        "," +
+        this.optionVal5 +
+        "" +
+        this.inputVal5;
+      this.optionVal6 = this.optionVal6 + "" + this.inputVal6;
+      this.optionVal7 = this.optionVal7 + "" + this.inputVal7;
+      this.optionVal8 = this.optionVal8 + "" + this.inputVal8;
+      this.optionVal9 = this.optionVal9 + "" + this.inputVal9;
+      this.optionVal10 = this.optionVal10 + "" + this.inputVal10;
+      this.optionVal11 = this.optionVal11 + "" + this.inputVal11;
+      this.optionVal12 = this.optionVal12 + "" + this.inputVal12;
+      this.optionVal13 = this.optionVal13 + "" + this.inputVal13;
+      this.optionVal14 = this.optionVal14 + "" + this.inputVal14;
+      this.optionVal15 = this.recognizedMsg15 + "," + this.improvedMsg15;
+      this.optionVal16 = this.optionVal16 + "" + this.inputVal16;
+      this.optionVal18 = this.optionVal18 + "" + this.inputVal18;
+      this.optionVal19 = this.optionVal19 + "" + this.inputVal19;
 
-     var str = this.optionVal1+'-'+this.optionVal2+'-'+this.optionVal3+'-'+this.optionVal4+'-'+this.question5+'-'+
-     this.optionVal6+'-'+this.optionVal7+'-'+this.optionVal8+'-'+this.optionVal9+'-'+this.optionVal10+'-'+this.optionVal11
-     +'-'+this.optionVal12+'-'+this.optionVal13+'-'+this.optionVal14+'-'+this.optionVal15+'-'+this.optionVal16+'-'+
-     this.radioValue17+'-'+this.optionVal18+'-'+this.optionVal19+'-'+this.message20
-     console.log(str)
-     this.$ajax.post('https://result.eolinker.com/fHSq9Erb6b80ebc3e2a059e8b04fcf3bb1e6ae8b8fe238d?uri=/trav/writeAnswer.do',
-     {
-       qAnswers:str,
-       spType:1
-     }
-     ).then((res)=>{
-if(res.data.code == 0){
-var spId = res.data.data.spId
-}
-this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
-     })
+      var str =
+        this.optionVal1 +
+        "-" +
+        this.optionVal2 +
+        "-" +
+        this.optionVal3 +
+        "-" +
+        this.optionVal4 +
+        "-" +
+        this.question5 +
+        "-" +
+        this.optionVal6 +
+        "-" +
+        this.optionVal7 +
+        "-" +
+        this.optionVal8 +
+        "-" +
+        this.optionVal9 +
+        "-" +
+        this.optionVal10 +
+        "-" +
+        this.optionVal11 +
+        "-" +
+        this.optionVal12 +
+        "-" +
+        this.optionVal13 +
+        "-" +
+        this.optionVal14 +
+        "-" +
+        this.optionVal15 +
+        "-" +
+        this.optionVal16 +
+        "-" +
+        this.radioValue17 +
+        "-" +
+        this.optionVal18 +
+        "-" +
+        this.optionVal19 +
+        "-" +
+        this.message20;
+      console.log(str);
+      this.$ajax
+        .post("http://qa.travbao.com/goabraod/trav/writeAnswer.do", {
+          qAnswers: str,
+          spType: 1,
+        })
+        .then((res) => {
+          if (res.data.code == 0) {
+            var spId = res.data.data.spId;
+          }
+          this.$router.push({
+            path: "/personalInfo",
+            query: { spId: spId, idx: this.lanIdx },
+          });
+        });
     },
     checkboxChange(idx, option) {
       var arr = "result" + idx;
@@ -671,7 +828,7 @@ this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
       this[opval] = this[arr].join(",");
     },
     radioChange() {
-      if (this.radioValue5 == 'D') {
+      if (this.radioValue5 == "D") {
         this.radioFlag5 = true;
       } else {
         this.radioFlag5 = false;
@@ -740,7 +897,7 @@ this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
 }
 .box_title {
   width: 3.3rem;
-  height:0.74rem;
+  height: 0.74rem;
   background: url(../assets/img/icon5.png) no-repeat 0.01rem center;
   background-size: 3.15rem 100%;
   margin: 0.1rem auto;
@@ -756,7 +913,7 @@ this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
 }
 .box_title3 {
   width: 3.3rem;
-  height:1rem;
+  height: 1rem;
   background: url(../assets/img/icon17.png) no-repeat 0.01rem center;
   background-size: 3.15rem 100%;
   margin: 0.1rem auto;
@@ -764,7 +921,7 @@ this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
 }
 .box_title4 {
   width: 3.3rem;
-  height:1.3rem;
+  height: 1.3rem;
   background: url(../assets/img/icon18.png) no-repeat 0.01rem center;
   background-size: 3.15rem 100%;
   margin: 0.1rem auto;
@@ -864,7 +1021,7 @@ this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
 }
 .box_img {
   width: 0.35rem;
-  height: 0.28rem;
+  height: 0.3rem;
 }
 .box_em {
   text-align: center;
@@ -881,7 +1038,7 @@ this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
   background: url(../assets/img/icon11.png) no-repeat center;
   background-size: 100% 100%;
   margin: 0 auto;
-  padding-top:0.2rem;
+  padding-top: 0.2rem;
 }
 .box_div_textarea .van-cell {
   background: none;
@@ -910,7 +1067,7 @@ this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
   font-weight: bold;
 }
 .box_tip {
-  padding-left:0.15rem;
+  padding-left: 0.15rem;
   color: #00569c;
   font-size: 0.14rem;
 }
@@ -955,8 +1112,8 @@ this.$router.push({path:'/personalInfo',query:{spId:spId,idx:this.lanIdx}})
 .van-dialog__confirm:active {
   color: #0189f9;
 }
-.message_tip{
-  padding:0 0.16rem;
+.message_tip {
+  padding: 0 0.16rem;
   color: #00569c;
   font-size: 0.14rem;
 }

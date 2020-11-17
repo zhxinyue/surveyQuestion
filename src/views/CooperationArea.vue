@@ -1,9 +1,9 @@
 <template>
   <div id="area_wrap">
     <div class="area_content">
-      <h4 class="area_title">{{dataList.title}}</h4>
+      <h4 class="area_title">{{ dataList.title }}</h4>
       <div class="area_options" @click="chooseArea(1)">
-        {{dataList.list[0]}}<img
+        {{ dataList.list[0]}}<img
           src="../assets/img/icon.png"
           alt=""
           class="dui_img"
@@ -11,7 +11,7 @@
         />
       </div>
       <div class="area_options" @click="chooseArea(2)">
-        {{dataList.list[1]}}<img
+        {{ dataList.list[1]}}<img
           src="../assets/img/icon.png"
           alt=""
           class="dui_img"
@@ -19,35 +19,38 @@
         />
       </div>
       <div class="area_options" @click="chooseArea(3)">
-        {{dataList.list[2]}}<img
+        {{ dataList.list[2]}}<img
           src="../assets/img/icon.png"
           alt=""
           class="dui_img"
           v-if="chooseFlag3"
         />
       </div>
-      <div class="area_btn" @click="nextStep">开始问卷＞＞</div>
+      <div class="area_btn" @click="nextStep">{{ btnText }}</div>
     </div>
   </div>
 </template>
 <script>
-import list from '../../static/questionList.json'
+import list from "../../static/questionList.json";
 export default {
   name: "CooperationArea",
   data() {
     return {
-      dataList:[],
+      dataList: [],
+      btnText: "",
       chooseFlag1: true,
       chooseFlag2: false,
       chooseFlag3: false,
-      page:1
+      page: 1,
     };
   },
-  created(){
-    if(this.$route.query.idx == 1){
-      this.dataList = list.cnArea
-    }else if(this.$route.query.idx == 2){
-      this.dataList = list.enArea
+  created() {
+    if (this.$route.query.idx == 1) {
+      this.dataList = list.cnArea;
+      this.btnText = list.cnBtn;
+    } else if (this.$route.query.idx == 2) {
+      this.dataList = list.enArea;
+      this.btnText = list.enBtn;
     }
   },
   methods: {
@@ -64,19 +67,22 @@ export default {
           _this.chooseFlag1 = false;
           _this.chooseFlag2 = true;
           _this.chooseFlag3 = false;
-           _this.page = 2;
+          _this.page = 2;
           break;
         case 3:
           _this.chooseFlag1 = false;
           _this.chooseFlag2 = false;
           _this.chooseFlag3 = true;
-           _this.page = 3;
+          _this.page = 3;
           break;
       }
     },
-    nextStep(){
-      this.$router.push({path:'/question'+this.page,query:{idx:this.$route.query.idx}})
-    }
+    nextStep() {
+      this.$router.push({
+        path: "/question" + this.page,
+        query: { idx: this.$route.query.idx },
+      });
+    },
   },
 };
 </script>
@@ -98,7 +104,7 @@ export default {
   transform: translateX(-50%);
 }
 .area_title {
-  height:0.54rem;
+  height: 0.54rem;
   font-size: 0.18rem;
   color: #333c82;
   margin-bottom: 0.2rem;

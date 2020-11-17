@@ -2,143 +2,88 @@
   <div id="question_wrap">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="question_content">
-      <div class="question_title">Part3</div>  
-       <div class="question_box">
-        <div class="box_title">
+      <div class="question_title">Part3</div>
+      <div class="question_box">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">01</span>
-          <div class="box_text">
-            您对四维图新高精度地图的<i class="text_underline">现有质量体系</i>方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.SD11"></div>
         </div>
         <div class="box_div">
-          <div :class="[activeIndex1 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 1)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex1 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 1)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
-          </div>
-          <div :class="[activeIndex1 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div :class="[activeIndex1 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div :class="[activeIndex1 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div :class="[activeIndex1 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div :class="[activeIndex1 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 1)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
         <input
           type="text"
           class="box_dec"
           v-model="inputVal1"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag1"
         />
       </div>
-     <div class="question_box">
+      <div class="question_box">
         <div class="box_title">
           <span class="box_num">02</span>
-          <div class="box_text">
-            您对四维图新高精度地图的<i class="text_underline">质量体系改进</i>方面的满意程度如何？
-          </div>
+          <div class="box_text" v-html="dataList.HD15"></div>
         </div>
         <div class="box_div">
-          <div :class="[activeIndex2 == 5 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(5, 2)"
+          <div
+            v-for="(item, index) in dataList.answer2"
+            :key="index"
+            :class="[
+              activeIndex2 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 2)"
           >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">5</i>
-            <em class="box_em">非常满意</em>
-          </div>
-          <div :class="[activeIndex2 == 4 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(4, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">4</i>
-            <em class="box_em">满意</em>
-          </div>
-          <div :class="[activeIndex2 == 3 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(3, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">3</i>
-            <em class="box_em">一般</em>
-          </div>
-          <div :class="[activeIndex2 == 2 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(2, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">2</i>
-            <em class="box_em">不满意</em>
-          </div>
-          <div :class="[activeIndex2 == 1 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(1, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">1</i>
-            <em class="box_em">非常不满意</em>
-          </div>
-          <div :class="[activeIndex2 == 0 ? 'box_options_on' : '', 'box_options']"
-            @click="chooseLevel(0, 2)"
-          >
-            <img src="../assets/img/icon9.png" alt="" class="box_img" />
-            <i class="box_i">?</i>
-            <em class="box_em">不清楚</em>
+            <img :src="item.img" alt="" class="box_img" />
+            <i class="box_i">{{ item.score }}</i>
+            <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
         <input
           type="text"
           class="box_dec"
           v-model="inputVal2"
-          placeholder="原因&合作项目（必填）"
+          :placeholder="dataList.answer11"
           v-if="causeFlag2"
         />
       </div>
- <div class="question_box">
+      <div class="question_box">
         <div class="box_title">
           <span class="box_num">03</span>
-          <div class="box_text">您是否能够及时收到四维图新最新产品和服务信息？ </div>
+          <div class="box_text">
+            {{ dataList.SD17 }}
+          </div>
         </div>
         <van-radio-group
           v-model="radioValue3"
           direction="horizontal"
           class="box_checkbox_group"
         >
-  <van-radio name="A">A.是</van-radio>
-  <van-radio name="B">B.否</van-radio>
-</van-radio-group>
+          <van-radio
+            v-for="(item, index) in dataList.answer6"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-radio
+          >
+        </van-radio-group>
       </div>
-  <div class="question_box">
-        <div class="box_title">
+      <div class="question_box">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">04</span>
-          <div class="box_text">您是通过以下哪些途径获得四维图新的最新产品和服务信息的？（可多选）
+          <div class="box_text">
+            {{ dataList.SD18 }}
           </div>
         </div>
         <van-checkbox-group
@@ -147,32 +92,26 @@
           direction="horizontal"
           @change="checkboxChange(4, 'M')"
         >
-          <van-checkbox name="A">A.线上活动</van-checkbox>
-          <van-checkbox name="B">B.公司产品宣传册</van-checkbox>
-          <van-checkbox name="C">C.公司介绍</van-checkbox>
-          <van-checkbox name="D">D.用户大会</van-checkbox>
-          <van-checkbox name="E">E.产品赏鉴会</van-checkbox>
-          <van-checkbox name="F">F.Workshop/Tech Day</van-checkbox>
-          <van-checkbox name="G">G.企业间访问参观</van-checkbox>
-          <van-checkbox name="H">H.专业展会</van-checkbox>
-          <van-checkbox name="I">I.Newsletter</van-checkbox>
-          <van-checkbox name="J">J.微信/微博</van-checkbox>
-          <van-checkbox name="K">K.第三方媒体渠道</van-checkbox>
-          <van-checkbox name="L">L.客户经理告知</van-checkbox>
-          <van-checkbox name="M">M.其他</van-checkbox>
+          <van-checkbox
+            v-for="(item, index) in dataList.answer7"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-checkbox
+          >
         </van-checkbox-group>
         <input
           type="text"
           class="box_dec"
-          placeholder="请在此输入产品名称（必填）"
+          :placeholder="dataList.answer12"
           v-if="causeFlag4"
-           v-model="inputVal4"
+          v-model="inputVal4"
         />
       </div>
-  <div class="question_box">
-        <div class="box_title">
+      <div class="question_box">
+        <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
           <span class="box_num">05</span>
-          <div class="box_text">以下四维图新产品和服务中，您认为可能与贵司建立合作的领域有哪些？（可多选）
+          <div class="box_text">
+            {{ dataList.SD19 }}
           </div>
         </div>
         <van-checkbox-group
@@ -181,66 +120,57 @@
           direction="horizontal"
           @change="checkboxChange(5, 'S')"
         >
-          <van-checkbox name="A">A.导航地图</van-checkbox>
-          <van-checkbox name="B">B.导航软件</van-checkbox>
-          <van-checkbox name="C">C.新能源汽车智能出行解决方案</van-checkbox>
-          <van-checkbox name="D">D.乘用车车联网服务</van-checkbox>
-          <van-checkbox name="E">E.商用车车联网服务</van-checkbox>
-          <van-checkbox name="F">F.动态交通信息</van-checkbox>
-          <van-checkbox name="G">G.位置大数据平台</van-checkbox>
-          <van-checkbox name="H">H.语音产品及服务</van-checkbox>
-          <van-checkbox name="I">I.ADAS地图</van-checkbox>
-          <van-checkbox name="J">J.ADASIS</van-checkbox>
-          <van-checkbox name="K">K.高精度地图</van-checkbox>
-          <van-checkbox name="L">L.自动驾驶综合解决方案</van-checkbox>
-          <van-checkbox name="M">M.自动代客泊车解决方案</van-checkbox>
-          <van-checkbox name="N">N.自动驾驶模拟仿真</van-checkbox>
-          <van-checkbox name="O">O.V2X解决方案</van-checkbox>
-          <van-checkbox name="P">P.高精度定位</van-checkbox>
-          <van-checkbox name="Q">Q.高精度融合定位</van-checkbox>
-          <van-checkbox name="R">R.芯片产品及服务</van-checkbox>
-          <van-checkbox name="S">S.其他</van-checkbox>
+          <van-checkbox
+            v-for="(item, index) in dataList.answer8"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-checkbox
+          >
         </van-checkbox-group>
-       <input
+        <input
           type="text"
           class="box_dec"
-          placeholder="请在此输入产品名称（必填）"
+          :placeholder="dataList.answer12"
           v-if="causeFlag5"
-           v-model="inputVal5"
+          v-model="inputVal5"
         />
       </div>
-<div class="question_box question_box_nobor">
+      <div class="question_box question_box_nobor">
         <div class="box_div_textarea box_div_textarea2">
           <span class="left_num">06</span>
-          <div class="box_tip">写给我们的悄悄话：</div>
-          <van-field
-            v-model="message6"
-            rows="2"
-            autosize
-            type="textarea"
-            placeholder="请输入留言"
-          />
+          <div class="box_tip">{{ dataList.SD20 }}</div>
+          <van-field v-model="message6" rows="2" autosize type="textarea" />
         </div>
       </div>
     </div>
     <div class="bottom_btn">
-<div class="left_btn" @click="lastStep"></div>
-<div class="right_btn" @click="nextStep"></div>
+      <div
+        :class="[lanIdx == 1 ? 'left_btn' : 'left_btn1']"
+        @click="lastStep"
+      ></div>
+      <div
+        :class="[lanIdx == 1 ? 'right_btn' : 'right_btn1']"
+        @click="nextStep"
+      ></div>
     </div>
   </div>
 </template>
 <script>
+import list from "../../static/questionList.json";
 export default {
   name: "Part3",
   data() {
     return {
+      dataList: [],
+      lanIdx: "",
+      dialogText: "",
       result4: [],
       result5: [],
-      radioValue3:'',
-      message6:'',
+      radioValue3: "",
+      message6: "",
       activeIcon: require("../assets/img/icon7.png"),
       inactiveIcon: require("../assets/img/icon6.png"),
-      flag:false,
+      flag: false,
       activeIndex1: 6,
       activeIndex2: 6,
       causeFlag1: false,
@@ -255,53 +185,79 @@ export default {
       optionVal2: "",
       optionVal4: "",
       optionVal5: "",
-
     };
   },
+  created() {
+    this.lanIdx = this.$route.query.idx;
+    if (this.$route.query.idx == 1) {
+      this.dataList = list.cn;
+      this.dialogText = list.cnDialog;
+    } else if (this.$route.query.idx == 2) {
+      this.dataList = list.en;
+      this.dialogText = list.enDialog;
+    }
+  },
   methods: {
-    lastStep(){
+    lastStep() {
       this.$router.go(-1);
     },
-    nextStep(){
-       if (
+    nextStep() {
+      if (
         this.optionVal1 == "" ||
         this.optionVal2 == "" ||
         this.radioValue3 == "" ||
         this.optionVal4 == "" ||
-        this.optionVal5 == "" ||
-        this.message6 == ""
+        this.optionVal5 == ""
       ) {
         this.$dialog.alert({
-          message: "您还没有完整填写，请继续完成！",
+          message: this.dialogText,
         });
         return;
       }
-      if((this.causeFlag1 && this.inputVal1 == "") || (this.causeFlag2 && this.inputVal2 == "")
-      || (this.causeFlag4 && this.inputVal4 == "") || (this.causeFlag5 && this.inputVal5 == "")){
+      if (
+        (this.causeFlag1 && this.inputVal1 == "") ||
+        (this.causeFlag2 && this.inputVal2 == "") ||
+        (this.causeFlag4 && this.inputVal4 == "") ||
+        (this.causeFlag5 && this.inputVal5 == "")
+      ) {
         this.$dialog.alert({
-            message: "您还没有完整填写，请继续完成！",
-          });
-          return;
+          message: this.dialogText,
+        });
+        return;
       }
-       this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
+      this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
       this.optionVal2 = this.optionVal2 + "" + this.inputVal2;
-this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
-this.optionVal5 = this.optionVal5 + "" + this.inputVal5;
+      this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
+      this.optionVal5 = this.optionVal5 + "" + this.inputVal5;
 
-     var str = this.optionVal1+'-'+this.optionVal2+'-'+this.radioValue3+'-'+this.optionVal4+'-'+this.optionVal5+'-'+
-     this.message6
-     console.log(str)
-     this.$ajax.post('https://result.eolinker.com/fHSq9Erb6b80ebc3e2a059e8b04fcf3bb1e6ae8b8fe238d?uri=/trav/writeAnswer.do',
-     {
-       qAnswers:str,
-       spType:3
-     }
-     ).then((res)=>{
-if(res.data.code == 0){
-var spId = res.data.data.spId
-}
-// this.$router.push({path:'/personalInfo',query:{spId:spId}})
-     })
+      var str =
+        this.optionVal1 +
+        "-" +
+        this.optionVal2 +
+        "-" +
+        this.radioValue3 +
+        "-" +
+        this.optionVal4 +
+        "-" +
+        this.optionVal5 +
+        "-" +
+        this.message6;
+      console.log(str);
+      this.$ajax
+        .post("http://qa.travbao.com/goabraod/trav/writeAnswer.do", {
+          qAnswers: str,
+          spType: 3,
+        })
+        .then((res) => {
+          if (res.data.code == 0) {
+            var spId = res.data.data.spId;
+          }
+          var spId3 = this.$route.query.spId + "-" + spId;
+          this.$router.push({
+            path: "/personalInfo",
+            query: { spId: spId3, idx: this.lanIdx },
+          });
+        });
     },
     checkboxChange(idx, option) {
       var arr = "result" + idx;
@@ -329,7 +285,6 @@ var spId = res.data.data.spId
         this[onflag] = false;
       }
     },
-
   },
 };
 </script>
@@ -373,20 +328,40 @@ var spId = res.data.data.spId
   padding: 0.1rem 0 0.15rem;
   border-bottom: 0.01rem dashed #00569c;
 }
-.question_box.question_box_nobor{
-  border:none;
+.question_box.question_box_nobor {
+  border: none;
 }
 .box_title {
   width: 3.3rem;
   height: 0.74rem;
   background: url(../assets/img/icon5.png) no-repeat 0.01rem center;
-  background-size: 3.15rem 0.74rem;
+  background-size: 3.15rem 100%;
   margin: 0.1rem auto;
   position: relative;
 }
-.box_title.box_title2{
-  height:0.94rem;
-  background-image: url(../assets/img/icon10.png);
+.box_title2 {
+  width: 3.3rem;
+  height: 0.94rem;
+  background: url(../assets/img/icon10.png) no-repeat 0.01rem center;
+  background-size: 3.15rem 100%;
+  margin: 0.1rem auto;
+  position: relative;
+}
+.box_title3 {
+  width: 3.3rem;
+  height: 1rem;
+  background: url(../assets/img/icon17.png) no-repeat 0.01rem center;
+  background-size: 3.15rem 100%;
+  margin: 0.1rem auto;
+  position: relative;
+}
+.box_title4 {
+  width: 3.3rem;
+  height: 1.3rem;
+  background: url(../assets/img/icon18.png) no-repeat 0.01rem center;
+  background-size: 3.15rem 100%;
+  margin: 0.1rem auto;
+  position: relative;
 }
 .box_num {
   position: absolute;
@@ -419,12 +394,14 @@ var spId = res.data.data.spId
   width: 0.18rem;
   height: 0.18rem;
 }
-.box_checkbox_group .van-checkbox--horizontal, .box_checkbox_group .van-radio--horizontal{
+.box_checkbox_group .van-checkbox--horizontal,
+.box_checkbox_group .van-radio--horizontal {
   width: 50%;
   margin: 0 0 0.12rem;
 }
 
-.box_checkbox_group .van-checkbox__icon .van-icon,.box_checkbox_group .van-radio__icon .van-icon {
+.box_checkbox_group .van-checkbox__icon .van-icon,
+.box_checkbox_group .van-radio__icon .van-icon {
   width: 0.18rem;
   height: 0.18rem;
   background: url(../assets/img/icon6.png) no-repeat center;
@@ -433,11 +410,13 @@ var spId = res.data.data.spId
   font-size: 0;
 }
 
-.box_checkbox_group .van-checkbox__icon--checked .van-icon,.box_checkbox_group .van-radio__icon--checked .van-icon {
+.box_checkbox_group .van-checkbox__icon--checked .van-icon,
+.box_checkbox_group .van-radio__icon--checked .van-icon {
   background: url(../assets/img/icon7.png) no-repeat center;
   background-size: 100%;
 }
-.box_checkbox_group .van-checkbox__label,.box_checkbox_group .van-radio__label {
+.box_checkbox_group .van-checkbox__label,
+.box_checkbox_group .van-radio__label {
   font-size: 0.13rem;
   color: #001a2f;
   margin-left: 0.05rem;
@@ -479,75 +458,89 @@ var spId = res.data.data.spId
 }
 .box_img {
   width: 0.35rem;
-  height: 0.28rem;
+  height: 0.3rem;
 }
 .box_em {
   text-align: center;
-  
-line-height: 0.15rem;
+
+  line-height: 0.15rem;
 }
 .box_i {
   padding: 0.1rem 0;
 }
-.box_div_textarea{
-  width:3rem;
-  min-height:1.5rem;
-  height:auto;
+.box_div_textarea {
+  width: 3rem;
+  min-height: 1.5rem;
+  height: auto;
   background: url(../assets/img/icon11.png) no-repeat center;
-  background-size:100% 100%;
+  background-size: 100% 100%;
   margin: 0 auto;
   position: relative;
+  padding-top: 0.2rem;
 }
-.box_div_textarea .van-cell{
+.box_div_textarea .van-cell {
   background: none;
 }
-.box_div_textarea .van-field__label{
-  color:#00569C;
-  margin-right:0;
-  width:0.7rem;
+.box_div_textarea .van-field__label {
+  color: #00569C;
+  margin-right: 0;
+  width: 0.7rem;
 }
-.box_div_textarea2{
-  margin-top:0.1rem;
+.box_div_textarea2 {
+  margin-top: 0.1rem;
 }
-.left_num{
+.left_num {
   position: absolute;
-  left:-0.12rem;
-  top:-0.12rem;
-  width:0.27rem;
-  height:0.25rem;
+  left: -0.12rem;
+  top: -0.12rem;
+  width: 0.27rem;
+  height: 0.25rem;
   background: url(../assets/img/icon16.png) no-repeat center;
   background-size: 100% 100%;
   text-align: center;
   line-height: 0.26rem;
-   font-size: 0.12rem;
+  font-size: 0.12rem;
   color: #fff;
   font-weight: bold;
 }
-.box_tip{
-  padding:0.15rem 0 0 0.15rem;
-  color:#00569C;
+.box_tip {
+  padding-left: 0.15rem;
+  color: #00569c;
   font-size: 0.14rem;
-  
 }
-.bottom_btn{
-  width:3rem;
-  height:0.45rem;
+.bottom_btn {
+  width: 3rem;
+  height: 0.45rem;
   margin: 0.2rem auto;
 }
 
-.left_btn{
-   width:1.25rem;
-height:0.45rem;
+.left_btn {
+  width: 1.25rem;
+  height: 0.45rem;
   float: left;
-background: url(../assets/img/last.png) no-repeat center;
-background-size: 100% 100%;
+  background: url(../assets/img/last.png) no-repeat center;
+  background-size: 100% 100%;
 }
-.right_btn{
-   width:1.25rem;
-height:0.45rem;
+.left_btn1 {
+  width: 1.25rem;
+  height: 0.45rem;
+  float: left;
+  background: url(../assets/img/last1.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.right_btn {
+  width: 1.25rem;
+  height: 0.45rem;
   float: right;
   background: url(../assets/img/next.png) no-repeat center;
-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.right_btn1 {
+  width: 1.25rem;
+  height: 0.45rem;
+  float: right;
+  background: url(../assets/img/next1.png) no-repeat center;
+  background-size: 100% 100%;
 }
 .van-dialog__message {
   font-size: 0.16rem;

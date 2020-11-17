@@ -37,7 +37,8 @@
     "cnThanks2":"我们会委托快递小哥将礼品寄送到您的手中",
     "enThanks1":"You have submitted successfully",
     "enThanks2":"thank you again for your feedback!",
-
+    "cnBtn":"开始问卷＞＞",
+    "enBtn":"Begin",
 
     "cn":{
         "SD1":"贵司目前与四维图新在地图方面合作的产品是以下哪些？（可多选）",
@@ -105,52 +106,52 @@
             "text":"I.其他"
         }],
         "answer2":[{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon1.png",
             "score":"5",
             "text":"非常满意"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon2.png",
             "score":"4",
             "text":"满意"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon3.png",
             "score":"3",
             "text":"一般"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon4.png",
             "score":"2",
             "text":"不满意"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon5.png",
             "score":"1",
             "text":"非常不满意"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon6.png",
             "score":"?",
             "text":"不清楚"
         }],
         "answer3":[{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon1.png",
             "score":"5",
             "text":"未发生过且非常满意"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon2.png",
             "score":"4",
             "text":"发生过且满意"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon3.png",
             "score":"3",
             "text":"未发生且一般"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon4.png",
             "score":"2",
             "text":"发生过且不满意"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon5.png",
             "score":"1",
             "text":"发生过且非常不满意"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon6.png",
             "score":"?",
             "text":"不清楚"
         }],
@@ -355,52 +356,52 @@
             "text":"I.Others"
         }],
         "answer2":[{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon1.png",
             "score":"5",
             "text":"Very Satisfied"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon2.png",
             "score":"4",
             "text":"Satisfied"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon3.png",
             "score":"3",
             "text":"Neutral"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon4.png",
             "score":"2",
             "text":"Dissatisfied"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon5.png",
             "score":"1",
             "text":"Very Dissatisfied"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon6.png",
             "score":"?",
             "text":"Not Clear"
         }],
         "answer3":[{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon1.png",
             "score":"5",
             "text":"No & Very satisfied"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon2.png",
             "score":"4",
             "text":"No & satisfied"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon3.png",
             "score":"3",
             "text":"No & Neutral"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon4.png",
             "score":"2",
             "text":"Yes & Dissatisfied"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon5.png",
             "score":"1",
             "text":"Yes & Very Dissatisfied"
         },{
-            "img":"../static/img/icon9.png",
+            "img":"../static/img/icon6.png",
             "score":"?",
             "text":"Not clear"
         }],

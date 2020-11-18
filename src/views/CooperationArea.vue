@@ -1,5 +1,5 @@
 <template>
-  <div id="area_wrap">
+  <div id="area_wrap" :class="[lanIdx==1?'area_cnbg':'area_enbg']">
     <div class="area_content">
       <h4 class="area_title">{{ dataList.title }}</h4>
       <div class="area_options" @click="chooseArea(1)">
@@ -42,9 +42,11 @@ export default {
       chooseFlag2: false,
       chooseFlag3: false,
       page: 1,
+      lanIdx:''
     };
   },
   created() {
+    this.lanIdx = this.$route.query.idx
     if (this.$route.query.idx == 1) {
       this.dataList = list.cnArea;
       this.btnText = list.cnBtn;
@@ -93,10 +95,18 @@ export default {
   top:0;
   left:0;
   width: 100%;
-  height:100%;
-  background: url(../assets/img/bg2.png) no-repeat;
-  background-size: 100% 100%;
+  height:100vh;
+  background-color: #0189F9;
 }
+.area_cnbg{
+  background: url(../assets/img/bg2.png) no-repeat top center;
+  background-size: 100% 6.2rem;
+}
+.area_enbg{
+  background: url(../assets/img/bg22.png) no-repeat top center;
+  background-size: 100% 6.2rem;
+}
+
 .area_content {
   width: 2.6rem;
   height: 3rem;

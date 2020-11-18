@@ -23,15 +23,16 @@ export default {
     left:0;
     top:0;
     width:100%;
-    height:100%;
+    height:100vh;
+    background-color: #229eff;
 }
 .cnbg{
-  background: url(../assets/img/cnthanks.jpg) no-repeat center;
-  background-size: 100% 100%;
+  background: url(../assets/img/cnthanks.jpg) no-repeat top center;
+  background-size: 100% 6.67rem;
 }
 .enbg{
-  background: url(../assets/img/enthanks.jpg) no-repeat center;
-  background-size: 100% 100%;
+  background: url(../assets/img/enthanks.jpg) no-repeat top center;
+  background-size: 100% 6.67rem;
 }
 .duihao_img{
 display: block;

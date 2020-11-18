@@ -87,6 +87,7 @@ export default {
       title:'',
       tip:'',
        dialogText:'',
+       errorMsg:'',
        dataList:{},
        iptPlace:'',
         suCompany:'',
@@ -106,6 +107,7 @@ telTip:''
       this.dialogText = list.cnDialog
       this.iptPlace = list.cn.answer12
       this.telTip = list.cnTel
+      this.errorMsg = list.cnErrorMsg
 
     }else if(this.$route.query.idx == 2){
       this.dataList = list.enPerlist
@@ -114,6 +116,7 @@ telTip:''
       this.dialogText = list.enDialog
       this.iptPlace = list.en.answer12
       this.telTip = list.enTel
+      this.errorMsg = list.enErrorMsg
     }
 
   },
@@ -147,6 +150,10 @@ telTip:''
      ).then((res)=>{
 if(res.data.code == 0){
   this.$router.push({path:'/thanks',query:{idx:this.$route.query.idx}})
+}else{
+  this.$dialog.alert({
+            message: this.errorMsg
+          });
 }
 
      })

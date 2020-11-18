@@ -38,7 +38,10 @@
     "enThanks1":"You have submitted successfully",
     "enThanks2":"thank you again for your feedback!",
     "cnBtn":"开始问卷＞＞",
-    "enBtn":"Begin",
+    "enBtn":"Begin＞＞",
+"cnErrorMsg":"不可以重复提交问卷",
+"enErrorMsg":"It is not allowed to submit the questionnaire repeatedly",
+    
 
     "cn":{
         "SD1":"贵司目前与四维图新在地图方面合作的产品是以下哪些？（可多选）",

@@ -18,7 +18,7 @@
             ]"
             @click="chooseLevel(item.score, 1)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -46,7 +46,7 @@
             ]"
             @click="chooseLevel(item.score, 2)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -74,7 +74,7 @@
             ]"
             @click="chooseLevel(item.score, 3)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -102,7 +102,7 @@
             ]"
             @click="chooseLevel(item.score, 4)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -130,7 +130,7 @@
             ]"
             @click="chooseLevel(item.score, 5)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -158,7 +158,7 @@
             ]"
             @click="chooseLevel(item.score, 6)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -186,7 +186,7 @@
             ]"
             @click="chooseLevel(item.score, 7)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -214,7 +214,7 @@
             ]"
             @click="chooseLevel(item.score, 8)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -242,7 +242,7 @@
             ]"
             @click="chooseLevel(item.score, 9)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -270,7 +270,7 @@
             ]"
             @click="chooseLevel(item.score, 10)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -298,7 +298,7 @@
             ]"
             @click="chooseLevel(item.score, 11)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -326,7 +326,7 @@
             ]"
             @click="chooseLevel(item.score, 12)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -354,7 +354,7 @@
             ]"
             @click="chooseLevel(item.score, 13)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -382,7 +382,7 @@
             ]"
             @click="chooseLevel(item.score, 14)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -410,7 +410,7 @@
             ]"
             @click="chooseLevel(item.score, 15)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -438,7 +438,7 @@
             ]"
             @click="chooseLevel(item.score, 16)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -495,7 +495,7 @@
             ]"
             @click="chooseLevel(item.score, 18)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>

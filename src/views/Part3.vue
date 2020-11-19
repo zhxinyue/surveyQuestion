@@ -18,7 +18,7 @@
             ]"
             @click="chooseLevel(item.score, 1)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>
@@ -46,7 +46,7 @@
             ]"
             @click="chooseLevel(item.score, 2)"
           >
-            <img :src="item.img" alt="" class="box_img" />
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
             <i class="box_i">{{ item.score }}</i>
             <em class="box_em">{{ item.text }}</em>
           </div>

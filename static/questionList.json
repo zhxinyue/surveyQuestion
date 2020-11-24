@@ -12,26 +12,26 @@
     "cnTitle2":"高精度地图",
     "enTitle2":"HD Map",
     "cnDialog":"您还没有完整填写，请继续完成！",
-    "enDialog":"You do not complete yet, please continue!",
+    "enDialog":"It has not been completed yet, please continue.",
     "cnPerTitle":"个人信息填写",
-    "enPerTitle":"personal information",
+    "enPerTitle":"Personal Information",
     "cnPerTip":"感谢您的反馈！请留下您的联系方式，我们会 为您寄送精美礼品哦~",
     "enPerTip":"Thanks for your feedback! If possible, please leave your information, thank you again~",
     "cnTel":"您输入的手机号不合法！",
     "enTel":"The mobile number you entered is not legal！",
     "cnPerlist":{
-        "suCompany":"公司名称：",
-        "suBumen":"部门名称：",
-        "suName":"姓名：",
-        "suTelephone":"联系电话：",
-        "suAddress":"邮寄地址："
+        "suCompany":"公司名称",
+        "suBumen":"部门名称",
+        "suName":"姓名",
+        "suTelephone":"手机号码",
+        "suAddress":"邮寄地址"
     },
     "enPerlist":{
-        "suCompany":"Company：",
-        "suBumen":"Dept.：",
-        "suName":"Name：",
-        "suTelephone":"Phone No.：",
-        "suAddress":"Address："
+        "suCompany":"Company",
+        "suBumen":"Dept.",
+        "suName":"Name",
+        "suTelephone":"Phone No.",
+        "suAddress":"Address"
     },
     "cnThanks1":"您已提交成功，再次感谢您的反馈！",
     "cnThanks2":"我们会委托快递小哥将礼品寄送到您的手中",
@@ -41,25 +41,26 @@
     "enBtn":"Begin＞＞",
 "cnErrorMsg":"不可以重复提交问卷",
 "enErrorMsg":"It is not allowed to submit the questionnaire repeatedly",
-    
+    "cnConfirm":"确认",
+    "enConfirm":"Continue",
 
     "cn":{
         "SD1":"贵司目前与四维图新在地图方面合作的产品是以下哪些？（可多选）",
-        "SD2":"您对四维图新导航地图数据在<i class='text_underline'>数据准确性</i>数据准确性方面满意程度如何？",
+        "SD2":"您对四维图新导航地图数据在<i class='text_underline'>数据准确性</i>方面满意程度如何？",
         "SD3":"您对四维图新导航地图数据在<i class='text_underline'>数据丰富度</i>方面满意程度如何？",
         "SD4":"在过去一年的导航地图项目合作中，是否发生过对贵司影响重大的<i class='text_underline'>数据品质</i>问题？满意程度如何？",
         "SD5":"在过去一年的项目合作中，贵司选择的<i class='text_underline'>数据更新频率</i>是多久？满意程度如何？",
         "SD6":"贵司是以什么形式接收地图产品的呢？对此您的满意程度如何？",
         "SD7":"您对四维图新地图产品<i class='text_underline'>在线服务发布的稳定性</i>的满意度如何？",
-        "SD8":"您对四维图新导航地图的<i class='text_underline'>产品交付及时性</i>方面的满意程度如何？",
+        "SD8":"您对四维图新导航地图的<i class='text_underline'>产品交付及时性</i>的满意程度如何？",
         "SD9":"您对四维图新导航地图的<i class='text_underline'>问联响应速度</i>的满意程度如何？",
         "SD10":"您对四维图新导航地图的<i class='text_underline'>问联答复内容</i>的满意程度如何？",
-        "SD11":"您对四维图新导航地图的<i class='text_underline'>现有质量体系</i>方面的满意程度如何？",
+        "SD11":"您对四维图新导航地图的<i class='text_underline'>现有质量管理体系</i>的满意程度如何？",
         "SD12":"在<i class='text_underline'>项目接洽</i>过程中，您对四维图新项目团队人员的满意程度如何？",
         "SD13":"在<i class='text_underline'>需求沟通</i>过程中，您对四维图新项目团队人员的满意程度如何？",
         "SD14":"在<i class='text_underline'>项目执行</i>过程中，您对四维图新项目团队人员的满意程度如何？",
         "SD15":"您认为四维图新的导航地图产品和服务在哪些方面值得认可？哪些方面还需要改进？",
-        "SD16":"与其他公司同类产品相比，您对四维图新产品的价格满意程度如何？",
+        "SD16":"与其他公司同类产品相比，您对四维图新导航地图产品及服务价格的满意程度如何？",
         "SD17":"您是否能够及时收到四维图新最新产品和服务信息？",
         "SD18":"您是通过以下哪些途径获得四维图新的最新产品和服务信息的？（可多选）",
         "SD19":"以下四维图新产品和服务中，您认为可能与贵司建立合作的领域有哪些？（可多选）",
@@ -70,25 +71,28 @@
         "HD4":"您对四维图新高精度地图的<i class='text_underline'>产品设计</i>的满意程度如何？",
         "HD5":"您对四维图新高精度地图的<i class='text_underline'>产品功能</i>的满意程度如何？",
         "HD6":"您对四维图新高精度地图的<i class='text_underline'>产品安全</i>的满意程度如何？",
-        "HD7":"您对四维图新高精度地图的<i class='text_underline'>产品交付及时性</i>方面的满意程度如何？",
-        "HD8":"您对四维图新高精度地图<i class='text_underline'>运维响应速度</i>方面的满意程度如何？",
-        "HD9":"您对四维图新高精度地图<i class='text_underline'>运维系统监控</i>方面的满意程度如何？",
-        "HD10":"您对四维图新高精度地图<i class='text_underline'>产品维护</i>更新方面的满意程度如何？",
-        "HD11":"您对四维图新高精度地图<i class='text_underline'>产品推送下载</i>方面的满意程度如何？",
+        "HD7":"您对四维图新高精度地图的<i class='text_underline'>产品交付及时性</i>的满意程度如何？",
+        "HD8":"您对四维图新高精度地图<i class='text_underline'>运维响应速度</i>的满意程度如何？",
+        "HD9":"您对四维图新高精度地图<i class='text_underline'>运维系统监控</i>的满意程度如何？",
+        "HD10":"您对四维图新高精度地图<i class='text_underline'>产品维护更新</i>的满意程度如何？",
+        "HD11":"您对四维图新高精度地图<i class='text_underline'>产品推送下载</i>的满意程度如何？",
         "HD12":"您对四维图新高精度地图项目团队的<i class='text_underline'>问联响应速度</i>的满意程度如何？",
-        "HD13":"您对四维图新高精度地图项目团队的<i class='text_underline'>问联答复</i>内容的满意程度如何？",
-        "HD14":"您对四维图新高精度地图的<i class='text_underline'>现有质量体系</i>方面的满意程度如何？",
-        "HD15":"您对四维图新高精度地图的<i class='text_underline'>质量体系改进</i>方面的满意程度如何？",
+        "HD13":"您对四维图新高精度地图项目团队的<i class='text_underline'>问联答复内容</i>的满意程度如何？",
+        "HD14":"您对四维图新高精度地图的<i class='text_underline'>现有质量管理体系</i>的满意程度如何？",
+        "HD15":"您对四维图新高精度地图的<i class='text_underline'>质量体系改进</i>的满意程度如何？",
         "HD19":"您认为四维图新的高精度地图产品和服务在哪些方面值得认可？哪些方面还需要改进？",
+        "HD20":"您对四维图新的<i class='text_underline'>现有质量管理体系</i>的满意程度如何？",
+        "HD21":"您对四维图新的<i class='text_underline'>质量体系改进</i>的满意程度如何？",
+        "HD22":"与其他公司同类产品相比，您对四维图新高精度地图产品及服务价格的满意程度如何？",
         "answer1":[{
             "name":"A",
-            "text":"A.日产品"
+            "text":"A.日更新地图产品"
         },{
             "name":"B",
             "text":"B.ADAS Map产品"
         },{
             "name":"C",
-            "text":"C.三维产品"
+            "text":"C.三维地图产品"
         },{
             "name":"D",
             "text":"D.停车场产品"
@@ -140,7 +144,7 @@
         },{
             "img":"imgicon2.png",
             "score":"4",
-            "text":"发生过且满意"
+            "text":"未发生过且满意"
         },{
             "img":"imgicon3.png",
             "score":"3",
@@ -330,30 +334,33 @@
         "HD14":"How satisfied are you with the current quality management system of NavInfo?",
         "HD15":"How satisfied are you with the improvement of quality management system of NavInfo?",
         "HD19":"What aspects of NavInfo HD map product do you think deserve being recognized? And what aspects need to be improved?",
+        "HD20":"How satisfied are you with the current quality management system of NavInfo?",
+        "HD21":"How satisfied are you with the improvement of quality management system of NavInfo?",
+        "HD22":"Compared with similar products of other companies, how satisfied are you with the price of NavInfo HD map product?",
         "answer1":[{
             "name":"A",
-            "text":"A.Daily Update Service"
+            "text":"A.Daily update service"
         },{
             "name":"B",
-            "text":"B.ADAS Map"
+            "text":"B.ADAS map"
         },{
             "name":"C",
-            "text":"C.3D Map"
+            "text":"C.3D map"
         },{
             "name":"D",
-            "text":"D.Parking Navigation Map"
+            "text":"D.Parking navigation map"
         },{
             "name":"E",
-            "text":"E.Charging Station&/Charging Pile"
+            "text":"E.Charging station&/Charging pile"
         },{
             "name":"F",
-            "text":"F.Vehicle Restriction Information Service"
+            "text":"F.Vehicle restriction information service"
         },{
             "name":"G",
-            "text":"G.Toll Cost Information Service"
+            "text":"G.Toll cost information service"
         },{
             "name":"H",
-            "text":"H.Construction Information Service"
+            "text":"H.Construction information service"
         },{
             "name":"I",
             "text":"I.Others"
@@ -361,7 +368,7 @@
         "answer2":[{
             "img":"imgicon1.png",
             "score":"5",
-            "text":"Very Satisfied"
+            "text":"Very satisfied"
         },{
             "img":"imgicon2.png",
             "score":"4",
@@ -377,32 +384,32 @@
         },{
             "img":"imgicon5.png",
             "score":"1",
-            "text":"Very Dissatisfied"
+            "text":"Very dissatisfied"
         },{
             "img":"imgicon6.png",
             "score":"?",
-            "text":"Not Clear"
+            "text":"Not clear"
         }],
         "answer3":[{
             "img":"imgicon1.png",
             "score":"5",
-            "text":"No & Very satisfied"
+            "text":"NO & Very satisfied"
         },{
             "img":"imgicon2.png",
             "score":"4",
-            "text":"No & satisfied"
+            "text":"NO & Satisfied"
         },{
             "img":"imgicon3.png",
             "score":"3",
-            "text":"No & Neutral"
+            "text":"NO & Neutral"
         },{
             "img":"imgicon4.png",
             "score":"2",
-            "text":"Yes & Dissatisfied"
+            "text":"YES & Dissatisfied"
         },{
             "img":"imgicon5.png",
             "score":"1",
-            "text":"Yes & Very Dissatisfied"
+            "text":"YES & Very dissatisfied"
         },{
             "img":"imgicon6.png",
             "score":"?",
@@ -410,7 +417,7 @@
         }],
         "answer4":[{
             "name":"A",
-            "text":"A.Quarterly Update"
+            "text":"A.Quarterly update"
         },{
             "name":"B",
             "text":"B.Monthly update"
@@ -423,13 +430,13 @@
         }],
         "answer5":[{
             "name":"A",
-            "text":"A.Data Packet"
+            "text":"A.Data packet"
         },{
             "name":"B",
-            "text":"B.Online Service"
+            "text":"B.Online service"
         },{
             "name":"C",
-            "text":"C.Data Packet+ Online Service"
+            "text":"C.Data packet + Online service"
         }],
         "answer6":[{
             "name":"A",
@@ -440,28 +447,28 @@
         }],
         "answer7":[{
             "name":"A",
-            "text":"A.Online Activity"
+            "text":"A.Online activity"
         },{
             "name":"B",
-            "text":"B.NavInfo Product Brochure"
+            "text":"B.NavInfo product brochure"
         },{
             "name":"C",
-            "text":"C.NavInfo Introduction PPT"
+            "text":"C.NavnIfo introduction PPT"
         },{
             "name":"D",
             "text":"D.NavInfo User Group"
         },{
             "name":"E",
-            "text":"E.NavInfo Product Event"
+            "text":"E.NavInfo product event"
         },{
             "name":"F",
-            "text":"F.Workshop/Tech Day"
+            "text":"F.Workshop/TechDay"
         },{
             "name":"G",
-            "text":"G.Visit Between Enterprises"
+            "text":"G.Visit between enterprises"
         },{
             "name":"H",
-            "text":"H.Professional Exhibition"
+            "text":"H.Professional exhibition"
         },{
             "name":"I",
             "text":"I.Newsletter"
@@ -470,59 +477,59 @@
             "text":"J.WeChat/Weibo"
         },{
             "name":"K",
-            "text":"K.3rd Party Media Channels"
+            "text":"K.3rd party media channels"
         },{
             "name":"L",
-            "text":"L.Account Manager Informed"
+            "text":"L.Account manager informed"
         },{
             "name":"M",
             "text":"M.Others"
         }],
         "answer8":[{
             "name":"A",
-            "text":"A.SD Map"
+            "text":"A.SD map"
         },{
             "name":"B",
-            "text":"B.Navigation Software"
+            "text":"B.Navigation software"
         },{
             "name":"C",
-            "text":"C.EV Smart Mobility Solution --EV Charger"
+            "text":"C.EV smart mobility solution --EV charger"
         },{
             "name":"D",
-            "text":"D.Passenger Vehicle Connected Vehicle Service"
+            "text":"D.Passenger vehicle connected vehicle service"
         },{
             "name":"E",
-            "text":"E.Commercial Vehicle Connected Vehicle Service"
+            "text":"E.Commercial vehicle connected vehicle service"
         },{
             "name":"F",
-            "text":"F.Dynamic Traffic Information"
+            "text":"F.Dynamic traffic information"
         },{
             "name":"G",
-            "text":"G.Location Big Data Platform"
+            "text":"G.Location big data platform"
         },{
             "name":"H",
-            "text":"H.Voice Product and Service"
+            "text":"H.Voice product and service"
         },{
             "name":"I",
-            "text":"I.ADAS Map"
+            "text":"I.ADAS map"
         },{
             "name":"J",
             "text":"J.ADASIS"
         },{
             "name":"K",
-            "text":"K.HD Map"
+            "text":"K.HD map"
         },{
             "name":"L",
-            "text":"L.Autonomous Driving System Solution"
+            "text":"L.Autonomous driving system solution"
         },{
             "name":"M",
-            "text":"M.Automatic Valet Parking Solution"
+            "text":"M.Automatic valet parking solution"
         },{
             "name":"N",
             "text":"N.Autonomous driving simulation"
         },{
             "name":"O",
-            "text":"O.V2X Solution"
+            "text":"O.V2X solution"
         },{
             "name":"P",
             "text":"P.HD-GNSS"
@@ -531,15 +538,15 @@
             "text":"Q.Integrated HD-Localization"
         },{
             "name":"R",
-            "text":"R.Automotive Chips"
+            "text":"R.Automotive chips"
         },{
             "name":"S",
             "text":"S.Others"
         }],
-        "answer9":"Being Recognized：",
-        "answer10":"To be Improved：",
-        "answer11":"Reasons &Cooperation Projects",
-        "answer12":"please enter"
+        "answer9":"Being recognized：",
+        "answer10":"To be improved：",
+        "answer11":"Reasons & Cooperation projects",
+        "answer12":"Please type..."
         
     }
 }

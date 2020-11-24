@@ -1,5 +1,5 @@
 <template>
-  <div id="question_wrap">
+  <div id="question_wrap" class="question3">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="question_content">
       <div class="question_title">Part1. {{ title }}</div>
@@ -45,7 +45,7 @@
             @click="chooseLevel(item.score, 2)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -73,7 +73,7 @@
             @click="chooseLevel(item.score, 3)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -101,7 +101,7 @@
             @click="chooseLevel(item.score, 4)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -150,7 +150,7 @@
             @click="chooseLevel(item.score, 5)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -192,7 +192,7 @@
             @click="chooseLevel(item.score, 6)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -220,7 +220,7 @@
             @click="chooseLevel(item.score, 7)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -248,7 +248,7 @@
             @click="chooseLevel(item.score, 8)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -276,7 +276,7 @@
             @click="chooseLevel(item.score, 9)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -304,7 +304,7 @@
             @click="chooseLevel(item.score, 10)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -333,7 +333,7 @@
             @click="chooseLevel(item.score, 11)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -361,7 +361,7 @@
             @click="chooseLevel(item.score, 12)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -389,7 +389,7 @@
             @click="chooseLevel(item.score, 13)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -442,7 +442,7 @@
             @click="chooseLevel(item.score, 15)"
           >
             <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            <i class="box_i">{{ item.score }}</i>
+            
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
@@ -481,6 +481,7 @@ export default {
       lanIdx: "",
       title: "",
       dialogText: "",
+      confirmTxt:"",
       result1: [],
       activeIcon: require("../assets/img/icon7.png"),
       inactiveIcon: require("../assets/img/icon6.png"),
@@ -555,10 +556,12 @@ export default {
       this.dataList = list.cn;
       this.title = list.cnTitle1;
       this.dialogText = list.cnDialog;
+      this.confirmTxt = list.cnConfirm
     } else if (this.$route.query.idx == 2) {
       this.dataList = list.en;
       this.title = list.enTitle1;
       this.dialogText = list.enDialog;
+      this.confirmTxt = list.enConfirm
     }
   },
   methods: {
@@ -588,6 +591,7 @@ export default {
       ) {
         this.$dialog.alert({
           message: this.dialogText,
+          confirmButtonText:this.confirmTxt
         });
         return;
       }
@@ -610,6 +614,7 @@ export default {
       ) {
         this.$dialog.alert({
           message: this.dialogText,
+          confirmButtonText:this.confirmTxt
         });
         return;
       }
@@ -866,7 +871,6 @@ export default {
   text-indent: 0.1rem;
 }
 .text_underline {
-  padding-bottom: 0.01rem;
   border-bottom: 0.01rem solid #000;
 }
 .box_div {
@@ -877,7 +881,6 @@ export default {
 }
 .box_options {
   flex: 1;
-  height: 1rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -890,6 +893,7 @@ export default {
 .box_img {
   width: 0.35rem;
   height: 0.3rem;
+  margin-bottom: 0.1rem;
 }
 .box_em {
   text-align: center;
@@ -941,28 +945,28 @@ export default {
   margin: 0.2rem auto;
 }
 
-.left_btn {
+.question3 .left_btn {
   width: 1.25rem;
   height: 0.45rem;
   float: left;
   background: url(../assets/img/last.png) no-repeat center;
   background-size: 100% 100%;
 }
-.left_btn1 {
+.question3 .left_btn1 {
   width: 1.25rem;
   height: 0.45rem;
   float: left;
   background: url(../assets/img/last1.png) no-repeat center;
   background-size: 100% 100%;
 }
-.right_btn {
+.question3 .right_btn {
   width: 1.25rem;
   height: 0.45rem;
   float: right;
   background: url(../assets/img/next.png) no-repeat center;
   background-size: 100% 100%;
 }
-.right_btn1 {
+.question3 .right_btn1 {
   width: 1.25rem;
   height: 0.45rem;
   float: right;

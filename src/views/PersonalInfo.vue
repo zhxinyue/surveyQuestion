@@ -1,5 +1,5 @@
 <template>
-  <div id="personal_wrap">
+  <div id="personal_wrap" class="personal">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="personal_content">
       <div class="personal_title">{{title}}</div>
@@ -10,55 +10,42 @@
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          {{dataList.suCompany}}<img
-            src="../assets/img/icon14.png"
-            alt=""
-            class="img_star"
-          />
+          {{dataList.suCompany}}
+          <i style="color:red">*</i> ：
+         
         </div>
         <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suCompany"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          {{dataList.suBumen}}<img
-            src="../assets/img/icon14.png"
-            alt=""
-            class="img_star"
-          />
+          {{dataList.suBumen}}
+           <i style="color:red">*</i> ：
+          
         </div>
         <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suBumen"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          {{dataList.suName}}<img
-            src="../assets/img/icon14.png"
-            alt=""
-            class="img_star"
-          />
+          {{dataList.suName}}
+           <i style="color:red">*</i> ：
         </div>
         <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suName"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          {{dataList.suTelephone}}<img
-            src="../assets/img/icon14.png"
-            alt=""
-            class="img_star"
-          />
+          {{dataList.suTelephone}}
+          <i style="color:red">*</i> ：
         </div>
         <input type="number" class="box_dec" :placeholder="iptPlace" v-model="suTelephone"/>
       </div>
       <div class="personal_box">
         <div class="input_title">
           <img src="../assets/img/icon13.png" alt="" class="img_pos" />
-          {{dataList.suAddress}}<img
-            src="../assets/img/icon14.png"
-            alt=""
-            class="img_star"
-          />
+          {{dataList.suAddress}}
+           <i style="color:red">*</i> ：
         </div>
         <input type="text" class="box_dec" :placeholder="iptPlace" v-model="suAddress"/>
       </div>
@@ -95,7 +82,8 @@ export default {
         suName:'',
         suTelephone:'',
         suAddress:'',
-telTip:''
+telTip:'',
+confirmTxt:""
     };
   },
   created(){
@@ -108,6 +96,7 @@ telTip:''
       this.iptPlace = list.cn.answer12
       this.telTip = list.cnTel
       this.errorMsg = list.cnErrorMsg
+      this.confirmTxt = list.cnConfirm
 
     }else if(this.$route.query.idx == 2){
       this.dataList = list.enPerlist
@@ -117,6 +106,7 @@ telTip:''
       this.iptPlace = list.en.answer12
       this.telTip = list.enTel
       this.errorMsg = list.enErrorMsg
+      this.confirmTxt = list.enConfirm
     }
 
   },
@@ -128,16 +118,22 @@ telTip:''
       if(this.suCompany=='' || this.suBumen=='' ||this.suName=='' ||this.suTelephone=='' ||this.suAddress==''){
         this.$dialog.alert({
             message: this.dialogText,
+            confirmButtonText:this.confirmTxt
           });
           return;
       }
-       var phone = Number(this.suTelephone)
-      if(!(/^[1][3,4,5,6,7,8][0-9]{9}$/.test(phone))){ 
+ var phone = Number(this.suTelephone)
+      if(this.$route.query.idx == 1){
+        if(!(/^[1][3,4,5,6,7,8][0-9]{9}$/.test(phone))){ 
         this.$dialog.alert({
             message: this.telTip,
+            confirmButtonText:this.confirmTxt
           });
           return;
       }
+      }
+      
+      
       this.$ajax.post('http://qa.travbao.com/goabraod/trav/writeAnswerUser.do',
      {
        suCompany:this.suCompany,
@@ -152,7 +148,8 @@ if(res.data.code == 0){
   this.$router.push({path:'/thanks',query:{idx:this.$route.query.idx}})
 }else{
   this.$dialog.alert({
-            message: this.errorMsg
+            message: this.errorMsg,
+            confirmButtonText:this.confirmTxt
           });
 }
 
@@ -261,28 +258,28 @@ if(res.data.code == 0){
   margin: 0.2rem auto;
 }
 
-.left_btn {
+.personal .left_btn {
   width: 1.25rem;
   height: 0.45rem;
   float: left;
   background: url(../assets/img/last.png) no-repeat center;
   background-size: 100% 100%;
 }
-.left_btn1 {
+.personal .left_btn1 {
   width: 1.25rem;
   height: 0.45rem;
   float: left;
   background: url(../assets/img/last1.png) no-repeat center;
   background-size: 100% 100%;
 }
-.right_btn {
+.personal .right_btn {
   width: 1.25rem;
   height: 0.45rem;
   float: right;
   background: url(../assets/img/confirm.png) no-repeat center;
   background-size: 100% 100%;
 }
-.right_btn1 {
+.personal .right_btn1 {
   width: 1.25rem;
   height: 0.45rem;
   float: right;

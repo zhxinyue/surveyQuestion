@@ -970,6 +970,10 @@ export default {
   width: 0.18rem;
   height: 0.18rem;
 }
+.box_checkbox_group .van-checkbox{
+-webkit-align-items: stretch;
+    align-items: stretch;
+}
 .box_checkbox_group .van-checkbox--horizontal,
 .box_checkbox_group .van-radio--horizontal {
   width: 50%;
@@ -1028,7 +1032,7 @@ export default {
   color: #001a2f;
 }
 .box_options_on {
-  color: #00569c;
+  color: #005aff;
 }
 .box_img {
   width: 0.35rem;

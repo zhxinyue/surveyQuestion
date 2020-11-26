@@ -883,7 +883,10 @@ export default {
   width: 50%;
   margin: 0 0 0.12rem;
 }
-
+.box_checkbox_group .van-checkbox{
+-webkit-align-items: stretch;
+    align-items: stretch;
+}
 .box_checkbox_group .van-checkbox__icon .van-icon,
 .box_checkbox_group .van-radio__icon .van-icon {
   width: 0.18rem;
@@ -936,7 +939,7 @@ export default {
   color: #001a2f;
 }
 .box_options_on {
-  color: #00569c;
+  color: #005aff;
 }
 .box_img {
   width: 0.35rem;

@@ -30,6 +30,7 @@
           v-if="causeFlag1"
           v-model="inputVal1"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
@@ -766,6 +767,7 @@ export default {
       optionVal20: "",
       optionVal22: "",
       optionVal23: "",
+      emptyFlag:false,
     };
   },
   created() {
@@ -813,6 +815,7 @@ export default {
         this.optionVal22 == "" ||
         this.optionVal23 == ""
       ) {
+        this.emptyFlag = true
         this.$dialog.alert({
           message: this.dialogText,
           confirmButtonText:this.confirmTxt
@@ -843,6 +846,7 @@ export default {
         (this.causeFlag22 && this.inputVal22 == "") ||
         (this.causeFlag23 && this.inputVal23 == "")
       ) {
+        this.emptyFlag = true
         this.$dialog.alert({
           message: this.dialogText,
           confirmButtonText:this.confirmTxt
@@ -1109,14 +1113,14 @@ export default {
   line-height: 0.34rem;
   font-size: 0.14rem;
   color: #00569c;
-  margin: 0 auto;
+  margin: 0 auto 0.05rem;
   border: none;
   background: url(../assets/img/icon8.png) no-repeat;
   background-size: 100%;
   text-indent: 0.1rem;
 }
 .text_underline {
-  border-bottom: 0.01rem solid #000;
+  border-bottom: 0.005rem solid #000;
 }
 .box_div {
   width: 3.3rem;
@@ -1252,6 +1256,12 @@ export default {
 .circle.circle4{
   bottom: -0.06rem;
   left:-0.06rem;
+}
+.errortip{
+      width: 3rem;
+    margin: 0 auto;
+  color:red;
+font-size: 0.14rem;
 }
 </style>
 

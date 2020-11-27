@@ -17,8 +17,8 @@
     "enPerTitle":"Personal Information",
     "cnPerTip":"感谢您的反馈！请留下您的联系方式，我们会 为您寄送精美礼品哦~",
     "enPerTip":"Thanks for your feedback! If possible, please leave your information, thank you again~",
-    "cnTel":"您输入的手机号不合法！",
-    "enTel":"The mobile number you entered is not legal！",
+    "cnTel":"请填写正确手机号码",
+    "enTel":"Please enter phone number in correct format",
     "cnPerlist":{
         "suCompany":"公司名称",
         "suBumen":"部门名称",
@@ -43,6 +43,8 @@
 "enErrorMsg":"It is not allowed to submit the questionnaire repeatedly",
     "cnConfirm":"确认",
     "enConfirm":"Continue",
+"cnSelect":"请选择合作领域",
+"enSelect":"Please choose the cooperate area",
 
     "cn":{
         "SD1":"贵司目前与四维图新在地图方面合作的产品是以下哪些？（可多选）",
@@ -313,7 +315,7 @@
         "SD13":"During the requirement communication process, how satisfied are you with the project team of NavInfo?",
         "SD14":"During project execution process, how satisfied are you with the project team of NavInfo?",
         "SD15":"What aspects of NavInfo navigation map product do you think deserve being recognized? And what aspects need to be improved?",
-        "SD16":"Compare with similar products of other companies, how satisfied are you with the price of NavInfo’s navigation map product?",
+        "SD16":"Compared with similar products of other companies, how satisfied are you with the price of NavInfo’s navigation map product?",
         "SD17":"Do you think it is timely to receive the latest product and service information of NavInfo?",
         "SD18":"How do you get the latest product and service information of NavInfo? (Multiple choice)",
         "SD19":"Which of the following NavInfo products and services do you think would establish cooperation with your company?(Multiple choice)",
@@ -351,7 +353,7 @@
             "text":"D.Parking navigation map"
         },{
             "name":"E",
-            "text":"E.Charging station&/Charging pile"
+            "text":"E.Charging station&Charging pile"
         },{
             "name":"F",
             "text":"F.Vehicle restriction information service"

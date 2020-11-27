@@ -38,11 +38,13 @@ export default {
     return {
       dataList: [],
       btnText: "",
-      chooseFlag1: true,
+      chooseFlag1: false,
       chooseFlag2: false,
       chooseFlag3: false,
       page: 1,
-      lanIdx:''
+      lanIdx:'',
+      dialogText:"",
+      confirmTxt:""
     };
   },
   created() {
@@ -50,9 +52,13 @@ export default {
     if (this.$route.query.idx == 1) {
       this.dataList = list.cnArea;
       this.btnText = list.cnBtn;
+      this.dialogText = list.cnSelect
+      this.confirmTxt = list.cnConfirm
     } else if (this.$route.query.idx == 2) {
       this.dataList = list.enArea;
       this.btnText = list.enBtn;
+      this.dialogText = list.enSelect
+      this.confirmTxt = list.enConfirm
     }
   },
   methods: {
@@ -80,6 +86,13 @@ export default {
       }
     },
     nextStep() {
+      if(!this.chooseFlag1&&!this.chooseFlag2&&!this.chooseFlag2){
+        this.$dialog.alert({
+          message: this.dialogText,
+          confirmButtonText:this.confirmTxt
+        });
+        return
+      }
       this.$router.push({
         path: "/question" + this.page,
         query: { idx: this.$route.query.idx },

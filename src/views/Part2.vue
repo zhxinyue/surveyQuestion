@@ -6,7 +6,7 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">01</span>
-          <div class="box_text" v-html="dataList.HD1"></div>
+          <div class="box_text" v-html="dataList.HD1" :style="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == '')) ? 'color: red' : 'color:#000'"></div>
         </div>
         <div class="box_div">
           <div
@@ -30,11 +30,12 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag1"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">02</span>
-          <div class="box_text" v-html="dataList.HD2"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal2=='') || (emptyFlag && (causeFlag2 && inputVal2 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD2"></div>
         </div>
         <div class="box_div">
           <div
@@ -58,11 +59,12 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag2"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal2=='') || (emptyFlag && (causeFlag2 && inputVal2 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title2' : 'box_title4']">
           <span class="box_num">03</span>
-          <div class="box_text" v-html="dataList.HD3"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal3=='') || (emptyFlag && (causeFlag3 && inputVal3 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD3"></div>
         </div>
         <div class="box_div">
           <div
@@ -86,11 +88,12 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag3"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal3=='') || (emptyFlag && (causeFlag3 && inputVal3 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">04</span>
-          <div class="box_text" v-html="dataList.HD4"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD4"></div>
         </div>
         <div class="box_div">
           <div
@@ -114,11 +117,12 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag4"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">05</span>
-          <div class="box_text" v-html="dataList.HD5"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal5=='') || (emptyFlag && (causeFlag5 && inputVal5 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD5"></div>
         </div>
         <div class="box_div">
           <div
@@ -142,11 +146,12 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag5"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal5=='') || (emptyFlag && (causeFlag5 && inputVal5 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">06</span>
-          <div class="box_text" v-html="dataList.HD6"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal6=='') || (emptyFlag && (causeFlag6 && inputVal6 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD6"></div>
         </div>
         <div class="box_div">
           <div
@@ -170,11 +175,12 @@
           v-if="causeFlag6"
           v-model="inputVal6"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal6=='') || (emptyFlag && (causeFlag6 && inputVal6 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">07</span>
-          <div class="box_text" v-html="dataList.HD7"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal7=='') || (emptyFlag && (causeFlag7 && inputVal7 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD7"></div>
         </div>
         <div class="box_div">
           <div
@@ -198,11 +204,12 @@
           v-if="causeFlag7"
           v-model="inputVal7"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal7=='') || (emptyFlag && (causeFlag7 && inputVal7 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">08</span>
-          <div class="box_text" v-html="dataList.HD8"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal8=='') || (emptyFlag && (causeFlag8 && inputVal8 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD8"></div>
         </div>
         <div class="box_div">
           <div
@@ -226,11 +233,12 @@
           v-if="causeFlag8"
           v-model="inputVal8"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal8=='') || (emptyFlag && (causeFlag8 && inputVal8 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">09</span>
-          <div class="box_text" v-html="dataList.HD9"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal9=='') || (emptyFlag && (causeFlag9 && inputVal9 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD9"></div>
         </div>
         <div class="box_div">
           <div
@@ -254,11 +262,12 @@
           v-if="causeFlag9"
           v-model="inputVal9"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal9=='') || (emptyFlag && (causeFlag9 && inputVal9 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">10</span>
-          <div class="box_text" v-html="dataList.HD10"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal10=='') || (emptyFlag && (causeFlag10 && inputVal10 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD10"></div>
         </div>
         <div class="box_div">
           <div
@@ -282,11 +291,12 @@
           v-if="causeFlag10"
           v-model="inputVal10"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal10=='') || (emptyFlag && (causeFlag10 && inputVal10 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">11</span>
-          <div class="box_text" v-html="dataList.HD11"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal11=='') || (emptyFlag && (causeFlag11 && inputVal11 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD11"></div>
         </div>
         <div class="box_div">
           <div
@@ -310,11 +320,12 @@
           v-if="causeFlag11"
           v-model="inputVal11"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal11=='') || (emptyFlag && (causeFlag11 && inputVal11 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">12</span>
-          <div class="box_text" v-html="dataList.HD12"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal12=='') || (emptyFlag && (causeFlag12 && inputVal12 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD12"></div>
         </div>
         <div class="box_div">
           <div
@@ -338,11 +349,12 @@
           v-if="causeFlag12"
           v-model="inputVal12"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal12=='') || (emptyFlag && (causeFlag12 && inputVal12 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">13</span>
-          <div class="box_text" v-html="dataList.HD13"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal13=='') || (emptyFlag && (causeFlag13 && inputVal13 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD13"></div>
         </div>
         <div class="box_div">
           <div
@@ -366,11 +378,12 @@
           v-if="causeFlag13"
           v-model="inputVal13"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal13=='') || (emptyFlag && (causeFlag13 && inputVal13 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">14</span>
-          <div class="box_text" v-html="dataList.SD12"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal14=='') || (emptyFlag && (causeFlag14 && inputVal14 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.SD12"></div>
         </div>
         <div class="box_div">
           <div
@@ -394,11 +407,12 @@
           v-if="causeFlag14"
           v-model="inputVal14"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal14=='') || (emptyFlag && (causeFlag14 && inputVal14 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">15</span>
-          <div class="box_text" v-html="dataList.SD13"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal15=='') || (emptyFlag && (causeFlag15 && inputVal15 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.SD13"></div>
         </div>
         <div class="box_div">
           <div
@@ -422,11 +436,12 @@
           v-if="causeFlag15"
           v-model="inputVal15"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal15=='') || (emptyFlag && (causeFlag15 && inputVal15 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">16</span>
-          <div class="box_text" v-html="dataList.SD14"></div>
+          <div class="box_text" :style="(emptyFlag && optionVal16=='') || (emptyFlag && (causeFlag16 && inputVal16 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.SD14"></div>
         </div>
         <div class="box_div">
           <div
@@ -450,11 +465,12 @@
           v-if="causeFlag16"
           v-model="inputVal16"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal16=='') || (emptyFlag && (causeFlag16 && inputVal16 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">17</span>
-          <div class="box_text">
+          <div class="box_text" :style="(emptyFlag && recognizedMsg17=='') || (emptyFlag && improvedMsg17=='') ? 'color: red' : 'color:#000'">
             {{ dataList.HD19 }}
           </div>
         </div>
@@ -476,12 +492,13 @@
             :placeholder="dataList.answer12"
           />
         </div>
+        <div class="errortip" v-if="(emptyFlag && recognizedMsg17=='') || (emptyFlag && improvedMsg17=='')" style="margin-top:0.05rem">该选项为必填项</div>
       </div>
 
       <div class="question_box question_box_nobor">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">18</span>
-          <div class="box_text">
+          <div class="box_text" :style="(emptyFlag && optionVal18=='') || (emptyFlag && (causeFlag18 && inputVal18 == '')) ? 'color: red' : 'color:#000'">
             {{ dataList.HD22 }}
           </div>
         </div>
@@ -507,6 +524,7 @@
           v-if="causeFlag18"
           v-model="inputVal18"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal18=='') || (emptyFlag && (causeFlag18 && inputVal18 == ''))">该选项为必填项</div>
       </div>
       <span class="circle circle1"></span>
     <span class="circle circle2"></span>
@@ -609,6 +627,7 @@ export default {
       optionVal16: "",
       optionVal17: "",
       optionVal18: "",
+      emptyFlag:false,
     };
   },
   created() {
@@ -651,6 +670,7 @@ export default {
         this.improvedMsg17 == "" ||
         this.optionVal18 == ""
       ) {
+        this.emptyFlag = true
         this.$dialog.alert({
           message: this.dialogText,
           confirmButtonText:this.confirmTxt
@@ -676,67 +696,69 @@ export default {
         (this.causeFlag16 && this.inputVal16 == "") ||
         (this.causeFlag18 && this.inputVal18 == "")
       ) {
+        this.emptyFlag = true
         this.$dialog.alert({
           message: this.dialogText,
           confirmButtonText:this.confirmTxt
         });
         return;
       }
-      this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
-      this.optionVal2 = this.optionVal2 + "" + this.inputVal2;
-      this.optionVal3 = this.optionVal3 + "" + this.inputVal3;
-      this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
-      this.optionVal5 = this.optionVal5 + "" + this.inputVal5;
-      this.optionVal6 = this.optionVal6 + "" + this.inputVal6;
-      this.optionVal7 = this.optionVal7 + "" + this.inputVal7;
-      this.optionVal8 = this.optionVal8 + "" + this.inputVal8;
-      this.optionVal9 = this.optionVal9 + "" + this.inputVal9;
-      this.optionVal10 = this.optionVal10 + "" + this.inputVal10;
-      this.optionVal11 = this.optionVal11 + "" + this.inputVal11;
-      this.optionVal12 = this.optionVal12 + "" + this.inputVal12;
-      this.optionVal13 = this.optionVal13 + "" + this.inputVal13;
-      this.optionVal14 = this.optionVal14 + "" + this.inputVal14;
-      this.optionVal15 = this.optionVal15 + "" + this.inputVal15;
-      this.optionVal16 = this.optionVal16 + "" + this.inputVal16;
-      this.optionVal17 = this.recognizedMsg17 + "," + this.improvedMsg17;
-      this.optionVal18 = this.optionVal18 + "" + this.inputVal18;
-
-      var str =
-        this.optionVal1 +
+     
+var val1 = this.optionVal1 + "" + this.inputVal1,
+          val2 = this.optionVal2 + "" + this.inputVal2,
+          val3 = this.optionVal3 + "" + this.inputVal3,
+          val4 = this.optionVal4 + "" + this.inputVal4,
+          val5 = this.optionVal5 + "" + this.inputVal5,
+          val6 = this.optionVal6 + "" + this.inputVal6,
+          val7 = this.optionVal7 + "" + this.inputVal7,
+          val8 = this.optionVal8 + "" + this.inputVal8,
+          val9 = this.optionVal9 + "" + this.inputVal9,
+          val10 = this.optionVal10 + "" + this.inputVal10,
+          val11 = this.optionVal11 + "" + this.inputVal11,
+          val12 = this.optionVal12 + "" + this.inputVal12,
+          val13 = this.optionVal13 + "" + this.inputVal13,
+          val14 = this.optionVal14 + "" + this.inputVal14,
+          val15 = this.optionVal15 + "" + this.inputVal15,
+          val16 = this.optionVal16 + "" + this.inputVal16,
+          val17 = this.recognizedMsg17 + "," + this.improvedMsg17,
+          val18 = this.optionVal18 + "" + this.inputVal18
+          var str =
+        val1 +
         "-" +
-        this.optionVal2 +
+        val2 +
         "-" +
-        this.optionVal3 +
+        val3 +
         "-" +
-        this.optionVal4 +
+        val4 +
         "-" +
-        this.optionVal5 +
+        val5 +
         "-" +
-        this.optionVal6 +
+        val6 +
         "-" +
-        this.optionVal7 +
+        val7 +
         "-" +
-        this.optionVal8 +
+        val8 +
         "-" +
-        this.optionVal9 +
+        val9 +
         "-" +
-        this.optionVal10 +
+        val10 +
         "-" +
-        this.optionVal11 +
+        val11 +
         "-" +
-        this.optionVal12 +
+        val12 +
         "-" +
-        this.optionVal13 +
+        val13 +
         "-" +
-        this.optionVal14 +
+        val14 +
         "-" +
-        this.optionVal15 +
+        val15 +
         "-" +
-        this.optionVal16 +
+        val16 +
         "-" +
-        this.optionVal17 +
+        val17 +
         "-" +
-        this.optionVal18;
+        val18 ;
+     
       console.log(str);
       this.$ajax
         .post("http://qa.travbao.com/goabraod/trav/writeAnswer.do", {
@@ -758,6 +780,7 @@ export default {
       var onindex = "activeIndex" + num;
       var onflag = "causeFlag" + num;
       var opval = "optionVal" + num;
+      var iptval = "inputVal" + num
       this[onindex] = idx;
       this[opval] = idx;
       if (idx == 0) {
@@ -767,6 +790,7 @@ export default {
         this[onflag] = true;
       } else {
         this[onflag] = false;
+        this[iptval] = ''
       }
     },
   },
@@ -915,7 +939,7 @@ export default {
   line-height: 0.34rem;
   font-size: 0.14rem;
   color: #00569c;
-  margin: 0 auto;
+  margin: 0 auto 0.05rem;
   border: none;
   background: url(../assets/img/icon8.png) no-repeat;
   background-size: 100%;
@@ -1054,6 +1078,12 @@ export default {
 .circle.circle4{
   bottom: -0.06rem;
   left:-0.06rem;
+}
+.errortip{
+      width: 3rem;
+    margin: 0 auto;
+  color:red;
+font-size: 0.14rem;
 }
 </style>
 

@@ -771,70 +771,69 @@ export default {
         });
         return;
       }
-      this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
-      this.optionVal2 = this.optionVal2 + "" + this.inputVal2;
-      this.optionVal3 = this.optionVal3 + "" + this.inputVal3;
-      this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
-      this.question5 =
-        this.radioValue5 +
+
+var val1 = this.optionVal1 + "" + this.inputVal1,
+          val2 = this.optionVal2 + "" + this.inputVal2,
+          val3 = this.optionVal3 + "" + this.inputVal3,
+          val4 = this.optionVal4 + "" + this.inputVal4,
+          val5 =  this.radioValue5 +
         "" +
         this.radioVal5 +
         "," +
         this.optionVal5 +
         "" +
-        this.inputVal5;
-      this.optionVal6 = this.optionVal6 + "" + this.inputVal6;
-      this.optionVal7 = this.optionVal7 + "" + this.inputVal7;
-      this.optionVal8 = this.optionVal8 + "" + this.inputVal8;
-      this.optionVal9 = this.optionVal9 + "" + this.inputVal9;
-      this.optionVal10 = this.optionVal10 + "" + this.inputVal10;
-      this.optionVal11 = this.optionVal11 + "" + this.inputVal11;
-      this.optionVal12 = this.optionVal12 + "" + this.inputVal12;
-      this.optionVal13 = this.optionVal13 + "" + this.inputVal13;
-      this.optionVal14 = this.optionVal14 + "" + this.inputVal14;
-      this.optionVal15 = this.recognizedMsg15 + "," + this.improvedMsg15;
-      this.optionVal16 = this.optionVal16 + "" + this.inputVal16;
-      this.optionVal18 = this.optionVal18 + "" + this.inputVal18;
-      this.optionVal19 = this.optionVal19 + "" + this.inputVal19;
-
+        this.inputVal5,
+          val6 = this.optionVal6 + "" + this.inputVal6,
+          val7 = this.optionVal7 + "" + this.inputVal7,
+          val8 = this.optionVal8 + "" + this.inputVal8,
+          val9 = this.optionVal9 + "" + this.inputVal9,
+          val10 = this.optionVal10 + "" + this.inputVal10,
+          val11 = this.optionVal11 + "" + this.inputVal11,
+          val12 = this.optionVal12 + "" + this.inputVal12,
+          val13 = this.optionVal13 + "" + this.inputVal13,
+          val14 = this.optionVal14 + "" + this.inputVal14,
+          val15 = this.recognizedMsg15 + "," + this.improvedMsg15,
+          val16 = this.optionVal16 + "" + this.inputVal16,
+          val18 = this.optionVal18 + "" + this.inputVal18,
+          val19 = this.optionVal19 + "" + this.inputVal19
       var str =
-        this.optionVal1 +
+        val1 +
         "-" +
-        this.optionVal2 +
+        val2 +
         "-" +
-        this.optionVal3 +
+        val3 +
         "-" +
-        this.optionVal4 +
+        val4 +
         "-" +
-        this.question5 +
+        val5 +
         "-" +
-        this.optionVal6 +
+        val6 +
         "-" +
-        this.optionVal7 +
+        val7 +
         "-" +
-        this.optionVal8 +
+        val8 +
         "-" +
-        this.optionVal9 +
+        val9 +
         "-" +
-        this.optionVal10 +
+        val10 +
         "-" +
-        this.optionVal11 +
+        val11 +
         "-" +
-        this.optionVal12 +
+        val12 +
         "-" +
-        this.optionVal13 +
+        val13 +
         "-" +
-        this.optionVal14 +
+        val14 +
         "-" +
-        this.optionVal15 +
+        val15 +
         "-" +
-        this.optionVal16 +
+        val16 +
         "-" +
         this.radioValue17 +
         "-" +
-        this.optionVal18 +
+        val18 +
         "-" +
-        this.optionVal19 +
+        val19 +
         "-" +
         this.message20;
       console.log(str);
@@ -857,10 +856,12 @@ export default {
       var arr = "result" + idx;
       var onflag = "causeFlag" + idx;
       var opval = "optionVal" + idx;
+       var iptval = "inputVal" + idx
       if (this[arr].indexOf(option) != -1) {
         this[onflag] = true;
       } else {
         this[onflag] = false;
+        this[iptval] = ''
       }
       this[opval] = this[arr].join(",");
     },
@@ -875,6 +876,7 @@ export default {
       var onindex = "activeIndex" + num;
       var onflag = "causeFlag" + num;
       var opval = "optionVal" + num;
+      var iptval = "inputVal" + num
       this[onindex] = idx;
       this[opval] = idx;
       if (idx == 0) {
@@ -884,6 +886,7 @@ export default {
         this[onflag] = true;
       } else {
         this[onflag] = false;
+        this[iptval] = ''
       }
     },
   },

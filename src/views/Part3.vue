@@ -6,7 +6,7 @@
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">01</span>
-          <div class="box_text" v-html="dataList.HD20"></div>
+          <div class="box_text" v-html="dataList.HD20" :style="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == '')) ? 'color: red' : 'color:#000'"></div>
         </div>
         <div class="box_div">
           <div
@@ -30,11 +30,12 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag1"
         />
+         <div class="errortip" v-if="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">02</span>
-          <div class="box_text" v-html="dataList.HD21"></div>
+          <div class="box_text" v-html="dataList.HD21" :style="(emptyFlag && optionVal2=='') || (emptyFlag && (causeFlag2 && inputVal2 == '')) ? 'color: red' : 'color:#000'"></div>
         </div>
         <div class="box_div">
           <div
@@ -58,11 +59,12 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag2"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal2=='') || (emptyFlag && (causeFlag2 && inputVal2 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div class="box_title">
           <span class="box_num">03</span>
-          <div class="box_text">
+          <div class="box_text" :style="(emptyFlag && radioValue3=='')? 'color: red' : 'color:#000'">
             {{ dataList.SD17 }}
           </div>
         </div>
@@ -78,11 +80,12 @@
             >{{ item.text }}</van-radio
           >
         </van-radio-group>
+        <div class="errortip" v-if="emptyFlag && radioValue3==''">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
           <span class="box_num">04</span>
-          <div class="box_text">
+          <div class="box_text" :style="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))? 'color: red' : 'color:#000'">
             {{ dataList.SD18 }}
           </div>
         </div>
@@ -106,11 +109,12 @@
           v-if="causeFlag4"
           v-model="inputVal4"
         />
+         <div class="errortip" v-if="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
           <span class="box_num">05</span>
-          <div class="box_text">
+          <div class="box_text" :style="(emptyFlag && optionVal5=='') || (emptyFlag && (causeFlag5 && inputVal5 == ''))? 'color: red' : 'color:#000'">
             {{ dataList.SD19 }}
           </div>
         </div>
@@ -134,6 +138,7 @@
           v-if="causeFlag5"
           v-model="inputVal5"
         />
+        <div class="errortip" v-if="(emptyFlag && optionVal5=='') || (emptyFlag && (causeFlag5 && inputVal5 == ''))">该选项为必填项</div>
       </div>
       <div class="question_box question_box_nobor">
         <div class="box_div_textarea box_div_textarea2">
@@ -190,6 +195,7 @@ export default {
       optionVal2: "",
       optionVal4: "",
       optionVal5: "",
+      emptyFlag:false,
     };
   },
   created() {
@@ -216,6 +222,7 @@ export default {
         this.optionVal4 == "" ||
         this.optionVal5 == ""
       ) {
+         this.emptyFlag = true
         this.$dialog.alert({
           message: this.dialogText,
           confirmButtonText:this.confirmTxt
@@ -228,27 +235,27 @@ export default {
         (this.causeFlag4 && this.inputVal4 == "") ||
         (this.causeFlag5 && this.inputVal5 == "")
       ) {
+         this.emptyFlag = true
         this.$dialog.alert({
           message: this.dialogText,
           confirmButtonText:this.confirmTxt
         });
         return;
       }
-      this.optionVal1 = this.optionVal1 + "" + this.inputVal1;
-      this.optionVal2 = this.optionVal2 + "" + this.inputVal2;
-      this.optionVal4 = this.optionVal4 + "" + this.inputVal4;
-      this.optionVal5 = this.optionVal5 + "" + this.inputVal5;
-
+       var val1 = this.optionVal1 + "" + this.inputVal1,
+          val2 = this.optionVal2 + "" + this.inputVal2,
+          val4 = this.optionVal4 + "" + this.inputVal4,
+          val5 = this.optionVal5 + "" + this.inputVal5;
       var str =
-        this.optionVal1 +
+        val1 +
         "-" +
-        this.optionVal2 +
+        val2 +
         "-" +
         this.radioValue3 +
         "-" +
-        this.optionVal4 +
+        val4 +
         "-" +
-        this.optionVal5 +
+        val5 +
         "-" +
         this.message6;
       console.log(str);
@@ -272,10 +279,12 @@ export default {
       var arr = "result" + idx;
       var onflag = "causeFlag" + idx;
       var opval = "optionVal" + idx;
+      var iptval = "inputVal" + idx
       if (this[arr].indexOf(option) != -1) {
         this[onflag] = true;
       } else {
         this[onflag] = false;
+        this[iptval] = ''
       }
       this[opval] = this[arr].join(",");
     },
@@ -283,6 +292,7 @@ export default {
       var onindex = "activeIndex" + num;
       var onflag = "causeFlag" + num;
       var opval = "optionVal" + num;
+      var iptval = "inputVal" + num
       this[onindex] = idx;
       this[opval] = idx;
       if (idx == 0) {
@@ -292,6 +302,7 @@ export default {
         this[onflag] = true;
       } else {
         this[onflag] = false;
+        this[iptval] = ''
       }
     },
   },
@@ -440,7 +451,7 @@ export default {
   line-height: 0.34rem;
   font-size: 0.14rem;
   color: #00569c;
-  margin: 0 auto;
+  margin: 0 auto 0.05rem;
   border: none;
   background: url(../assets/img/icon8.png) no-repeat;
   background-size: 100%;
@@ -578,6 +589,12 @@ export default {
 .circle.circle4{
   bottom: -0.06rem;
   left:-0.06rem;
+}
+.errortip{
+      width: 3rem;
+    margin: 0 auto;
+  color:red;
+font-size: 0.14rem;
 }
 </style>
 

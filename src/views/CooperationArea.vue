@@ -44,7 +44,8 @@ export default {
       page: 1,
       lanIdx:'',
       dialogText:"",
-      confirmTxt:""
+      confirmTxt:"",
+      refreshFlag:true
     };
   },
   created() {
@@ -95,9 +96,10 @@ export default {
       }
       this.$router.push({
         path: "/question" + this.page,
-        query: { idx: this.$route.query.idx },
+        query: { idx: this.$route.query.idx ,refresh:1},
       });
     },
+   
   },
 };
 </script>

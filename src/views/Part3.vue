@@ -458,7 +458,7 @@ export default {
   text-indent: 0.1rem;
 }
 .text_underline {
-  border-bottom: 0.005rem solid #000;
+ text-decoration: underline;
 }
 .box_div {
   width: 3.3rem;

@@ -1,5 +1,5 @@
 <template>
-  <div id="question_wrap" class="question1">
+  <div id="question_wrap" class="question1" v-if="isRouteAlive">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="question_content">
       <div class="question_title">{{ title }}</div>
@@ -692,6 +692,8 @@ export default {
       optionVal18: "",
       optionVal19: "",
       emptyFlag:false,
+      refreshFlag:true,
+      isRouteAlive: true
     };
   },
   created() {
@@ -707,6 +709,16 @@ export default {
       this.dialogText = list.enDialog;
       this.confirmTxt = list.enConfirm
     }
+
+    // if(this.$route.query.refresh&& this.$route.query.refresh==1){
+    //   console.log(111)
+    //   // this.reload ()
+    //   this.$router.push({
+    //     path: "/question1" ,
+    //     query: { idx: this.$route.query.idx },
+    //   });
+    //   // location.reload()
+    // }
   },
   methods: {
     lastStep() {
@@ -889,6 +901,12 @@ var val1 = this.optionVal1 + "" + this.inputVal1,
         this[iptval] = ''
       }
     },
+     reload () {
+      this.isRouteAlive = false
+      this.$nextTick (() => {
+        this.isRouteAlive = true
+      })
+    }
   },
 };
 </script>
@@ -1043,7 +1061,7 @@ var val1 = this.optionVal1 + "" + this.inputVal1,
   text-indent: 0.1rem;
 }
 .text_underline {
-  border-bottom: 0.005rem solid #000;
+      text-decoration: underline;
 }
 .box_div {
   width: 3.3rem;

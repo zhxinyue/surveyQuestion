@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <keep-alive>
-    <router-view v-if="$route.meta.keepAlive"></router-view>
-</keep-alive>
-<router-view v-if="!$route.meta.keepAlive"></router-view>
+    <keep-alive :include="cached">
+      <router-view></router-view>
+  </keep-alive>
   
 
   </div>
@@ -11,7 +10,20 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    		return {
+      			cached: this.$store.state.catchArr
+		    };
+    },
+    watch: {
+		    $route: {
+		      //监听路由变化
+		      handler: function(to, from) {
+		        this.cached = this.$store.state.catchArr;
+		      }
+		   }
+		}
 }
 </script>
 

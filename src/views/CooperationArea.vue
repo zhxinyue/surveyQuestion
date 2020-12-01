@@ -94,9 +94,13 @@ export default {
         });
         return
       }
+      // this.$router.push({
+      //   path: "/question" + this.page,
+      //   query: { idx: this.$route.query.idx ,refresh:1},
+      // });
       this.$router.push({
-        path: "/question" + this.page,
-        query: { idx: this.$route.query.idx ,refresh:1},
+        path: "/empty",
+        query: { idx: this.$route.query.idx ,path: "/question" + this.page},
       });
     },
    

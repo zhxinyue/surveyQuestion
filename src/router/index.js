@@ -9,10 +9,11 @@ import Part2 from '../views/Part2.vue'
 import Part3 from '../views/Part3.vue'
 import PersonalInfo from '../views/PersonalInfo.vue'
 import Thanks from '../views/Thanks.vue'
+import Empty from '../views/Empty.vue'
+import store from '../vuex/store';
 Vue.use(Router)
-
-export default new Router({
-  routes: [
+const router = new Router({
+  routes:[
     {
       path: '/',
       name: 'Index',
@@ -22,42 +23,32 @@ export default new Router({
     {
       path: '/cooperationArea',
       name: 'CooperationArea',
-      component: CooperationArea,
-      meta:{
-        keepAlive: true,
-        isIndex: false, // 用来清从列表页进入的缓存
-        isEdit: false // 用来判断是不是当前页是不是编辑页，回显数据
-      }
+      component: CooperationArea
     },
     {
       path: '/question1',
       name: 'Question1',
-      component: Question1,
-      meta:{keepAlive: true}
+      component: Question1
     },
     {
       path: '/question2',
       name: 'Question2',
-      component: Question2,
-      meta:{keepAlive: true}
+      component: Question2
     },
     {
       path: '/question3',
       name: 'Question3',
-      component: Question3,
-      meta:{keepAlive: true}
+      component: Question3
     },
     {
       path: '/part2',
       name: 'Part2',
-      component: Part2,
-      meta:{keepAlive: true}
+      component: Part2
     },
     {
       path: '/part3',
       name: 'Part3',
-      component: Part3,
-      meta:{keepAlive: true}
+      component: Part3
     },
     {
       path: '/personalInfo',
@@ -69,6 +60,11 @@ export default new Router({
       name: 'Thanks',
       component: Thanks
     },
+    {
+      path: '/empty',
+      name: 'Empty',
+      component: Empty
+    }
   ],
     scrollBehavior (to, from, savedPosition) {
       if (savedPosition) {
@@ -77,4 +73,15 @@ export default new Router({
         return { x: 0, y: 0 }
       }
     }
-})
+    // 全局导航守卫
+
+  })
+
+// router.beforeEach((to, from, next) => {
+// 	// 对组件B进行动态缓存
+// 	if (to.name === 'Question1') {
+// 		store.commit('iskeepAlive', to.name);
+// 		next();
+// 	}
+// })
+export default router;

@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import vant from 'vant'
 import axios from 'axios'
+import store from './vuex/store.js'
 import 'vant/lib/index.css';
 import { Radio ,RadioGroup, Checkbox,CheckboxGroup ,Field } from 'vant';
 Vue.use(Radio);
@@ -30,6 +31,7 @@ new Vue({
   el: '#app',
   router,
   vant,
+  store,
   components: { App },
   template: '<App/>'
 })

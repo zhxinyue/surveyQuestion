@@ -1,5 +1,5 @@
 <template>
-  <div id="question_wrap" class="question1" v-if="isRouteAlive">
+  <div id="question_wrap" class="question1">
     <img src="../assets/img/icon3.png" alt="" class="top_img" />
     <div class="question_content">
       <div class="question_title">{{ title }}</div>
@@ -692,8 +692,6 @@ export default {
       optionVal18: "",
       optionVal19: "",
       emptyFlag:false,
-      refreshFlag:true,
-      isRouteAlive: true
     };
   },
   created() {
@@ -710,15 +708,7 @@ export default {
       this.confirmTxt = list.enConfirm
     }
 
-    // if(this.$route.query.refresh&& this.$route.query.refresh==1){
-    //   console.log(111)
-    //   // this.reload ()
-    //   this.$router.push({
-    //     path: "/question1" ,
-    //     query: { idx: this.$route.query.idx },
-    //   });
-    //   // location.reload()
-    // }
+   
   },
   methods: {
     lastStep() {
@@ -901,12 +891,12 @@ var val1 = this.optionVal1 + "" + this.inputVal1,
         this[iptval] = ''
       }
     },
-     reload () {
-      this.isRouteAlive = false
-      this.$nextTick (() => {
-        this.isRouteAlive = true
-      })
-    }
+    beforeRouteLeave(to, from, next) {
+	    if (to.name !== "PersonalInfo") {
+	      this.$store.commit("noKeepAlive", "Question1");
+	    }
+	    next();
+	},
   },
 };
 </script>

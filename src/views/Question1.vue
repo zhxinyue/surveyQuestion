@@ -29,7 +29,7 @@
           :placeholder="dataList.answer12"
           v-if="causeFlag1"
         />
-        <div class="errortip" v-if="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == ''))">该选项为必填项</div>
+        <div class="errortip" v-if="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div class="box_title">
@@ -58,7 +58,7 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag2"
         />
-        <div class="errortip" v-if="(emptyFlag && optionVal2=='') || (emptyFlag && (causeFlag2 && inputVal2 == ''))">该选项为必填项</div>
+        <div class="errortip" v-if="(emptyFlag && optionVal2=='') || (emptyFlag && (causeFlag2 && inputVal2 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div class="box_title">
@@ -87,14 +87,14 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag3"
         />
-        <div class="errortip" v-if="(emptyFlag && optionVal3=='') || (emptyFlag && (causeFlag3 && inputVal3 == ''))">该选项为必填项</div>
+        <div class="errortip" v-if="(emptyFlag && optionVal3=='') || (emptyFlag && (causeFlag3 && inputVal3 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title2' : 'box_title4']">
           <span class="box_num">04</span>
           <div class="box_text" v-html="dataList.SD4" :style="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == '')) ? 'color: red' : 'color:#000'"></div>
         </div>
-        <div class="box_div">
+        <div class="box_div" v-if="lanIdx==1">
           <div
             v-for="(item, index) in dataList.answer3"
             :key="index"
@@ -109,6 +109,39 @@
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
+        <div class="box_div" v-if="lanIdx==2">
+          <div
+            v-for="(item, index) in answerArr"
+            :key="index"
+            :class="[
+              activeIndex4 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 4)"
+          >
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
+            
+            <em class="box_em">{{ item.text }}</em>
+          </div>
+        </div>
+        <div class="box_div" v-if="lanIdx==2">
+          <div
+            v-for="(item, index) in answerArr2"
+            :key="index"
+            :class="[
+              activeIndex4 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 4)"
+          >
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
+            
+            <em class="box_em">{{ item.text }}</em>
+          </div>
+        </div>
+
+
+
         <input
           type="text"
           class="box_dec"
@@ -116,7 +149,7 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag4"
         />
-        <div class="errortip" v-if="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))">该选项为必填项</div>
+        <div class="errortip" v-if="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
@@ -166,7 +199,7 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag5"
         />
-      <div class="errortip" v-if="(emptyFlag && radioValue5=='') ||(emptyFlag && optionVal5=='') || (emptyFlag && (causeFlag5 && inputVal5 == '')) || (emptyFlag && (radioFlag5 && radioVal5 == ''))">该选项为必填项</div>
+      <div class="errortip" v-if="(emptyFlag && radioValue5=='') ||(emptyFlag && optionVal5=='') || (emptyFlag && (causeFlag5 && inputVal5 == '')) || (emptyFlag && (radioFlag5 && radioVal5 == ''))">{{queTip}}</div>
 
       </div>
       <div class="question_box">
@@ -210,7 +243,7 @@
           v-if="causeFlag6"
           v-model="inputVal6"
         />
-         <div class="errortip" v-if="(emptyFlag && radioValue6=='') ||(emptyFlag && optionVal6=='')|| (emptyFlag && (causeFlag6 && inputVal6 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && radioValue6=='') ||(emptyFlag && optionVal6=='')|| (emptyFlag && (causeFlag6 && inputVal6 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -239,10 +272,10 @@
           v-if="causeFlag7"
           v-model="inputVal7"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal7=='') || (emptyFlag && (causeFlag7 && inputVal7 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal7=='') || (emptyFlag && (causeFlag7 && inputVal7 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
-        <div class="box_title">
+        <div  :class="[lanIdx == 1 ? 'box_title' : 'box_title2']">
           <span class="box_num">08</span>
           <div class="box_text" v-html="dataList.SD8" :style="(emptyFlag && optionVal8=='') || (emptyFlag && (causeFlag8 && inputVal8 == '')) ? 'color: red' : 'color:#000'"></div>
         </div>
@@ -268,7 +301,7 @@
           v-if="causeFlag8"
           v-model="inputVal8"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal8=='') || (emptyFlag && (causeFlag8 && inputVal8 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal8=='') || (emptyFlag && (causeFlag8 && inputVal8 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -297,7 +330,7 @@
           v-if="causeFlag9"
           v-model="inputVal9"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal9=='') || (emptyFlag && (causeFlag9 && inputVal9 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal9=='') || (emptyFlag && (causeFlag9 && inputVal9 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -326,7 +359,7 @@
           v-if="causeFlag10"
           v-model="inputVal10"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal10=='') || (emptyFlag && (causeFlag10 && inputVal10 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal10=='') || (emptyFlag && (causeFlag10 && inputVal10 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -355,7 +388,7 @@
           v-if="causeFlag11"
           v-model="inputVal11"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal11=='') || (emptyFlag && (causeFlag11 && inputVal11 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal11=='') || (emptyFlag && (causeFlag11 && inputVal11 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -384,7 +417,7 @@
           v-if="causeFlag12"
           v-model="inputVal12"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal12=='') || (emptyFlag && (causeFlag12 && inputVal12 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal12=='') || (emptyFlag && (causeFlag12 && inputVal12 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -413,7 +446,7 @@
           v-if="causeFlag13"
           v-model="inputVal13"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal13=='') || (emptyFlag && (causeFlag13 && inputVal13 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal13=='') || (emptyFlag && (causeFlag13 && inputVal13 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -442,7 +475,7 @@
           v-if="causeFlag14"
           v-model="inputVal14"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal14=='') || (emptyFlag && (causeFlag14 && inputVal14 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal14=='') || (emptyFlag && (causeFlag14 && inputVal14 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
@@ -467,7 +500,7 @@
             :placeholder="dataList.answer12"
           />
         </div>
-           <div class="errortip" v-if="(emptyFlag && recognizedMsg15=='') || (emptyFlag && improvedMsg15=='')" style="margin-top:0.05rem">该选项为必填项</div>
+           <div class="errortip" v-if="(emptyFlag && recognizedMsg15=='') || (emptyFlag && improvedMsg15=='')" style="margin-top:0.05rem">{{queTip}}</div>
 
       </div>
       <div class="question_box">
@@ -497,7 +530,7 @@
           v-if="causeFlag16"
           v-model="inputVal16"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal16=='') || (emptyFlag && (causeFlag16 && inputVal16 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal16=='') || (emptyFlag && (causeFlag16 && inputVal16 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div class="box_title">
@@ -516,7 +549,7 @@
             >{{ item.text }}</van-radio
           >
         </van-radio-group>
-         <div class="errortip" v-if="emptyFlag && radioValue17==''">该选项为必填项</div>
+         <div class="errortip" v-if="emptyFlag && radioValue17==''">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -543,7 +576,7 @@
           v-if="causeFlag18"
           v-model="inputVal18"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal18=='') || (emptyFlag && (causeFlag18 && inputVal18 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal18=='') || (emptyFlag && (causeFlag18 && inputVal18 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
@@ -570,7 +603,7 @@
           v-if="causeFlag19"
           v-model="inputVal19"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal19=='') || (emptyFlag && (causeFlag19 && inputVal19 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal19=='') || (emptyFlag && (causeFlag19 && inputVal19 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box question_box_nobor">
         <div class="box_div_textarea box_div_textarea2">
@@ -611,6 +644,7 @@ export default {
       title: "",
       dialogText: "",
       confirmTxt:"",
+      queTip:'',
       result1: [],
       result18: [],
       result19: [],
@@ -692,6 +726,8 @@ export default {
       optionVal18: "",
       optionVal19: "",
       emptyFlag:false,
+      answerArr:[],
+      answerArr2:[],
     };
   },
   created() {
@@ -701,15 +737,27 @@ export default {
       this.title = list.cnTitle1;
       this.dialogText = list.cnDialog;
       this.confirmTxt = list.cnConfirm
+      this.queTip = list.cnQueTip
     } else if (this.$route.query.idx == 2) {
       this.dataList = list.en;
       this.title = list.enTitle1;
       this.dialogText = list.enDialog;
       this.confirmTxt = list.enConfirm
+       this.queTip = list.enQueTip
+
+        this.answerArr = this.dataList.answer3.slice(0,3)
+        this.answerArr2 = this.dataList.answer3.slice(3,6)
     }
 
    
   },
+  beforeRouteLeave(to, from, next) {
+	    if (to.name !== "PersonalInfo") {
+        console.log("noKeepAlive", "Question1")
+	      this.$store.commit("noKeepAlive", "Question1");
+	    }
+	    next();
+	},
   methods: {
     lastStep() {
       this.$router.go(-1);
@@ -891,13 +939,9 @@ var val1 = this.optionVal1 + "" + this.inputVal1,
         this[iptval] = ''
       }
     },
-    beforeRouteLeave(to, from, next) {
-	    if (to.name !== "PersonalInfo") {
-	      this.$store.commit("noKeepAlive", "Question1");
-	    }
-	    next();
-	},
+    
   },
+  
 };
 </script>
 <style>

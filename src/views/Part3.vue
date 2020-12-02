@@ -30,7 +30,7 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag1"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal1=='') || (emptyFlag && (causeFlag1 && inputVal1 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div class="box_title">
@@ -59,7 +59,7 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag2"
         />
-        <div class="errortip" v-if="(emptyFlag && optionVal2=='') || (emptyFlag && (causeFlag2 && inputVal2 == ''))">该选项为必填项</div>
+        <div class="errortip" v-if="(emptyFlag && optionVal2=='') || (emptyFlag && (causeFlag2 && inputVal2 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div class="box_title">
@@ -80,7 +80,7 @@
             >{{ item.text }}</van-radio
           >
         </van-radio-group>
-        <div class="errortip" v-if="emptyFlag && radioValue3==''">该选项为必填项</div>
+        <div class="errortip" v-if="emptyFlag && radioValue3==''">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title3']">
@@ -109,7 +109,7 @@
           v-if="causeFlag4"
           v-model="inputVal4"
         />
-         <div class="errortip" v-if="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))">该选项为必填项</div>
+         <div class="errortip" v-if="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
@@ -138,7 +138,7 @@
           v-if="causeFlag5"
           v-model="inputVal5"
         />
-        <div class="errortip" v-if="(emptyFlag && optionVal5=='') || (emptyFlag && (causeFlag5 && inputVal5 == ''))">该选项为必填项</div>
+        <div class="errortip" v-if="(emptyFlag && optionVal5=='') || (emptyFlag && (causeFlag5 && inputVal5 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box question_box_nobor">
         <div class="box_div_textarea box_div_textarea2">
@@ -174,6 +174,7 @@ export default {
       lanIdx: "",
       dialogText: "",
       confirmTxt:"",
+      queTip:'',
       result4: [],
       result5: [],
       radioValue3: "",
@@ -204,12 +205,21 @@ export default {
       this.dataList = list.cn;
       this.dialogText = list.cnDialog;
       this.confirmTxt = list.cnConfirm
+      this.queTip = list.cnQueTip
     } else if (this.$route.query.idx == 2) {
       this.dataList = list.en;
       this.dialogText = list.enDialog;
       this.confirmTxt = list.enConfirm
+      this.queTip = list.enQueTip
     }
   },
+  beforeRouteLeave(to, from, next) {
+	    if (to.name !== "PersonalInfo") {
+        console.log("noKeepAlive", "Part3")
+	      this.$store.commit("noKeepAlive", "Part3");
+	    }
+	    next();
+	},
   methods: {
     lastStep() {
       this.$router.go(-1);

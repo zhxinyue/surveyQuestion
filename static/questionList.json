@@ -45,7 +45,8 @@
     "enConfirm":"Continue",
 "cnSelect":"请选择合作领域",
 "enSelect":"Please choose the cooperate area",
-
+"cnQueTip":"此题为必答题",
+"enQueTip":"",
     "cn":{
         "SD1":"贵司目前与四维图新在地图方面合作的产品是以下哪些？（可多选）",
         "SD2":"您对四维图新导航地图数据在<i class='text_underline'>数据准确性</i>方面满意程度如何？",

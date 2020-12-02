@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export default new  Vuex.Store({
     state: {
-		catchArr: [ 'D' ] //保存缓存的列表(D是固定要缓存的组件）
+		catchArr: [ 'CooperationArea' ] //保存缓存的列表(D是固定要缓存的组件）
 	},
 	mutations: {
 		// 对指定组件进行动态更改缓存（缓存）--组件调用该方法时，判断该组件是否存在于该缓存数组，无则添加
@@ -12,8 +12,8 @@ export default new  Vuex.Store({
 		},
 		// 对指定组件进行动态更改缓存（不缓存）--组件调用该方法时，从缓存数组中删除对应的组件元素
 		noKeepAlive(state, component) {
-			let index = state.catchList.indexOf(component);
-			index > -1 && state.catchList.splice(index, 1);
+			let index = state.catchArr.indexOf(component);
+			index > -1 && state.catchArr.splice(index, 1);
 		},
 	}
 })

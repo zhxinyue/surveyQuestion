@@ -39,7 +39,7 @@
           {{dataList.suTelephone}}
           <i style="color:red">*</i> ：
         </div>
-        <input type="number" class="box_dec" :placeholder="iptPlace" v-model="suTelephone"/>
+        <input class="box_dec" :placeholder="iptPlace" v-model="suTelephone"/>
       </div>
       <div class="personal_box">
         <div class="input_title">

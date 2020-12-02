@@ -62,6 +62,12 @@ export default {
       this.confirmTxt = list.enConfirm
     }
   },
+  beforeRouteLeave(to, from, next) {
+	    if (to.name !== "Question1" && to.name !== "Question2" && to.name !== "Question3") {
+	      this.$store.commit("noKeepAlive", "CooperationArea");
+	    }
+	    next();
+	},
   methods: {
     chooseArea(ind) {
       var _this = this;
@@ -87,21 +93,18 @@ export default {
       }
     },
     nextStep() {
-      if(!this.chooseFlag1&&!this.chooseFlag2&&!this.chooseFlag2){
+      if(!this.chooseFlag1&&!this.chooseFlag2&&!this.chooseFlag3){
         this.$dialog.alert({
           message: this.dialogText,
           confirmButtonText:this.confirmTxt
         });
         return
       }
-      // this.$router.push({
-      //   path: "/question" + this.page,
-      //   query: { idx: this.$route.query.idx ,refresh:1},
-      // });
       this.$router.push({
-        path: "/empty",
-        query: { idx: this.$route.query.idx ,path: "/question" + this.page},
+        path: "/question" + this.page,
+        query: { idx: this.$route.query.idx},
       });
+     
     },
    
   },
@@ -174,6 +177,13 @@ export default {
   line-height: 0.4rem;
   margin: 0 auto;
   font-weight: bold;
+}
+.van-dialog__message {
+  font-size: 0.16rem;
+}
+.van-dialog__confirm,
+.van-dialog__confirm:active {
+  color: #0189f9;
 }
 </style>
 

@@ -44,8 +44,7 @@ export default {
       page: 1,
       lanIdx:'',
       dialogText:"",
-      confirmTxt:"",
-      refreshFlag:true
+      confirmTxt:""
     };
   },
   created() {
@@ -178,11 +177,11 @@ export default {
   margin: 0 auto;
   font-weight: bold;
 }
-.van-dialog__message {
+ .van-dialog__message {
   font-size: 0.16rem;
 }
 .van-dialog__confirm,
-.van-dialog__confirm:active {
+ .van-dialog__confirm:active {
   color: #0189f9;
 }
 </style>

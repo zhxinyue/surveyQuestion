@@ -245,7 +245,7 @@ if(res.data.code == 0){
   line-height: 0.34rem;
   font-size: 0.14rem;
   color: #00569c;
-  margin: 0 auto;
+  margin: 0 auto 0.05rem;
   border: none;
   background: url(../assets/img/icon8.png) no-repeat;
   background-size: 100%;

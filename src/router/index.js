@@ -9,7 +9,6 @@ import Part2 from '../views/Part2.vue'
 import Part3 from '../views/Part3.vue'
 import PersonalInfo from '../views/PersonalInfo.vue'
 import Thanks from '../views/Thanks.vue'
-import Empty from '../views/Empty.vue'
 import store from '../vuex/store';
 Vue.use(Router)
 let router = new Router({
@@ -59,11 +58,6 @@ let router = new Router({
       path: '/thanks',
       name: 'Thanks',
       component: Thanks
-    },
-    {
-      path: '/empty',
-      name: 'Empty',
-      component: Empty
     }
   ],
     scrollBehavior (to, from, savedPosition) {

@@ -753,7 +753,6 @@ export default {
   },
   beforeRouteLeave(to, from, next) {
 	    if (to.name !== "PersonalInfo") {
-        console.log("noKeepAlive", "Question1")
 	      this.$store.commit("noKeepAlive", "Question1");
 	    }
 	    next();

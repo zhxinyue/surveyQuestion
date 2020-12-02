@@ -181,7 +181,6 @@ export default {
       message6: "",
       activeIcon: require("../assets/img/icon7.png"),
       inactiveIcon: require("../assets/img/icon6.png"),
-      flag: false,
       activeIndex1: 6,
       activeIndex2: 6,
       causeFlag1: false,
@@ -215,7 +214,6 @@ export default {
   },
   beforeRouteLeave(to, from, next) {
 	    if (to.name !== "PersonalInfo") {
-        console.log("noKeepAlive", "Part3")
 	      this.$store.commit("noKeepAlive", "Part3");
 	    }
 	    next();

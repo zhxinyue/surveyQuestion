@@ -847,7 +847,6 @@ export default {
   },
   beforeRouteLeave(to, from, next) {
 	    if (to.name !== "PersonalInfo") {
-        console.log("noKeepAlive", "Question2")
 	      this.$store.commit("noKeepAlive", "Question2");
 	    }
 	    next();
@@ -943,8 +942,6 @@ export default {
           val20 = this.optionVal20 + "" + this.inputVal20,
           val22 = this.optionVal22 + "" + this.inputVal22,
           val23 = this.optionVal23 + "" + this.inputVal23
-console.log(this.inputVal1)
-console.log(this.optionVal1)
       var str =
         val1 +
         "-" +

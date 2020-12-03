@@ -66,7 +66,7 @@
           <span class="box_num">03</span>
           <div class="box_text" :style="(emptyFlag && optionVal3=='') || (emptyFlag && (causeFlag3 && inputVal3 == '')) ? 'color: red' : 'color:#000'" v-html="dataList.HD3"></div>
         </div>
-        <div class="box_div">
+        <div class="box_div" v-if="lanIdx==1">
           <div
             v-for="(item, index) in dataList.answer3"
             :key="index"
@@ -81,6 +81,39 @@
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
+<div class="box_div" v-if="lanIdx==2">
+          <div
+            v-for="(item, index) in answerArr"
+            :key="index"
+            :class="[
+              activeIndex3 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 3)"
+          >
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
+            
+            <em class="box_em">{{ item.text }}</em>
+          </div>
+        </div>
+        <div class="box_div" v-if="lanIdx==2">
+          <div
+            v-for="(item, index) in answerArr2"
+            :key="index"
+            :class="[
+              activeIndex3 == item.score ? 'box_options_on' : '',
+              'box_options',
+            ]"
+            @click="chooseLevel(item.score, 3)"
+          >
+            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
+            
+            <em class="box_em">{{ item.text }}</em>
+          </div>
+        </div>
+
+
+
         <input
           type="text"
           class="box_dec"
@@ -629,14 +662,11 @@ export default {
       optionVal17: "",
       optionVal18: "",
       emptyFlag:false,
+      answerArr:[],
+      answerArr2:[],
     };
   },
-  // beforeRouteLeave(to, from, next) {
-	//     if (to.name !== "Part3") {
-	//       this.$store.commit("noKeepAlive", "Part2");
-	//     }
-	//     next();
-	// },
+ 
   created() {
     this.lanIdx = this.$route.query.idx;
     if (this.$route.query.idx == 1) {
@@ -651,6 +681,8 @@ export default {
       this.dialogText = list.enDialog;
       this.confirmTxt = list.enConfirm
       this.queTip = list.enQueTip
+      this.answerArr = this.dataList.answer3.slice(0,3)
+        this.answerArr2 = this.dataList.answer3.slice(3,6)
     }
   },
   methods: {

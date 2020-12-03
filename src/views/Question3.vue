@@ -599,12 +599,7 @@ export default {
       answerArr2:[],
     };
   },
-  // beforeRouteLeave(to, from, next) {
-	//     if (to.name !== "Part2") {
-	//       this.$store.commit("noKeepAlive", "Question3");
-	//     }
-	//     next();
-	// },
+
   created() {
     this.lanIdx = this.$route.query.idx;
     if (this.$route.query.idx == 1) {

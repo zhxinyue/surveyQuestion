@@ -212,12 +212,12 @@ export default {
       this.queTip = list.enQueTip
     }
   },
-  beforeRouteLeave(to, from, next) {
-	    if (to.name !== "PersonalInfo") {
-	      this.$store.commit("noKeepAlive", "Part3");
-	    }
-	    next();
-	},
+  // beforeRouteLeave(to, from, next) {
+	//     if (to.name !== "PersonalInfo") {
+	//       this.$store.commit("noKeepAlive", "Part3");
+	//     }
+	//     next();
+	// },
   methods: {
     lastStep() {
       this.$router.go(-1);

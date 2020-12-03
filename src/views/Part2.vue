@@ -631,12 +631,12 @@ export default {
       emptyFlag:false,
     };
   },
-  beforeRouteLeave(to, from, next) {
-	    if (to.name !== "Part3") {
-	      this.$store.commit("noKeepAlive", "Part2");
-	    }
-	    next();
-	},
+  // beforeRouteLeave(to, from, next) {
+	//     if (to.name !== "Part3") {
+	//       this.$store.commit("noKeepAlive", "Part2");
+	//     }
+	//     next();
+	// },
   created() {
     this.lanIdx = this.$route.query.idx;
     if (this.$route.query.idx == 1) {

@@ -61,12 +61,12 @@ export default {
       this.confirmTxt = list.enConfirm
     }
   },
-  beforeRouteLeave(to, from, next) {
-	    if (to.name !== "Question1" && to.name !== "Question2" && to.name !== "Question3") {
-	      this.$store.commit("noKeepAlive", "CooperationArea");
-	    }
-	    next();
-	},
+  // beforeRouteLeave(to, from, next) {
+	//     if (to.name !== "Question1" && to.name !== "Question2" && to.name !== "Question3") {
+	//       this.$store.commit("noKeepAlive", "CooperationArea");
+	//     }
+	//     next();
+	// },
   methods: {
     chooseArea(ind) {
       var _this = this;

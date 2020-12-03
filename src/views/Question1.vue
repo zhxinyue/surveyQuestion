@@ -751,12 +751,12 @@ export default {
 
    
   },
-  beforeRouteLeave(to, from, next) {
-	    if (to.name !== "PersonalInfo") {
-	      this.$store.commit("noKeepAlive", "Question1");
-	    }
-	    next();
-	},
+  // beforeRouteLeave(to, from, next) {
+	//     if (to.name !== "PersonalInfo") {
+	//       this.$store.commit("noKeepAlive", "Question1");
+	//     }
+	//     next();
+	// },
   methods: {
     lastStep() {
       this.$router.go(-1);

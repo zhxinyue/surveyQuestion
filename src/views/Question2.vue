@@ -845,12 +845,12 @@ export default {
         this.answerArr2 = this.dataList.answer3.slice(3,6)
     }
   },
-  beforeRouteLeave(to, from, next) {
-	    if (to.name !== "PersonalInfo") {
-	      this.$store.commit("noKeepAlive", "Question2");
-	    }
-	    next();
-	},
+  // beforeRouteLeave(to, from, next) {
+	//     if (to.name !== "PersonalInfo") {
+	//       this.$store.commit("noKeepAlive", "Question2");
+	//     }
+	//     next();
+	// },
   methods: {
     lastStep() {
       this.$router.go(-1);

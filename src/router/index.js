@@ -9,7 +9,6 @@ import Part2 from '../views/Part2.vue'
 import Part3 from '../views/Part3.vue'
 import PersonalInfo from '../views/PersonalInfo.vue'
 import Thanks from '../views/Thanks.vue'
-import store from '../vuex/store';
 Vue.use(Router)
 let router = new Router({
   routes:[
@@ -22,37 +21,58 @@ let router = new Router({
     {
       path: '/cooperationArea',
       name: 'CooperationArea',
-      component: CooperationArea
+      component: CooperationArea,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/question1',
       name: 'Question1',
-      component: Question1
+      component: Question1,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/question2',
       name: 'Question2',
-      component: Question2
+      component: Question2,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/question3',
       name: 'Question3',
-      component: Question3
+      component: Question3,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/part2',
       name: 'Part2',
-      component: Part2
+      component: Part2,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/part3',
       name: 'Part3',
-      component: Part3
+      component: Part3,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/personalInfo',
       name: 'PersonalInfo',
-      component: PersonalInfo
+      component: PersonalInfo,
+      meta: {
+        keepAlive: true
+      }
     },
     {
       path: '/thanks',
@@ -70,14 +90,6 @@ let router = new Router({
     
 
   })
-// 全局导航守卫
-router.beforeEach((to, from, next) => {
-	// 对组件B进行动态缓存
-  if (to.name === 'CooperationArea' || to.name === 'Question1' || to.name === 'Question2'|| 
-  to.name === 'Question3'|| to.name === 'Part2'|| to.name === 'Part3') {
-		store.commit('iskeepAlive', to.name);
-  }
-  next();
-})
+
 
 export default router;

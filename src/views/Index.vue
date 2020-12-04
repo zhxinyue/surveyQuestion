@@ -14,6 +14,7 @@ export default {
   data() {
     return {};
   },
+
   methods: {
     nextStep(idx) {
       this.$router.push({ path: "/cooperationArea", query: { idx: idx } });

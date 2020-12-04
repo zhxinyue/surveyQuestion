@@ -61,12 +61,18 @@ export default {
       this.confirmTxt = list.enConfirm
     }
   },
-  // beforeRouteLeave(to, from, next) {
-	//     if (to.name !== "Question1" && to.name !== "Question2" && to.name !== "Question3") {
-	//       this.$store.commit("noKeepAlive", "CooperationArea");
-	//     }
-	//     next();
-	// },
+  beforeRouteLeave(to, from, next) {
+	    if (to.name == "Index" ) {
+        this.$store.commit("noKeepAlive", "CooperationArea");
+        this.$store.commit("noKeepAlive", "Question1");
+        this.$store.commit("noKeepAlive", "Question2");
+        this.$store.commit("noKeepAlive", "Question3");
+        this.$store.commit("noKeepAlive", "Part2");
+        this.$store.commit("noKeepAlive", "Part3");
+        this.$store.commit("noKeepAlive", "PersonalInfo");
+	    }
+	    next();
+	},
   methods: {
     chooseArea(ind) {
       var _this = this;

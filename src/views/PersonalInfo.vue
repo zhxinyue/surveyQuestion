@@ -83,7 +83,8 @@ export default {
         suTelephone:'',
         suAddress:'',
 telTip:'',
-confirmTxt:""
+confirmTxt:"",
+lanStr:''
     };
   },
   created(){
@@ -97,6 +98,7 @@ confirmTxt:""
       this.telTip = list.cnTel
       this.errorMsg = list.cnErrorMsg
       this.confirmTxt = list.cnConfirm
+      this.lanStr = 'C-'
 
     }else if(this.$route.query.idx == 2){
       this.dataList = list.enPerlist
@@ -107,6 +109,7 @@ confirmTxt:""
       this.telTip = list.enTel
       this.errorMsg = list.enErrorMsg
       this.confirmTxt = list.enConfirm
+      this.lanStr = 'E-'
     }
 
   },
@@ -136,7 +139,7 @@ confirmTxt:""
       
       this.$ajax.post('http://qa.travbao.com/goabraod/trav/writeAnswerUser.do',
      {
-       suCompany:this.suCompany,
+       suCompany:this.lanStr+this.suCompany,
         suBumen:this.suBumen,
         suName:this.suName,
         suTelephone:this.suTelephone,

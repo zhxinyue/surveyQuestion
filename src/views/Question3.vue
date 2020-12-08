@@ -91,11 +91,24 @@
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title2' : 'box_title4']">
           <span class="box_num">04</span>
-          <div class="box_text" v-html="dataList.SD4" :style="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == '')) ? 'color: red' : 'color:#000'"></div>
+          <div class="box_text" v-html="dataList.SD4" :style="(emptyFlag && radioValue4=='') ||(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == '')) ? 'color: red' : 'color:#000'"></div>
         </div>
-        <div class="box_div" v-if="lanIdx==1">
+         <van-radio-group
+          v-model="radioValue4"
+          direction="horizontal"
+          class="box_checkbox_group"
+        >
+          <van-radio
+            v-for="(item, index) in dataList.answer13"
+            :key="index"
+            :name="item.name"
+            >{{ item.text }}</van-radio
+          >
+        </van-radio-group>
+
+        <div class="box_div">
           <div
-            v-for="(item, index) in dataList.answer3"
+            v-for="(item, index) in dataList.answer2"
             :key="index"
             :class="[
               activeIndex4 == item.score ? 'box_options_on' : '',
@@ -108,36 +121,7 @@
             <em class="box_em">{{ item.text }}</em>
           </div>
         </div>
-          <div class="box_div" v-if="lanIdx==2">
-          <div
-            v-for="(item, index) in answerArr"
-            :key="index"
-            :class="[
-              activeIndex4 == item.score ? 'box_options_on' : '',
-              'box_options',
-            ]"
-            @click="chooseLevel(item.score, 4)"
-          >
-            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            
-            <em class="box_em">{{ item.text }}</em>
-          </div>
-        </div>
-          <div class="box_div" v-if="lanIdx==2">
-          <div
-            v-for="(item, index) in answerArr2"
-            :key="index"
-            :class="[
-              activeIndex4 == item.score ? 'box_options_on' : '',
-              'box_options',
-            ]"
-            @click="chooseLevel(item.score, 4)"
-          >
-            <img :src="require('../assets/img/'+item.img)" alt="" class="box_img" />
-            
-            <em class="box_em">{{ item.text }}</em>
-          </div>
-        </div>
+        
         <input
           type="text"
           class="box_dec"
@@ -145,7 +129,7 @@
           :placeholder="dataList.answer11"
           v-if="causeFlag4"
         />
-        <div class="errortip" v-if="(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))">{{queTip}}</div>
+        <div class="errortip" v-if="(emptyFlag && radioValue4=='') ||(emptyFlag && optionVal4=='') || (emptyFlag && (causeFlag4 && inputVal4 == ''))">{{queTip}}</div>
       </div>
       <div class="question_box">
         <div :class="[lanIdx == 1 ? 'box_title' : 'box_title4']">
@@ -531,6 +515,7 @@ export default {
       result1: [],
       activeIcon: require("../assets/img/icon7.png"),
       inactiveIcon: require("../assets/img/icon6.png"),
+      radioValue4:"",
       radioValue5: "",
       radioValue6: "",
       recognizedMsg14: "",
@@ -595,8 +580,6 @@ export default {
       optionVal14: "",
       optionVal15: "",
       emptyFlag:false,
-       answerArr:[],
-      answerArr2:[],
     };
   },
 
@@ -614,8 +597,6 @@ export default {
       this.dialogText = list.enDialog;
       this.confirmTxt = list.enConfirm
       this.queTip = list.enQueTip
-       this.answerArr = this.dataList.answer3.slice(0,3)
-        this.answerArr2 = this.dataList.answer3.slice(3,6)
     }
   },
   methods: {
@@ -628,6 +609,7 @@ export default {
         this.optionVal2 == "" ||
         this.optionVal3 == "" ||
         this.optionVal4 == "" ||
+        this.radioValue4 == "" ||
         this.radioValue5 == "" ||
         this.optionVal5 == "" ||
         this.radioValue6 == "" ||
@@ -677,7 +659,7 @@ export default {
 var val1 = this.optionVal1 + "" + this.inputVal1,
           val2 = this.optionVal2 + "" + this.inputVal2,
           val3 = this.optionVal3 + "" + this.inputVal3,
-          val4 = this.optionVal4 + "" + this.inputVal4,
+          val4 =  this.radioValue4 +"," +this.optionVal4 + "" + this.inputVal4,
           val5 =  this.radioValue5 +
         "" +
         this.radioVal5 +
@@ -685,7 +667,7 @@ var val1 = this.optionVal1 + "" + this.inputVal1,
         this.optionVal5 +
         "" +
         this.inputVal5,
-          val6 = this.optionVal6 + "" + this.inputVal6,
+          val6 = this.radioValue6 +"," +this.optionVal6 + "" + this.inputVal6,
           val7 = this.optionVal7 + "" + this.inputVal7,
           val8 = this.optionVal8 + "" + this.inputVal8,
           val9 = this.optionVal9 + "" + this.inputVal9,

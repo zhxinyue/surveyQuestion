@@ -59,9 +59,9 @@
         "SD9":"您对四维图新导航地图的<i class='text_underline'>问联响应速度</i>的满意程度如何？",
         "SD10":"您对四维图新导航地图的<i class='text_underline'>问联答复内容</i>的满意程度如何？",
         "SD11":"您对四维图新导航地图的<i class='text_underline'>现有质量管理体系</i>的满意程度如何？",
-        "SD12":"在<i class='text_underline'>项目接洽</i>过程中，您对四维图新项目团队人员的满意程度如何？",
-        "SD13":"在<i class='text_underline'>需求沟通</i>过程中，您对四维图新项目团队人员的满意程度如何？",
-        "SD14":"在<i class='text_underline'>项目执行</i>过程中，您对四维图新项目团队人员的满意程度如何？",
+        "SD12":"在<i class='text_underline'>项目接洽</i>过程中，您对四维图新对应团队人员的满意程度如何？",
+        "SD13":"在<i class='text_underline'>需求沟通</i>过程中，您对四维图新对应团队人员的满意程度如何？",
+        "SD14":"在<i class='text_underline'>项目执行</i>过程中，您对四维图新对应团队人员的满意程度如何？",
         "SD15":"您认为四维图新的导航地图产品和服务在哪些方面值得认可？哪些方面还需要改进？",
         "SD16":"与其他公司同类产品相比，您对四维图新导航地图产品及服务价格的满意程度如何？",
         "SD17":"您是否能够及时收到四维图新最新产品和服务信息？",
@@ -296,7 +296,14 @@
         "answer9":"值得认可：",
         "answer10":"需要改进：",
         "answer11":"原因&合作项目",
-        "answer12":"请输入"
+        "answer12":"请输入",
+        "answer13":[{
+            "name":"A",
+            "text":"A.未发生过"
+        },{
+            "name":"B",
+            "text":"B.发生过"
+        }]
 
 
     },
@@ -312,9 +319,9 @@
         "SD9":"How satisfied are you with customer issues response speed in navigation map cooperation of NavInfo?",
         "SD10":"How satisfied are you with the reply of customer issues in navigation map cooperation of NavInfo?",
         "SD11":"How satisfied are you with the current product quality management system of NavInfo?",
-        "SD12":"In the beginning of business negotiation, how satisfied are you with the project team of NavInfo?",
-        "SD13":"During the requirement communication process, how satisfied are you with the project team of NavInfo?",
-        "SD14":"During project execution process, how satisfied are you with the project team of NavInfo?",
+        "SD12":"In the beginning of business negotiation, how satisfied are you with the team of NavInfo?",
+        "SD13":"During the requirement communication process, how satisfied are you with the team of NavInfo?",
+        "SD14":"During project execution process, how satisfied are you with the team of NavInfo?",
         "SD15":"What aspects of NavInfo navigation map product do you think deserve being recognized? And what aspects need to be improved?",
         "SD16":"Compared with similar products of other companies, how satisfied are you with the price of NavInfo’s navigation map product?",
         "SD17":"Do you think it is timely to receive the latest product and service information of NavInfo?",
@@ -549,7 +556,14 @@
         "answer9":"Being recognized：",
         "answer10":"To be improved：",
         "answer11":"Reasons & Cooperation projects",
-        "answer12":"Please type..."
+        "answer12":"Please type...",
+        "answer13":[{
+            "name":"A",
+            "text":"A.Yes"
+        },{
+            "name":"B",
+            "text":"B.No"
+        }]
         
     }
 }
